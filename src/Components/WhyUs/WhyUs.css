@@ -1,0 +1,105 @@
+#WhyUsContainer {
+    background-color: rgb(13, 42, 59);
+    max-height: 800px;
+    overflow: hidden;
+    color: white;
+}
+
+.BackImageBackWhyUs {
+    max-height: 900px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.BackImageBackWhyUs img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.CounterContainerWhyUs {
+    margin-top: 60px;
+}
+
+.WhyUsContentHomePage h2 {
+    color: white;
+    letter-spacing: -1.4px;
+    margin-top: 0;
+    margin-bottom: 26px;
+    font-size: 58px;
+    font-weight: 500;
+    line-height: 107%;
+}
+
+.WhyUsContentHomePage span {
+    display: flex;
+    align-items: center;
+    margin: 30px 0px;
+    font-weight: 600;
+    color: white;
+}
+
+.WhyUsContentHomePage p {
+    color: white;
+}
+
+.WhyUsContentHomePage span::before {
+    content: "";
+    height: 1px;
+    width: 20px;
+    background-color: white;
+    color: white;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.CounterBoxContainer {
+    min-height: 200px;
+    margin: 5px;
+}
+
+.WhyUsContentHomePage .BackOverlayImage {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (max-width:900px) {
+    #WhyUsContainer {
+        background-color: rgb(13, 42, 59);
+        max-height: 100% !important;
+        overflow: hidden;
+        color: white;
+    }
+
+    .CounterContainerWhyUs .ant-row .ant-col {
+        width: 50%;
+    }
+
+    .CounterBoxContainer {
+        min-height: 130px;
+        padding: 10px;
+    }
+
+    .BackImageBackWhyUs {
+        max-height: 400px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+
+    .WhyUsContentHomePage h2 {
+        color: white;
+        letter-spacing: -1.4px;
+        margin-top: 0;
+        margin-bottom: 26px;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 107%;
+    }
+}

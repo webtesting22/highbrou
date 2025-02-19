@@ -1,0 +1,11 @@
+#ExpertiseContainer .ant-row .ant-col {
+    padding: 10px 5px;
+}
+
+#ExpertiseContainer .ant-row .ant-col .HoverableCardImage img {
+    object-fit: cover;
+}
+
+#ExpertiseContainer .ant-row .ant-col .HoverableCardImage {
+    height: 200px;
+}

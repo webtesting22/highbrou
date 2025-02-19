@@ -1,0 +1,110 @@
+.HoverAnimationContentContainer div img {
+    width: 100%;
+}
+
+.HoverAnimationContentContainer:hover .HoverableCardContent {
+    color: black;
+}
+
+.HoverAnimationContentContainer .HoverableCardContent {
+    color: white;
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    border-right: 1px solid white;
+    padding-bottom: 0px !important;
+    background: linear-gradient(#222226bc, #1f1e22a6 40%, rgb(13 42 59 / 60%) 60%, #212124);
+    overflow: hidden;
+}
+
+.HoverAnimatedImageContainer .ant-row .ant-col:last-child .HoverableCardContent {
+    border: none;
+}
+
+.HoverAnimationContentContainer .HoverableCardContent h2 {
+    padding: 0px 30px;
+    background-color: transparent;
+    margin-bottom: 0px;
+    color: white;
+    transition: .5s;
+    padding-top: 30px;
+    transform: translateY(150px);
+    padding-bottom: 30px;
+}
+
+.HoverAnimationContentContainer .HoverableCardContent:hover h2 {
+    background-color: white;
+    color: black;
+    transition: .5s;
+    transform: translateY(0px);
+    padding-bottom: 0px;
+}
+
+.HoverAnimationContentContainer .HoverableCardContent>div {
+    background-color: transparent;
+    /* height: 100px; */
+    max-height: 100px;
+    transition: .5s;
+    padding: 30px;
+    transform: translateY(150px);
+}
+
+.HoverAnimationContentContainer .HoverableCardContent:hover>div {
+    background-color: white;
+    max-height: 400px;
+    transition: .5s;
+    transform: translateY(0px);
+}
+
+@media (max-width:900px) {
+
+    .HoverAnimationContentContainer .HoverableCardContent {
+        color: rgb(0, 0, 0);
+        min-height: 100% !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        border-right: 1px solid white;
+        padding-bottom: 0px !important;
+        background: linear-gradient(#222226bc, #1f1e22a6 40%, rgb(13 42 59 / 60%) 60%, #212124);
+        overflow: hidden;
+    }
+
+
+    .HoverAnimationContentContainer .HoverableCardContent h2 {
+        padding: 0px 30px;
+        background-color: white;
+        margin-bottom: 0px;
+        color: black;
+
+        transition: .5s;
+        padding-top: 30px;
+        transform: translateY(0px);
+        padding-bottom: 30px;
+    }
+
+    .HoverAnimationContentContainer .HoverableCardContent:hover h2 {
+        background-color: white;
+        color: black;
+        transition: .5s;
+        transform: translateY(0px);
+        padding-bottom: 0px;
+    }
+
+    .HoverAnimationContentContainer .HoverableCardContent>div {
+        background-color: white;
+        /* height: 100px; */
+        max-height: 100% !important;
+        transition: .5s;
+        padding: 30px;
+        transform: translateY(0px);
+    }
+
+    .HoverAnimationContentContainer .HoverableCardContent:hover>div {
+        background-color: white;
+        max-height: 100% !important;
+        transition: .5s;
+        transform: translateY(0px);
+    }
+}

@@ -1,0 +1,149 @@
+#WhatWeDoHome {
+    color: black;
+}
+
+.HeaderContainerWhatWeDo span {
+    display: flex;
+    align-items: center;
+    margin: 30px 0px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+}
+
+.HeaderContainerWhatWeDo span::before {
+    content: "";
+    height: 1px;
+    width: 20px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.HeaderContainerWhatWeDo h2 {
+    color: rgb(13, 42, 59);
+    letter-spacing: -1.4px;
+    margin-top: 0;
+    margin-bottom: 26px;
+    font-size: 58px;
+    font-weight: 500;
+    line-height: 107%;
+}
+
+.HoverableCardImage {
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.HoverableCardImage img {
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+    object-fit: cover;
+}
+
+.WhatWeDoHoverableCards {
+    margin-top: 60px;
+}
+
+.WhatWeDoHoverableCards .ant-row .ant-col {
+    padding-right: 30px;
+}
+
+.HoverableCardContent {
+    padding: 30px 0px;
+    padding-bottom: 15px !important;
+}
+
+.HoverableCardContent h2 {
+    font-weight: 500;
+    margin-top: 5px;
+    color: rgb(13, 42, 59);
+}
+
+.HoverableCardContent span {
+    color: rgb(13, 42, 59);
+}
+
+.BorderHoverCard {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.57);
+    position: relative;
+}
+
+.BorderHoverCard hr {
+    position: absolute;
+    bottom: 0px;
+    width: 20px;
+    background-color: black;
+    border: 1px solid black;
+    opacity: 1;
+    margin: 0px;
+    bottom: -1.6px;
+    transition: .5s;
+}
+
+.BorderHoverCard:hover hr {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: black;
+    border: 1px solid black;
+    opacity: 1;
+    margin: 0px;
+    bottom: -1.6px;
+    transition: .5s;
+}
+
+.BorderHoverCard:hover .HoverableCardImage img {
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+@media (max-width:900px) {
+    .HoverableCardContent {
+        padding: 0px 0px;
+        padding-bottom: 15px !important;
+    }
+    .HeaderContainerWhatWeDo h2 {
+        color: rgb(13, 42, 59);
+        letter-spacing: -1.4px;
+        margin-top: 0;
+        margin-bottom: 26px;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 107%;
+    }
+
+    .WhatWeDoHoverableCards .ant-row .ant-col {
+        padding-right: 20px;
+        margin-bottom: 10px;
+    }
+
+    .HoverableCardImage {
+        height: 300px;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .BorderHoverCard {
+        margin-bottom: 20px;
+    }
+
+
+}
+
+@media (max-width:769px) {
+    .HoverableCardImage {
+        height: 300px;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+    .WhatWeDoHoverableCards .ant-row .ant-col {
+        padding-right: 0px;
+        width: 100%;
+    }
+
+}

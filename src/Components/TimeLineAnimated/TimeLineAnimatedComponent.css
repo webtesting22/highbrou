@@ -1,0 +1,211 @@
+#TimeLineAnimatedContainer {
+    overflow: hidden;
+}
+
+.AnimatedHoverAnimationTimeline {
+    border-bottom: 1px solid black;
+    padding: 30px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: .5s;
+    position: relative;
+
+}
+
+.AnimatedHoverAnimationTimeline:hover {
+    padding: 40px 0px;
+    transition: .5s;
+    /* border-radius: 20px; */
+}
+
+.AnimatedHoverAnimationTimeline::before {
+    height: 0px;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(240, 240, 240, 0.035);
+    content: "";
+    display: inline-block;
+    transition: .5s;
+}
+
+.AnimatedHoverAnimationTimeline:hover::before {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(226, 226, 226, 0.424);
+    content: "";
+    display: inline-block;
+    transition: .5s;
+    border-radius: 20px;
+}
+
+.ContentContainerTimeline {
+    position: sticky;
+    z-index: 4;
+    padding: 0px 20px;
+}
+
+.ContentContainerTimeline h2 {
+    color: black;
+}
+
+.AnimatedHoverAnimationTimeline svg {
+    color: black;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.496);
+    padding: 20px;
+    border-radius: 50%;
+    font-size: 20px;
+    rotate: -90deg;
+    transition: .5s;
+    opacity: 0.3;
+}
+
+.AnimatedHoverAnimationTimeline hr {
+    position: absolute;
+    bottom: -1.5px;
+    margin: 0px;
+    border: 1px solid black;
+    background-color: black;
+    width: 20px;
+    transition: .5s;
+}
+
+.AnimatedHoverAnimationTimeline:hover hr {
+    position: absolute;
+    bottom: -1.5px;
+    margin: 0px;
+    border: 1px solid black;
+    background-color: black;
+    width: 100%;
+    transition: .5s;
+}
+
+.AnimatedHoverAnimationTimeline:hover svg {
+    color: wheat;
+    background-color: black;
+    padding: 20px;
+    border-radius: 50%;
+    font-size: 20px;
+    rotate: 0deg;
+    transition: .5s;
+    opacity: 0.9;
+}
+
+.TimelineSectionHeading {
+    color: rgb(13, 42, 59);
+    letter-spacing: -1.4px;
+    margin-top: 0;
+    margin-bottom: 26px;
+    font-size: 58px;
+    font-weight: 500;
+    line-height: 107%;
+}
+
+.TimelineImageonPc {
+    width: 100%;
+}
+
+/* 
+.AbsoluteContainer {
+    position: relative;
+}
+
+.TimelineContentContainer {
+    color: black;
+}
+
+.TimelineContentContainer div:first-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin-top: 10px;
+}
+
+.TimelineContentContainer div:last-child {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+.TimelineContentContainer div:nth-child(2) {
+    position: absolute;
+    left: 100px;
+}
+
+.TimelineContentContainer div:nth-child(3) {
+    position: absolute;
+    left: 300px;
+    top: 220px;
+
+}
+
+.TimelineContentContainer div:nth-child(4) {
+    position: absolute;
+    left: 350px;
+    top: -50px;
+}
+
+.TimelineContentContainer div:nth-child(5) {
+    position: absolute;
+    right: 240px;
+    bottom: -30px;
+}
+
+.TimelineContentContainer div:nth-child(6) {
+    position: absolute;
+    right: 60px;
+    top: 0px;
+} */
+.OnlyPCCode{
+    display: block;
+}
+.OnlyMobile{
+    display: none;
+}
+
+@media (max-width:900px) {
+    .OnlyMobile{
+        display: block;
+        margin-top: -4rem;
+    }
+    
+    .OnlyPCCode{
+        display: none;
+    }
+    .TimelineSectionHeading {
+        color: rgb(13, 42, 59);
+        letter-spacing: -1.4px;
+        margin-top: 0;
+        margin-bottom: 26px;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 107%;
+    }
+}
+
+.TimelineImages img {
+    width: 100%;
+    height: 100%;
+    /* margin-top: -7px; */
+}
+
+/* .TimelineImages img:last-child{
+    margin-left: -1px;
+} */
+.TimelineImages {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 
+.TimelineImages img:nth-child(2) {
+    margin-left: 1px;
+} */
+
+@media (min-width:1500px) and (max-width:2000px) {
+    .TimelineImages {
+        padding: 0px 200px;
+    }
+}

@@ -1,0 +1,163 @@
+#FooterContainer {
+    background-color: rgb(13, 42, 59);
+    position: relative;
+    overflow: hidden;
+}
+
+#FooterContainer .sectionPadding {
+    padding-bottom: 0px;
+}
+
+#FooterContainer .LogoPlacingContainer img {
+    width: 70%;
+}
+
+.FooterbackImageOverlay img {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.03;
+}
+
+#FooterContainer .NavigationLinksContainer {
+    padding: 0px 30px;
+}
+
+#FooterContainer .NavigationLinksContainer p {
+    color: white;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.365);
+    width: 70%;
+    position: relative;
+    transition: .5s;
+    text-align: center;
+    margin-top: 0px !important;
+    margin-bottom: 30px;
+
+}
+
+#FooterContainer .NavigationLinksContainer p a {
+    color: white;
+}
+
+#FooterContainer .NavigationLinksContainer p::before {
+    content: "";
+    position: absolute;
+    bottom: -0.7px;
+    height: 1px;
+    background-color: rgb(255, 255, 255);
+    width: 20px;
+    transition: .5s;
+    left: 0px;
+}
+
+#FooterContainer .NavigationLinksContainer p:hover::before {
+    content: "";
+    position: absolute;
+    bottom: -0.7px;
+    height: 1px;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    transition: .5s;
+}
+
+
+#FooterContainer .NavigationLinksContainer .ant-row .ant-col {
+    padding: 0px 10px;
+}
+
+
+.FooterLogoContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: start;
+}
+
+.AddressAndSocialLinksContainer p {
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+/* .OfficeAddressContainer{
+    display: flex
+    ;
+        align-items: start;
+}
+
+.OfficeAddressContainer svg{
+    font-size: 50px;
+    margin: 0px 10px;
+    margin-top: -6px !important;
+}
+.OfficeAddressContainer p{
+    margin-top: 0px;
+} */
+
+.CopywriteText {
+    border-top: 0.5px solid rgba(255, 255, 255, 0.255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    position: sticky;
+    z-index: 55;
+}
+
+.CopywriteText p {
+    color: white;
+    margin: 0px;
+}
+
+.CopywriteText p a {
+    color: white;
+}
+
+.LogoPlacingContainer p {
+    color: white;
+}
+
+.CopywriteText svg {
+    font-size: 25px;
+}
+
+@media (max-width:900px) {
+    .CopywriteText {
+        border-top: 0.5px solid rgba(255, 255, 255, 0.255);
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        padding: 20px 0px;
+        position: sticky;
+        z-index: 55;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #FooterContainer .NavigationLinksContainer {
+        padding: 30px 0px;
+    }
+
+    #FooterContainer .NavigationLinksContainer .ant-row .ant-col {
+        padding: 0px 10px;
+        width: 50% !important;
+    }
+
+    #FooterContainer .NavigationLinksContainer p {
+        width: 100% !important;
+    }
+    #FooterContainer .LogoPlacingContainer img {
+        width: 300px;
+    }
+
+    
+}
+
+@media (max-width:769px){
+    #FooterContainer .LogoPlacingContainer img {
+        width: 100%;
+    }
+
+}

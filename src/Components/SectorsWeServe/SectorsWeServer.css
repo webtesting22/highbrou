@@ -1,0 +1,61 @@
+.sectorsCardsContainer h2 {
+    color: black;
+    padding-top: 30px;
+}
+
+.sectorsCardsContainer {
+    min-height: 330px;
+    border-right: 0.5px solid black;
+    /* padding:20px 20px; */
+    transition: .5s;
+    /* height: 100%; */
+    transition: .5s;
+
+}
+
+.RowAdjustBorder .ant-row .ant-col:nth-child(1),
+.RowAdjustBorder .ant-row .ant-col:nth-child(2),
+.RowAdjustBorder .ant-row .ant-col:nth-child(3) {
+    border-bottom: 0.5px solid black;
+    transition: .5s;
+}
+
+.sectorsCardsContainer:hover {
+    /* background-color: rgba(226, 226, 226, 0.424); */
+    transition: .5s;
+    border-right: 0.5px solid black;
+    background-color: rgba(226, 226, 226, 0.424);
+
+}
+
+.sectorsCardsContainer img {
+    width: 80px;
+}
+
+.sectorsCardsContainer div {
+    transform: translateY(20px);
+    height: 100%;
+    padding: 20px;
+    transition: .5s;
+}
+
+.sectorsCardsContainer:hover div {
+    transform: translateY(0px);
+    transition: .5s;
+}
+
+.RowAdjustBorder .ant-row .ant-col {
+    height: 100% !important;
+}
+
+@media (max-width:900px){
+    .sectorsCardsContainer {
+        min-height: 100%;
+        border-right: 0.5px solid transparent;
+        /* padding:20px 20px; */
+        transition: .5s;
+        /* height: 100%; */
+        transition: .5s;
+    
+    }
+}

@@ -1,0 +1,15 @@
+.ModalContentJob p b {
+    font-weight: 500;
+    color: black;
+}
+
+#AnimatedBtnContainer {
+    border-radius: 0px;
+    padding: 15px 50px;
+}
+
+#AnimatedBtnContainer:hover {
+    background-color: #3189BC;
+    color: white;
+    border-radius: 5px;
+}

@@ -1,0 +1,116 @@
+#HomePageAboutContainer {
+    color: black;
+}
+
+.AboutContentContainer {
+    /* width: 100%; */
+    height: 100%;
+    padding-right: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.AboutContentContainer h1 {
+    color: rgb(13, 42, 59);
+    letter-spacing: -1.4px;
+    margin-top: 0;
+    margin-bottom: 26px;
+    font-size: 58px;
+    font-weight: 500;
+    line-height: 107%;
+}
+
+.AboutContentContainer span {
+    display: flex;
+    align-items: center;
+    margin: 30px 0px;
+    font-weight: 600;
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+.AboutContentContainer span::before {
+    content: "";
+    height: 1px;
+    width: 20px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    display: inline-block;
+    margin-right: 5px;
+    /* position: absolute; */
+}
+
+.AboutHomeImageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: -30px;
+    border-radius: 20px;
+}
+
+.AboutHomeImageContainer {
+    height: 700px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.AnimatedBtnContainer {
+    text-transform: uppercase;
+    padding: 15px 50px;
+    color: white;
+    background-color: black;
+    border: none;
+    display: flex;
+    align-items: center;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.AnimatedBtnContainer:hover {
+    text-transform: uppercase;
+    padding: 15px 50px;
+    color: white;
+    background-color: rgb(43, 136, 188);
+    border: none;
+    transform: translateX(10px);
+    transition: .5s;
+    border-radius: 5px;
+}
+
+.AnimatedBtnContainer svg {
+    margin-left: 5px;
+    font-size: 15px;
+    opacity: 1;
+    transition: .5s;
+}
+
+.AnimatedBtnContainer:hover svg {
+    margin-left: 5px;
+    font-size: 15px;
+    transform: translateX(20px);
+    opacity: 0;
+    transition: .5s;
+}
+
+
+@media (max-width:900px) {
+
+    .AboutContentContainer {
+        /* width: 100%; */
+        height: 100%;
+        padding-right: 0px;
+        display: flex;
+        align-items: center;
+    }
+
+    .AboutContentContainer h1 {
+        color: rgb(13, 42, 59);
+        letter-spacing: -1.4px;
+        margin-top: 0;
+        margin-bottom: 26px;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: unset;
+    }
+}
