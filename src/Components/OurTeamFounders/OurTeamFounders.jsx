@@ -12,7 +12,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 // import required modules
 import { Autoplay, Pagination } from 'swiper/modules';
-import ShaikhIsmail from "./ShaikhIsmail.JPG"
+import ShaikhIsmail from "./ShaikhIsmail.jpg"
 import ShaikhKashif1 from "./ShaikhKashif1.jpg"
 const OurTeamFounders = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
