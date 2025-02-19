@@ -12,8 +12,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 // import required modules
 import { Autoplay, Pagination } from 'swiper/modules';
-import ShaikhIsmail from "./ShaikhIsmail.jpg"
-import ShaikhKashif1 from "./ShaikhKashif1.jpg"
+import ShaikhIsmail from "./DSC_8374 copy -.jpg"
+import ShaikhKashif1 from "./k4.jpg"
 const OurTeamFounders = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedPerson, setSelectedPerson] = useState(null);
@@ -73,14 +73,14 @@ const OurTeamFounders = () => {
             image: ShaikhIsmail,
             name: "Shaikh Ismail",
             details: <>
-                <p>An accounting graduate with extensive experience in real estate transactions, Ismail specializes in financial planning, resource management, and project funding. His expertise in cost structuring and financial optimization ensures seamless execution of large-scale structural engineering projects.</p>
+                <p>With a strong background in finance and extensive experience in real estate investments and project development, Mr. Shaikh Ismail plays a pivotal role in strategic decision-making and business expansion at Highbrou Engineering. His expertise in financial planning and asset management contributes to the firm’s sustainable growth and ability to undertake large-scale projects.</p>
             </>
         },
         {
             image: ShaikhKashif1,
             name: "Shaikh Mohammed Kashif",
             details: <>
-                <p>A business graduate with a deep understanding of operational strategy and corporate growth, Kashif excels in business development, market expansion, and strategic partnerships. His expertise in optimizing workflows, streamlining processes, and driving efficiency contributes to the company's continued success in the engineering and manufacturing sectors.</p>
+                <p>A business graduate with a deep understanding of real estate markets and development strategies, Mr. Mohammed Kashif brings valuable industry insights that help shape Highbrou Engineering’s vision. His experience in land acquisitions, project feasibility, and market dynamics strengthens the firm’s ability to align engineering solutions with real-world development challenges.</p>
             </>
         },
 
@@ -160,7 +160,7 @@ const OurTeamFounders = () => {
                                         <div className="InverstorsTeamContainerContent">
                                             <div>
                                                 <h2>Board of Directors</h2>
-                                                <p>We seek visionary and dynamic individuals who are driven to create a lasting impact and contribute to our growth and innovation.</p>
+                                                <p>At Highbrou Engineering, our leadership team brings together expertise in structural engineering, project development, and strategic growth, ensuring innovative and technically sound solutions for our clients.</p>
                                             </div>
                                         </div>
                                     </Col>
