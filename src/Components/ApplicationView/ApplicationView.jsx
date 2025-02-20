@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table, Input, message } from "antd";
-
+import "./JobApplicationheading.css"
+import CommonTopBannerDynamic from "../CommonTopBanner/CommonTopBannerDynamic";
 const { Search } = Input;
 
 const ApplicationView = () => {
@@ -129,26 +130,35 @@ const ApplicationView = () => {
     ];
 
     return (
-        <section id="ApplicationViewContainer" style={{ padding: "20px" }}>
-            <h2>Job Applications</h2>
-
-            {/* Search Input */}
-            <Search
-                placeholder="Search by Name, Email, Mobile, Qualification..."
-                allowClear
-                onChange={(e) => setSearchText(e.target.value)}
-                style={{ width: 400, marginBottom: 16 }}
+        <div>
+            <CommonTopBannerDynamic
+                heading="JobApplications"
+                image="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             />
+            <section id="ApplicationViewContainer" className="sectionPadding" >
+                <div className="JobApplicationheading">
+                    <h2 >Job Applications</h2>
+                </div>
 
-            {/* Table with search, sorting, and filters */}
-            <Table
-                columns={columns}
-                dataSource={filteredApplications.map((app) => ({ ...app, key: app._id }))}
-                loading={loading}
-                bordered
-                pagination={{ pageSize: 10 }}
-            />
-        </section>
+                <br /><br />
+                {/* Search Input */}
+                <Search
+                    placeholder="Search by Name, Email, Mobile, Qualification..."
+                    allowClear
+                    onChange={(e) => setSearchText(e.target.value)}
+                    style={{ width: 400, marginBottom: 16 }}
+                />
+
+                {/* Table with search, sorting, and filters */}
+                <Table
+                    columns={columns}
+                    dataSource={filteredApplications.map((app) => ({ ...app, key: app._id }))}
+                    loading={loading}
+                    bordered
+                    pagination={{ pageSize: 10 }}
+                />
+            </section>
+        </div>
     );
 };
 

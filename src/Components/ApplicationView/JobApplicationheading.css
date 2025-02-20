@@ -1,0 +1,10 @@
+.JobApplicationheading h2{
+    color: rgb(13, 42, 59);
+    letter-spacing: -1.4px;
+    margin-top: 0;
+    margin-bottom: 26px;
+    font-size: 58px;
+    font-weight: 500;
+    line-height: 107%;
+    /* margin: 4rem 0rem; */
+}
