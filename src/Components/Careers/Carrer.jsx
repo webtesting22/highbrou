@@ -105,7 +105,7 @@ const Career = () => {
         };
 
         try {
-            const response = await fetch("http://testapi.prepseed.com/highbrou/addJobApplication", {
+            const response = await fetch("https://testapi.prepseed.com/highbrou/addJobApplication", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
