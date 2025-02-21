@@ -182,7 +182,7 @@
 }
 
 .InvestorImage {
-    height: 350px;
+    height: 300px;
     overflow: hidden;
     transition: .5s;
     display: flex;
@@ -195,7 +195,7 @@
 }
 
 .InvestorImage img {
-    /* width: 100%; */
+    width: 100%;
     height: 100%;
     object-fit: cover;
     transition: .5s;
@@ -260,6 +260,8 @@
     /* padding: 10px; */
 }
 
+
+
 @media (min-width:1500px) and (max-width:4000px) {
     .FounderAnimatedCard {
         position: relative;
@@ -275,6 +277,15 @@
         align-items: center;
         justify-content: center;
     }
+
+    .InvestorImage {
+        height: 350px;
+        overflow: hidden;
+        transition: .5s;
+        display: flex;
+        justify-content: center;
+    }
+
 }
 
 @media (max-width:900px) {

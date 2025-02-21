@@ -12,7 +12,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 // import required modules
 import { Autoplay, Pagination } from 'swiper/modules';
-import ShaikhIsmail from "./DSC_8374 copy -.jpg"
+import ShaikhIsmail from "./Image (1).png"
 import ShaikhKashif1 from "./k4.jpg"
 const OurTeamFounders = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -62,13 +62,13 @@ const OurTeamFounders = () => {
     };
 
     const InverstorsDetails = [
-        {
-            image: "/Images/team1.webp",
-            name: "SAYYAD WAJED ALI",
-            details: <>
-                <p>Sayyad Wajed Ali, a Civil Engineering graduate from Dr. BAMU University, brings over 10 years of expertise in high-rise structures and infrastructure. As a Board of Director, he plays a key role in driving innovation and engineering excellence in the company.</p>
-            </>
-        },
+        // {
+        //     image: "/Images/team1.webp",
+        //     name: "SAYYAD WAJED ALI",
+        //     details: <>
+        //         <p>Sayyad Wajed Ali, a Civil Engineering graduate from Dr. BAMU University, brings over 10 years of expertise in high-rise structures and infrastructure. As a Board of Director, he plays a key role in driving innovation and engineering excellence in the company.</p>
+        //     </>
+        // },
         {
             image: ShaikhIsmail,
             name: "Shaikh Ismail",
@@ -156,15 +156,15 @@ const OurTeamFounders = () => {
                         <div className="OurInverstorsContentContainer">
                             <div>
                                 <Row>
-                                    <Col lg={10}>
+                                    {/* <Col lg={10}>
                                         <div className="InverstorsTeamContainerContent">
                                             <div>
                                                 <h2>Board of Directors</h2>
                                                 <p>At Highbrou Engineering, our leadership team brings together expertise in structural engineering, project development, and strategic growth, ensuring innovative and technically sound solutions for our clients.</p>
                                             </div>
                                         </div>
-                                    </Col>
-                                    <Col lg={14}>
+                                    </Col> */}
+                                    <Col lg={12}>
                                         <div id="InvestorsCardSwiperContainer">
                                             <Swiper
                                                 slidesPerView={2}
