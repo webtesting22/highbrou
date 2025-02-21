@@ -16,7 +16,7 @@ const ApplicationView = () => {
     const fetchApplications = async () => {
         setLoading(true);
         try {
-            const response = await fetch("http://localhost:4040/api/highbrou/getAllJobApplications");
+            const response = await fetch("https://testapi.prepseed.com/highbrou/getAllJobApplications");
             const data = await response.json();
 
             if (response.ok) {
@@ -146,17 +146,19 @@ const ApplicationView = () => {
                     placeholder="Search by Name, Email, Mobile, Qualification..."
                     allowClear
                     onChange={(e) => setSearchText(e.target.value)}
-                    style={{ width: 400, marginBottom: 16 }}
+                    style={{ width: 300, marginBottom: 16 }}
                 />
 
                 {/* Table with search, sorting, and filters */}
-                <Table
+               <div style={{overflow:"auto",width:"100%"}}>
+               <Table
                     columns={columns}
                     dataSource={filteredApplications.map((app) => ({ ...app, key: app._id }))}
                     loading={loading}
                     bordered
                     pagination={{ pageSize: 10 }}
                 />
+               </div>
             </section>
         </div>
     );

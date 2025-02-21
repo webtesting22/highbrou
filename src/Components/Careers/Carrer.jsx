@@ -20,7 +20,7 @@ const Career = () => {
             const fileType = file.type;
 
             // Request upload policy from the backend
-            const response = await fetch("http://localhost:4040/api/chats/uploadPolicy", {
+            const response = await fetch("https://testapi.prepseed.com/chats/uploadPolicy", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -105,7 +105,7 @@ const Career = () => {
         };
 
         try {
-            const response = await fetch("http://localhost:4040/api/highbrou/addJobApplication", {
+            const response = await fetch("http://testapi.prepseed.com/highbrou/addJobApplication", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

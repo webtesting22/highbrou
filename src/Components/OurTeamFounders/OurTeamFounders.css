@@ -283,13 +283,13 @@
         padding: 10px 10px;
         color: black;
     }
-    
+
     .FounderImageContainer {
         width: 100%;
         padding: 0px;
         overflow: hidden;
     }
-    
+
     #FounderCardMainContainer {
         display: flex;
         gap: 20px;
@@ -299,6 +299,7 @@
         overflow: hidden;
         flex-direction: column;
     }
+
     .InverstorsTeamContainerContent {
         display: flex;
         align-items: center;
@@ -306,6 +307,7 @@
         /* width: 100%; */
         padding: 20px 10px;
     }
+
     .OurTeamFoundersContentHeader span {
         display: flex;
         align-items: start;
