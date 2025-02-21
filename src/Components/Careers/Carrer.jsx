@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import CommonTopBannerDynamic from "../CommonTopBanner/CommonTopBannerDynamic";
-import { Row, Col, Modal, Form, Input, Button, message, Tag, Upload, notification } from "antd";
+import { Row, Col, Modal, Form, Input, Select, Button, message, Tag, Upload, notification } from "antd";
 import { MdOutlineArrowRight } from "react-icons/md";
 import { FaCalendar } from "react-icons/fa";
 import Topback from "./Topback.jpeg"
 import "./Careers.css"
+const { Option } = Select;
 const Career = () => {
     const [isDescriptionModalOpen, setIsDescriptionModalOpen] = useState(false);
     const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
@@ -91,6 +92,7 @@ const Career = () => {
         const payload = {
             firstName: values.firstName,
             lastName: values.lastName,
+            jobPosition: values.jobPosition,
             mobile: values.mobile,
             email: values.email,
             highestQualification: values.qualification,
@@ -401,7 +403,19 @@ const Career = () => {
                         >
                             <Input placeholder="Enter your last name" />
                         </Form.Item>
-
+                        <Form.Item
+                            name="jobPosition"
+                            label="Job Position"
+                            rules={[{ required: true, message: "Please select a job position!" }]}
+                        >
+                            <Select placeholder="Select a job position">
+                                {CareerPostData.map((job) => (
+                                    <Option key={job.postTitle} value={job.postTitle}>
+                                        {job.postTitle}
+                                    </Option>
+                                ))}
+                            </Select>
+                        </Form.Item>
                         <Form.Item
                             name="mobile"
                             label="Mobile Number"
