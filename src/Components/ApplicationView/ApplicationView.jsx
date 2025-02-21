@@ -65,6 +65,11 @@ const ApplicationView = () => {
             key: "email",
         },
         {
+            title: "Postion Applied",
+            dataIndex: "jobPosition",
+            key: "jobPosition",
+        },
+        {
             title: "Mobile",
             dataIndex: "mobile",
             key: "mobile",
