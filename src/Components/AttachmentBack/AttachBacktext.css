@@ -1,7 +1,7 @@
 .BackgroundImageWithText {
     height: 500px;
     width: 100%;
-    background: url("./SectionImage.jpg");
+    background: url("https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/inventoryManagement/UxS7ren70hNBwpPe5D2N/SectionImage.jpg");
     background-size: cover;
     background-attachment: fixed;
     display: flex;
@@ -36,7 +36,7 @@
     .BackgroundImageWithText {
         height: 500px;
         width: 100%;
-        background: url("./SectionImage.jpg");
+        background: url("https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/inventoryManagement/UxS7ren70hNBwpPe5D2N/SectionImage.jpg");
         background-size: cover;
         background-attachment: scroll;
         display: flex;

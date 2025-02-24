@@ -155,15 +155,15 @@ const ApplicationView = () => {
                 />
 
                 {/* Table with search, sorting, and filters */}
-               <div style={{overflow:"auto",width:"100%"}}>
-               <Table
-                    columns={columns}
-                    dataSource={filteredApplications.map((app) => ({ ...app, key: app._id }))}
-                    loading={loading}
-                    bordered
-                    pagination={{ pageSize: 10 }}
-                />
-               </div>
+                <div style={{ overflow: "auto", width: "100%" }}>
+                    <Table
+                        columns={columns}
+                        dataSource={filteredApplications.map((app) => ({ ...app, key: app._id }))}
+                        loading={loading}
+                        bordered
+                        pagination={{ pageSize: 10 }}
+                    />
+                </div>
             </section>
         </div>
     );

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom"; // Remove Router from here
 import "./App.css";
 import HomeRoutes from "./Components/HomeRoutes/HomeRoutes";
 import HighbrouNavigation from "./Components/HighbrouNavigation/HighbrouNavigation";
@@ -15,7 +15,7 @@ import ApplicationView from "./Components/ApplicationView/ApplicationView";
 
 function App() {
   return (
-    <Router>
+    <>
       <HighbrouNavigation />
       <Routes>
         <Route path="/" element={<HomeRoutes />} />
@@ -29,9 +29,8 @@ function App() {
       </Routes>
       <Footer />
       <BackToTop />
-    </Router>
+    </>
   );
 }
 
 export default App;
-
