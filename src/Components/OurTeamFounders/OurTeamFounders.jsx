@@ -72,6 +72,7 @@ const OurTeamFounders = () => {
         {
             image: ShaikhIsmail,
             name: "Shaikh Ismail",
+            position: "Director",
             tagline: "A finance expert with extensive experience in project development, driving strategic growth at Highbrou Engineering.",
             details: <>
                 <p>With a strong background in finance and extensive experience in real estate investments and project development, Mr. Shaikh Ismail plays a pivotal role in strategic decision-making and business expansion at Highbrou Engineering. His expertise in financial planning and asset management contributes to the firm’s sustainable growth and ability to undertake large-scale projects.</p>
@@ -79,6 +80,7 @@ const OurTeamFounders = () => {
         },
         {
             image: ShaikhKashif1,
+            position: "Director",
             name: "Shaikh Mohammed Kashif",
             tagline: "A business graduate specializing in real estate markets, enhancing project feasibility and development strategies at Highbrou Engineering.",
             details: <>
@@ -156,7 +158,7 @@ const OurTeamFounders = () => {
                         </div>
                         <br />
                         <div className="OurInverstorsContentContainer">
-                            <div className="FoundersAnimatedCards">
+                            <div className="FoundersAnimatedCards" style={{background:"transparent"}}>
                                 <Row>
                                     {/* <Col lg={10}>
                                         <div className="InverstorsTeamContainerContent">
