@@ -72,6 +72,7 @@ const OurTeamFounders = () => {
         {
             image: ShaikhIsmail,
             name: "Shaikh Ismail",
+            tagline: "A finance expert with extensive experience in project development, driving strategic growth at Highbrou Engineering.",
             details: <>
                 <p>With a strong background in finance and extensive experience in real estate investments and project development, Mr. Shaikh Ismail plays a pivotal role in strategic decision-making and business expansion at Highbrou Engineering. His expertise in financial planning and asset management contributes to the firm’s sustainable growth and ability to undertake large-scale projects.</p>
             </>
@@ -79,6 +80,7 @@ const OurTeamFounders = () => {
         {
             image: ShaikhKashif1,
             name: "Shaikh Mohammed Kashif",
+            tagline: "A business graduate specializing in real estate markets, enhancing project feasibility and development strategies at Highbrou Engineering.",
             details: <>
                 <p>A business graduate with a deep understanding of real estate markets and development strategies, Mr. Mohammed Kashif brings valuable industry insights that help shape Highbrou Engineering’s vision. His experience in land acquisitions, project feasibility, and market dynamics strengthens the firm’s ability to align engineering solutions with real-world development challenges.</p>
             </>
@@ -142,9 +144,9 @@ const OurTeamFounders = () => {
                                                     <p>{item.tagline}</p>
                                                 </div>
                                                 <div>
-                                                    <FaFacebookSquare />
+                                                    {/* <FaFacebookSquare />
                                                     <FaLinkedin />
-                                                    <FaInstagramSquare />
+                                                    <FaInstagramSquare /> */}
                                                 </div>
                                             </div>
                                         </div>
@@ -152,9 +154,9 @@ const OurTeamFounders = () => {
                                 ))}
                             </Row>
                         </div>
-                        <br /><br /><br />
+                        <br />
                         <div className="OurInverstorsContentContainer">
-                            <div>
+                            <div className="FoundersAnimatedCards">
                                 <Row>
                                     {/* <Col lg={10}>
                                         <div className="InverstorsTeamContainerContent">
@@ -164,8 +166,36 @@ const OurTeamFounders = () => {
                                             </div>
                                         </div>
                                     </Col> */}
-                                    <Col lg={12}>
-                                        <div id="InvestorsCardSwiperContainer">
+                                    {/* <Col lg={12}> */}
+                                    {InverstorsDetails.map((item, index) => (
+                                        <Col lg={12} md={24} key={index} style={{ width: "100%" }} data-aos="fade-up"
+                                            data-aos-delay={`${index * 200}`}>
+                                            <div
+
+                                                onClick={() => showModal(item)} // Open modal on click
+                                                style={{ cursor: "pointer" }}
+                                                id="FounderCardMainContainer"
+                                            >
+
+                                                <div className="FounderImageContainer">
+                                                    <img src={item.image} alt={item.memberName} />
+                                                </div>
+                                                <div className="FounderInfo">
+                                                    <div>
+                                                        <span style={{ textTransform: "uppercase" }}>{item.position}</span>
+                                                        <h2>{item.name}</h2>
+                                                        <p>{item.tagline}</p>
+                                                    </div>
+                                                    <div>
+                                                        {/* <FaFacebookSquare />
+                                                        <FaLinkedin />
+                                                        <FaInstagramSquare /> */}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </Col>
+                                    ))}
+                                    {/* <div id="InvestorsCardSwiperContainer">
                                             <Swiper
                                                 slidesPerView={2}
                                                 spaceBetween={30}
@@ -198,8 +228,8 @@ const OurTeamFounders = () => {
                                                 ))}
 
                                             </Swiper>
-                                        </div>
-                                    </Col>
+                                        </div> */}
+                                    {/* </Col> */}
                                 </Row>
                             </div>
                         </div>
