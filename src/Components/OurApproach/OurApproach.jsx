@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import OurApprochtimelineImage from "./OurApprochTimeline.png"
 import "./OurApproch.css"
 import CommonTopBannerDynamic from "../CommonTopBanner/CommonTopBannerDynamic";
 import ApproachImage1 from "./1.png"

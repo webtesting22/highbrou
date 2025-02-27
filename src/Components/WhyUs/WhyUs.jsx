@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import "./WhyUs.css";
 import { Row, Col } from "antd";
-// import BackImage from "./BackImage.jpeg";
 import BackImage from "./BackImage.jpeg"
 import pattern from "./pattern.webp";
 

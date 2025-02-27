@@ -1,17 +1,8 @@
 import React, { useState } from "react";
 import "./OurTeamFounders.css";
 import { Row, Col, Modal } from "antd";
-import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
-import { FaInstagramSquare } from "react-icons/fa";
-
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-// import required modules
-import { Autoplay, Pagination } from 'swiper/modules';
 import ShaikhIsmail from "./Image (1).png"
 import ShaikhKashif1 from "./k4.jpg"
 const OurTeamFounders = () => {

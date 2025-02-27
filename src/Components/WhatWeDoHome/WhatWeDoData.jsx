@@ -1,7 +1,3 @@
-import ValueEngineering from "./ValueEngineering.jpg"
-import PeerReview from "./PeerReview.jpg"
-import StructuralEnginn from "./StructuralEnginn.jpg"
-import ValueEngineering2 from "./ValueEngineering2.jpeg"
 import ValueEnginne3 from "/Images/ValueEnginne3.jpeg"
 import StructuralImage from "/Images/StructuralImage.png"
 import ValueEnginn2 from "/Images/ValueEnginn2.jpeg"
