@@ -55,14 +55,14 @@ const WhyUs = () => {
                     <Row>
                         <Col lg={12} md={24}>
                             <div className="BackImageBackWhyUs">
-                                <img src={BackImage} alt="" />
+                                <img src={BackImage} alt="" loading="lazy"/>
                             </div>
                         </Col>
                         <Col lg={12} md={24}>
                             <div className="sectionPadding" style={{ position: "relative" }}>
                                 <div className="WhyUsContentHomePage">
                                     <div className="BackOverlayImage">
-                                        <img src={pattern} alt="" />
+                                        <img src={pattern} alt="" loading="lazy"/>
                                     </div>
                                     <span>WHY CHOOSE US?</span>
                                     {/* <h2>WHY CHOOSE US?</h2> */}

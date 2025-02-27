@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import "./Contact.css"
 import CommonTopBannerDynamic from "../CommonTopBanner/CommonTopBannerDynamic";
 import { Row, Col } from "antd";
-import Contactback from "./Contactback.jpg"
 const Contact = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -13,7 +12,7 @@ const Contact = () => {
                 <CommonTopBannerDynamic
                     heading="Contact"
                     subheading="Reach Out"
-                    image={Contactback}
+                    image="/Images/ContactTopBanner.jpeg"
                 />
                 <div>
                     <div className="sectionPadding">

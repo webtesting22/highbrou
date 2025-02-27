@@ -137,7 +137,7 @@ const OurTeamFounders = () => {
                                         >
 
                                             <div className="FounderImageContainer">
-                                                <img src={item.image} alt={item.memberName} />
+                                                <img src={item.image} alt={item.memberName} loading="lazy"/>
                                             </div>
                                             <div className="FounderInfo">
                                                 <div>
@@ -180,7 +180,7 @@ const OurTeamFounders = () => {
                                             >
 
                                                 <div className="FounderImageContainer">
-                                                    <img src={item.image} alt={item.memberName} />
+                                                    <img src={item.image} alt={item.memberName} loading="lazy"/>
                                                 </div>
                                                 <div className="FounderInfo">
                                                     <div>
@@ -257,6 +257,7 @@ const OurTeamFounders = () => {
                                     src={selectedPerson.image}
                                     alt={selectedPerson.name || selectedPerson.memberName}
                                     className="ModalFounderImage"
+                                    loading="lazy"
                                 />
                             </div>
                             <div className="ModalDetails">

@@ -66,6 +66,7 @@ const HomePage = () => {
                                 alt={`Slide ${index + 1}`}
                                 className={`carousel-image ${index === currentIndex ? "visible" : "hidden"
                                     }`}
+                                    loading="lazy"
                             />
                         ))}
                     </div>
@@ -79,7 +80,7 @@ const HomePage = () => {
                                     <div className="HoverItem" data-aos="fade-up"
                                         data-aos-duration="1000">
                                         <div>
-                                            <h4><img src={Icon1} alt="" className="Icon"/> CUTTING EDGE DESIGN</h4>
+                                            <h4><img src={Icon1} alt="" className="Icon" loading="lazy"/> CUTTING EDGE DESIGN</h4>
                                             <FaArrowRightLong />
                                         </div>
                                         <div className="HoverContainer">
@@ -92,7 +93,7 @@ const HomePage = () => {
 
                                     <div className="HoverItem" data-aos="fade-up"
                                         data-aos-duration="1500">
-                                        <h4><img src={Icon2} alt="" className="Icon"/> PRECISION ENGINEERING</h4>
+                                        <h4><img src={Icon2} alt="" className="Icon" loading="lazy"/> PRECISION ENGINEERING</h4>
                                         <FaArrowRightLong />
                                         <div className="HoverContainer">
                                             <p>We Deliver accuracy down to the milimeter, ensuring perfect execution every time.</p>
@@ -103,7 +104,7 @@ const HomePage = () => {
                                 <Col lg={6} md={12} style={{ width: "100%" }}>
                                     <div className="HoverItem" data-aos="fade-up"
                                         data-aos-duration="2000">
-                                        <h4><img src={Icon4} alt="" className="Icon"/>SUSTAINABLE SOLUTIONS</h4>
+                                        <h4><img src={Icon4} alt="" className="Icon" loading="lazy"/>SUSTAINABLE SOLUTIONS</h4>
                                         <FaArrowRightLong />
                                         <div className="HoverContainer">
                                             <p>Our eco-friendly designs are setting new standards in green engineering.</p>
@@ -114,7 +115,7 @@ const HomePage = () => {
                                 <Col lg={6} md={12} style={{ width: "100%" }}>
                                     <div className="HoverItem" data-aos="fade-up"
                                         data-aos-duration="2500">
-                                        <h4><img src={Icon3} alt="" className="Icon"/> RAPID DELIVERY </h4>
+                                        <h4><img src={Icon3} alt="" className="Icon" loading="lazy"/> RAPID DELIVERY </h4>
                                         <FaArrowRightLong />
                                         <div className="HoverContainer">
                                             <p>We work at the speed of innovation, without compromising on quality.</p>

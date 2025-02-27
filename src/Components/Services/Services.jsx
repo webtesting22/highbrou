@@ -5,7 +5,6 @@ import WhatWeDoCardsData from "../WhatWeDoHome/WhatWeDoData";
 import "./Services.css";
 import SectorsWeServe from "../SectorsWeServe/SectorsWeServe";
 import Expertise from "../Expertise/Expertise";
-import ServicesTopComImage from "./ServicesTopComImage.jpg"
 const Services = () => {
     const [activeImage, setActiveImage] = useState(WhatWeDoCardsData[0].img); // Default to the first image
 
@@ -23,7 +22,7 @@ const Services = () => {
                 <CommonTopBannerDynamic
                     heading="Services"
                     subheading="Empowering The Future Of Infrastructure"
-                    image={ServicesTopComImage}
+                    image="/Images/ServicesTopBack.jpeg"
                 />
                 <div className="sectionPadding" style={{ paddingBottom: "0px" }}>
                     <div>

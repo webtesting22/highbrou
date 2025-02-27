@@ -4,9 +4,7 @@ import "./ProjectsPage.css";
 import { Modal, Row, Col, Image, Checkbox } from "antd";
 import ProjectsData from "./ProjectsData";
 import NavigationLinks from "../HighbrouNavigation/NavigationLinks";
-import AllProjectsTopComBanner from "./AllProjectsTopComBanner.jpg";
 import { CiFilter } from "react-icons/ci";
-import ProjectsTopBanner from "./ProjectsTopBanner.jpg"
 
 const AllProjects = () => {
     const projectCategory = NavigationLinks.find(link => link.link === "Projects +");
@@ -59,7 +57,7 @@ const AllProjects = () => {
                 <CommonTopBannerDynamic
                     heading="Our Projects"
                     subheading="Our Works, Our Standards"
-                    image={ProjectsTopBanner}
+                    image="/Images/ProjectsTopBanner.jpg"
                 />
                 <div>
                     <div className="sectionPadding" style={{ position: "relative" }}>
@@ -99,7 +97,7 @@ const AllProjects = () => {
                                                 <div className="heightContainer">
                                                     <div className="OverlayContainerShadow"></div>
                                                     {Array.isArray(item.image) && item.image.length > 0 && (
-                                                        <img src={item.image[0]} alt={item.heading} />
+                                                        <img src={item.image[0]} alt={item.heading} loading="lazy"/>
                                                     )}
                                                     <div className="HoverContainerContainer">
                                                         <h2>{item.heading}</h2>
@@ -130,6 +128,7 @@ const AllProjects = () => {
                                                             key={imgIndex}
                                                             src={imgSrc}
                                                             alt={`${selectedProject.heading} - ${imgIndex + 1}`}
+                                                            loading="lazy"
                                                         />
                                                     ))}
                                                 </>

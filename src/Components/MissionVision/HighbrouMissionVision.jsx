@@ -22,7 +22,7 @@ const HighbrouMissionVision = () => {
                                         <div className="MissionContainer" data-aos="fade-up"
                                             data-aos-duration="1000">
                                             <div className="MissionIconContainer">
-                                                <img src="/Images/fluent_target-arrow-20-filled (1).svg" alt="" />
+                                                <img src="/Images/fluent_target-arrow-20-filled (1).svg" alt="" loading="lazy"/>
                                             </div>
                                             <div className="MissionContentContainer">
                                                 <h2>MISSION</h2>
@@ -32,7 +32,7 @@ const HighbrouMissionVision = () => {
                                         <div className="VisionContainer" data-aos="fade-up"
                                             data-aos-duration="1500">
                                             <div className="VisionIconContainer">
-                                                <img src="/Images/humbleicons_bulb (1).svg" alt="" />
+                                                <img src="/Images/humbleicons_bulb (1).svg" alt="" loading="lazy"/>
                                             </div>
                                             <div className="VisionContentContainer">
                                                 <h2>VISION</h2>

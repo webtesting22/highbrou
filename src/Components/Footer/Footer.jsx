@@ -17,7 +17,7 @@ const Footer = () => {
                 <div>
                     <div className="sectionPadding">
                         <div className="FooterbackImageOverlay">
-                            <img src={FooterBackOverlayImage} alt="" />
+                            <img src={FooterBackOverlayImage} alt="" loading="lazy"/>
 
                         </div>
                         <Row>

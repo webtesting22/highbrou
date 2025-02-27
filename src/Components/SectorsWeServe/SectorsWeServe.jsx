@@ -55,7 +55,7 @@ const SectorsWeServe = () => {
                                 <Col lg={8} md={12} style={{ width: "100%" }} key={index}>
                                     <div className="sectorsCardsContainer">
                                        <div>
-                                       <img src={item.icon} alt="" />
+                                       <img src={item.icon} alt="" loading="lazy"/>
                                         <h2>{item.title}</h2>
                                         <p>{item.tagline}</p>
                                        </div>

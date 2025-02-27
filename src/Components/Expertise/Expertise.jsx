@@ -2,21 +2,18 @@ import React from "react";
 import { Row, Col } from "antd";
 import "./Expertise.css"
 import RAPIDDELIVERY from "./RAPIDDELIVERY.jpeg"
-import CUTTINGEDGEDESIGN from "./CUTTINGEDGEDESIGN.jpg"
-import PRECISIONENGINEERING from "./PRECISIONENGINEERING.jpg"
 import SUSTAINABLESOLUTIONS from "./SUSTAINABLESOLUTIONS.jpeg"
-import Pioneering from "./Pioneering3.jpg"
 const Expertise = () => {
 
     const ExpertiseData = [
         {
             title: "CUTTING-EDGE DESIGN",
-            image: CUTTINGEDGEDESIGN,
+            image: "/Images/CUTTINGEDGE.jpeg",
             tagline: "Our state-of-the-art technology creates structures that others only dream of."
         },
         {
             title: "PRECISION ENGINEERING",
-            image: Pioneering,
+            image: "/Images/PRECISIONENGINEERING.jpeg",
             tagline: "We deliver accuracy down to the millimeter, ensuring perfect execution every time."
         },
         {
@@ -43,7 +40,7 @@ const Expertise = () => {
                             <Col lg={6} md={12} key={index}>
                                 <div className="BorderHoverCard">
                                     <div className="HoverableCardImage">
-                                        <img src={item.image} alt="" />
+                                    <img src={item.image} alt={item.title} loading="lazy" />
                                     </div>
                                     <div className="HoverableCardContent">
                                         <h2>{item.title}</h2>

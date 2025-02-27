@@ -25,7 +25,7 @@ const WhatWeDoHome = () => {
                                         <Link to="/services">
                                             <div className="BorderHoverCard">
                                                 <div className="HoverableCardImage">
-                                                    <img src={item.img} alt={item.title} />
+                                                    <img src={item.img} alt={item.title} loading="lazy"/>
                                                 </div>
                                                 <div className="HoverableCardContent">
                                                     <span>{item.tagline}</span>

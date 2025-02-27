@@ -40,7 +40,7 @@ const HomePageAbout = () => {
 
                         <Col lg={12} md={24}>
                             <div className="AboutHomeImageContainer">
-                                <img style={{ transform: `translateY(${offsetY * 0.1}px)` }} src={Sectionimage} alt="about-us-highbrou-image" />
+                                <img style={{ transform: `translateY(${offsetY * 0.1}px)` }} src={Sectionimage} alt="about-us-highbrou-image" loading="lazy"/>
                             </div>
                         </Col>
                     </Row>
