@@ -210,6 +210,7 @@ const Career = () => {
                         </ul>
                         <p><b>Required Skills:</b></p>
                         <ul>
+                            <li>Experience with International projects (specifically UAE & Gulf) is required with strong knowledge and hands on experience with American and Euro codes</li>
                             <li>Strong knowledge of RCC and steel design.
                             </li>
                             <li>Familiarity with BIM workflows.</li>

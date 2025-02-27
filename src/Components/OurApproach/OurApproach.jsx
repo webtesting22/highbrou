@@ -35,7 +35,6 @@ const OurApproach = () => {
                             <img src={ApproachImage5} alt="" data-aos="fade-up" data-aos-duration="1000" loading="lazy"/>
                             <img src={ApproachImage6} alt="" data-aos="fade-up" data-aos-duration="1000" loading="lazy"/>
                             <img src={ApproachImage7} alt="" data-aos="fade-up" data-aos-duration="1000" loading="lazy"/>
-
                         </div>
                     </div>
                     <img src={OurApprochMobile} alt="" className="OnlyMobile" style={{ width: "100%" }} />
