@@ -18,7 +18,6 @@ const CaseStudies = () => {
                         <div className="TimelineContainer">
                             <div className="TimelineItem">
 
-                                
                             </div>
                         </div>
                     </div>

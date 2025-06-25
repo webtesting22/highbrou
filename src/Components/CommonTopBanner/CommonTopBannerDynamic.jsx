@@ -7,7 +7,7 @@ const CommonTopBannerDynamic = ({ heading, subheading, image }) => {
             <section id="CommonTopBannerContainer">
                 <div className="AdjustBannerContainer">
                     <div className="OverlayOpacityContainer"></div>
-                    <img src={image} alt="Banner Background" loading="lazy"/>
+                    <img src={image} alt="Banner Background" loading="lazy" />
                     <div className="taglineContentContainer">
                         <div className="sectionPadding TopBannerSpanAdjust">
                             <span data-aos="fade-up"
