@@ -12,6 +12,7 @@ import BackToTop from "./Components/BackToTop/BackToTop";
 import Contact from "./Components/Contact/Contact";
 import OurApproach from "./Components/OurApproach/OurApproach";
 import ApplicationView from "./Components/ApplicationView/ApplicationView";
+import CaseStudies from "./Components/CaseStudies/CaseStudies";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/our-approach" element={<OurApproach />} />
         <Route path="/highbrouapplicationView" element={<ApplicationView />} />
+        <Route path="/case-studies" element={<CaseStudies />} />
       </Routes>
       <Footer />
       <BackToTop />

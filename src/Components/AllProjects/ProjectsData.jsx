@@ -408,6 +408,168 @@ const ProjectsData = [
                 <li><b>Client:</b> SAIL</li>
             </ul>
         </>
+    },
+    {
+        id: 14,
+        category: "",
+        image: ["https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/The Marque image.png"],
+        heading: "The Marque, Bandra West",
+        tagline: "",
+        description: <>
+            <ul>
+                <li><b>Floor count, height & construction area:</b> 3 Basements + Ground + 6 Podiums + 1 Amenity + 24 Floors + Terrace, 120m high, 430,200 SqFt construction area </li>
+                <li><b>Architect:</b> Ingenious Architects, Mumbai</li>
+                <li><b>Client:</b> Gurukrupa Realcon</li>
+                <li><b>Status:</b> On going</li>
+                <li><b>Challenge:</b> </li>
+                <li>Reclamation‑land strata under a 9 m‑deep basement.</li>
+                <li>Original consultant’s pile‑raft design risked skyrocketing cost and delay.</li>
+                <li>Coupling beams so congested on 75 locations that site execution ground to a halt.</li>
+
+                <li><b>Our Breakthroughs:</b></li>
+                <li><b>Single Uniform Raft: </b>Joint analysis with Geocon springs. Eliminated all piles—simpler excavation, 5–7% substructure cost cut.</li>
+                <li><b>Framed‑Tube Around Cores: </b>Widened lever‑arm to cut overturning moment by 20%, enabling thinner slab and slimmer columns.</li>
+                <li><b>Composite Coupling Beams (~75 Nos.):</b>Replaced 527 kg of diagonal rebar per beam with a 62 kg encased I‑section—88% less congestion, 65% faster install, 34% cost cut.</li>
+                <li><b>Material Savings: </b>3,917 t → 3,134 t steel (20%↓); 20,645 m³ → 19,613 m³ concrete (5%↓).</li>
+
+                <li><b>Benefits:</b>  </li>
+                <li><b>Developer </b>saved lakhs and reclaimed 2 months on schedule.</li>
+                <li><b>Contractor </b>built faster with zero RFIs on beams.</li>
+                <li><b>Architect</b>saw full design intent honoured.</li>
+
+            </ul>
+        </>
+
+    },
+    {
+        id: "15",
+        category: "",
+        image: ["https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/Gurukrupa Image.png"],
+        heading: "Gurukrupa – Ridhi Sidhi, Andheri (W)",
+        tagline: "",
+        description: <>
+            <ul>
+                <li><b>Project Snapshot</b></li>
+                <li><b>Type:</b> 41‑storey mixed‑use tower</li>
+                <li><b>Gross Built‑up Area:</b> 10.5 Lakh sq ft</li>
+                <li><b>Levels:</b>3 Basements (parking) + Ground & Podium 1 (retail) + Podiums 2–7 (offices & parking) + Podium 8 (amenities) + Floors 1–28 (16 luxury apartments each) + Terrace amenities</li>
+                <li><b>Total Height: </b>120m</li>
+
+                <li><b>Architect:</b> Ingenious Architects, Mumbai</li>
+                <li><b>Client:</b>Gurukrupa Realcon</li>
+                <li><b>Status:</b> On going</li>
+
+                <li><b>Challenge:</b></li>
+                <li>Podium levels demanded column‑free spans for retail/offices; residential floors above required a regular grid → floating columns.</li>
+                <li>IS 1893‑1 & IS 16700 ban floating columns in the primary lateral system.</li>
+
+                <li><b>Our Innovations:</b></li>
+                <li>Framed‑Tube + Core Shear Walls: Defined a ductile lateral frame in red (GA), isolating floating columns as gravity‑only.</li>
+                <li>BIM‑Driven Validation: 3D load paths proved full compliance without touching architect’s plan.</li>
+
+                <li><b>Material & Margin:</b></li>
+                <li>Saved ~18% steel on tube elements; freed 100% FSI for developer’s bottom line.</li>
+
+                <li><b>Outcome</b></li>
+                <li>Architect celebrated zero‑compromise vision.</li>
+                <li>Contractor moved from confusion to confidence.</li>
+            </ul>
+
+        </>
+    },
+    {
+        id: "16",
+        category: "",
+        image: ["https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/Maurya Image.png"],
+        heading: "Maurya, Versova",
+        tagline: "",
+        description: <>
+            <ul>
+                <li><b>Project Snapshot</b></li>
+                <li><b>Type</b>5 basements (mechanical parking) + Ground (commercial & amenities) + 13 residential floors + Terrace amenities</li>
+                <li><b>Gross Built‑up Area: </b>120,000 sq ft</li>
+
+                <li><b>Client</b>Gurukrupa Realcon</li>
+                <li><b>Architect</b>Ingenious Architects, Mumbai</li>
+                <li><b>Status</b>On going</li>
+
+                <li><b>Challenge</b></li>
+                <li>5 mechanical‑parking basements needed large‑span, column‑free zones.</li>
+                <li>13 residential floors of ~5,000 sq ft plates needed total interior flexibility (Jodi‑flat sales).</li>
+
+                <li><b>Our Solution:</b></li>
+                <li> bNo drop beams—ceiling‑flat, buyer‑friendly.</li>
+                <li><b>Perimeter Moment Frame: </b>Continuous around the façade, taking all lateral loads.</li>
+                <li><b>Corner Shear Walls: </b>From foundation to terrace—floating columns outside the lateral system.</li>
+
+                <li><b>Outcome:</b></li>
+                <li><b>Developer</b>gained a powerful sales USP: “Beamless luxury ceilings you can reconfigure.”</li>
+                <li><b>Parking</b> Vendor executed mechanical parking effortlessly.</li>
+
+                <li><b>Project Snapshot</b></li>
+                <li><b>Type:</b> 12‑storey mixed‑use building + 3 basements parking</li>
+                <li><b>Gross Built‑up Area:</b> 55,000  sq ft</li>
+                <li><b>Client:</b> Mayfair Housing Pvt. Ltd.</li>
+                <li><b>Architect:</b> Mayfair Housing Pvt. Ltd.</li>
+                <li><b>Status: </b>On going</li>
+
+                <li><b>Key Structural Challenge</b></li>
+                <li>4th Floor Projection:  A 3.8 m cantilever extension above the 3rd floor to create an additional bedroom footprint.</li>
+                <li>Column Obstruction: Supporting column falls within the basement driveway, blocking vehicle access.</li>
+                <li>Slender Column Issue: Continuous 13 m unsupported height from GF to underside of 4th floor demanded a very large column section.</li>
+                <li>Architectural Impact: Tie‑beam approach introduces visible beams that spoil façade aesthetics and conflict with the architect’s design vision.</li>
+
+                <li><b>Braced Cantilever Innovation</b></li>
+                <li><b>A. Braced Cantilever System</b></li>
+                <li><b>Cantilever Slab Design: </b>Extended 3.8 m from the dead wall at 4th floor, eliminating the need for an external column at ground level.</li>
+                <li><b>RCC Cross Tie Brace:</b>From the tip of the 4th‑floor cantilever to the start of a mirrored cantilever at the 5th floor, a reinforced concrete brace transfers bending moments axially.</li>
+                <li><b>Load Path Optimization:</b>Brace element conveys cantilever reaction forces directly into the slab and wall, bypassing the basement obstruction.</li>
+
+                <li><b>B. Façade & Functional Integrity</b></li>
+                <li><b>Uninterrupted Driveway:</b> No column in parking clears vehicle movement without layout compromise.</li>
+                <li><b>Architectural Freedom:</b>Clean exterior lines maintained; full 3.8 m projection achieved without visible beam on façade.</li>
+                <li><b>Layout Preservation:</b>Residential bedroom space remains as intended by the architect.</li>
+
+                <li><b>Outcome:</b></li>
+                <li><b>Developer</b> kept valuable parking slots.</li>
+                <li><b>Architect</b> retained dream façade.</li>
+                <li><b>Contractor</b> got swift basement pours with no obstruction.</li>
+            </ul>
+
+        </>
+    },
+    {
+        id: "17",
+        category: "",
+        image: ["https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/Chandra Image.png"],
+        heading: "Chandra Logassa – Andheri (W)",
+        tagline: "",
+        description: <>
+            <ul>
+                <li><b>Project Snapshot</b></li>
+                <li><b>Type</b>1 Basement (Parking + UGT, fire tank, pump room) + Ground Floor (Shops + Parking) + 21 Residential Floors + Terrace with Amenities</li>
+                <li><b>Gross Built‑up Area:</b>117,000 sq ft</li>
+                <li><b>Client:</b> Amaan Gold Leaf</li>
+                <li><b>Architect:</b>Nakhwa Architects, Mumbai</li>
+                <li><b>Status:</b> On going</li>
+
+                <li><b>Challenge:</b></li>
+                <li>A narrow floor plate made the building inherently flexible along its length, leaving it vulnerable to seismic and wind forces. Traditional shear wall placement or core systems were unfeasible due to architectural and spatial constraints.</li>
+
+                <li><b>Our Solution:</b></li>
+                <li>Designed rigid moment frames along the building’s shorter width to resist lateral forces effectively</li>
+                <li>Strategically placed frames to maximize stiffness without affecting spatial layouts</li>
+                <li>Ensured a continuous and direct load transfer from terrace to foundation, eliminating structural inconsistencies</li>
+                <li>Applied ductile detailing techniques for better earthquake resistance, fully aligned with Indian seismic design codes</li>
+
+                <li><b>Outcome:</b></li>
+                <li>Achieved strong lateral stability despite narrow building geometry</li>
+                <li>Maintained the architect’s original floor plan and external design without structural interference</li>
+                <li>Simplified the construction process using a clear and logical column layout</li>
+                <li>Avoided overdesign, ensuring an economical and efficient use of materials</li>
+
+            </ul>
+        </>
     }
 ];
 

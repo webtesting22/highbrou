@@ -14,38 +14,6 @@ import image7 from "./7.svg"
 import MobileTimeline from "./MobileTimeline.png"
 const TimeLineAnimatedComponent = () => {
 
-    const TimeLineContentData = [
-        {
-            title: "2016 – Humble Beginnings",
-            description: "Established with a vision to deliver innovative and reliable structural engineering solutions."
-        },
-        {
-            title: "2018 – Early Success",
-            description: "Earned recognition for excellence in high-rise and industrial projects, building a strong client base."
-        },
-        {
-            title: "2019 – Growth Phase",
-            description: "Expanded expertise, strengthened relationships with repeat clients, and grew the engineering team."
-        },
-        {
-            title: "2020 – Resilience and Adaptability",
-            description: "Seamlessly transitioned to remote work during the pandemic, integrating advanced design technologies."
-        },
-        {
-            title: "2022 – Innovation Drive",
-            description: "Initiated R&D for sustainable engineering and began leveraging AI and advanced design automation tools for accelerated project delivery."
-        },
-        {
-            title: "2024 – Incorporation & Expansion",
-            description: 'Incorporated as "Highbrou Engineering Private Limited" and expanded services to international markets.'
-        },
-        {
-            title: "2025 – Industry Leadership",
-            description: "Established as a trusted partner for architects, builders, and EPC contractors, delivering world-class structural engineering solutions globally."
-        }
-    ];
-
-
     return (
         <>
             <section id="TimeLineAnimatedContainer">

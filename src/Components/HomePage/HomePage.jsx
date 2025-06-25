@@ -4,9 +4,9 @@ import { Row, Col } from "antd";
 import { FaArrowRightLong } from "react-icons/fa6";
 import CarousalImage1 from "./CarousalImage1.jpeg"
 import CarousalImage2 from "./CarousalImage2.jpeg"
-import Homeback from "./Homeback.jpg"
-import CarousalImage3 from "./CarousalImage3.jpg"
-import CarousalImage4 from "./CarousalImage4.jpg"
+import Homeback from "./Homeback.jpeg"
+import CarousalImage3 from "./CarousalImage3.jpeg"
+import CarousalImage4 from "./CarousalImage4.jpeg"
 import Icon1 from "./Icon1.svg"
 import Icon2 from "./Icon2.svg"
 import Icon3 from "./Icon3.svg"

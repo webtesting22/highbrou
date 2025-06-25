@@ -12,7 +12,7 @@ const Career = () => {
     const [selectedPost, setSelectedPost] = useState(null);
     const [form] = Form.useForm();
     const [resumeLink, setResumeLink] = useState(null);
-
+    const apibaseUrl = import.meta.env.VITE_BASE_URL;
     const handleResumeChange = async (info) => {
         if (!info.file) return;
 
@@ -21,7 +21,7 @@ const Career = () => {
             const fileType = file.type;
 
             // Request upload policy from the backend
-            const response = await fetch("https://testapi.prepseed.com/chats/uploadPolicy", {
+            const response = await fetch(`${apibaseUrl}/chats/uploadPolicy`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -107,7 +107,7 @@ const Career = () => {
         };
 
         try {
-            const response = await fetch("https://testapi.prepseed.com/highbrou/addJobApplication", {
+            const response = await fetch(`${apibaseUrl}/highbrou/addJobApplication`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -143,7 +143,7 @@ const Career = () => {
     const CareerPostData = [
         {
             postTitle: "Design Engineer - BIM Structures",
-            postDate: "13 November, 2024",
+            postDate: "12 Mar, 2025",
             location: "Mumbai, Maharashtra, India",
             jobtype: [
                 "Remote", "Full-time"
@@ -182,10 +182,10 @@ const Career = () => {
         },
         {
             postTitle: "Structural Design Engineer",
-            postDate: "4 January 2025",
+            postDate: "12 Mar, 2025",
             location: "Mumbai Metropolitan Region",
             jobtype: [
-                "Hybrid", "Full-time", "0 of 10 skills match"
+                "Remote", "Full-time"
             ],
             jobdescription: <>
                 <div>
@@ -244,10 +244,10 @@ const Career = () => {
         },
         {
             postTitle: "Senior Structural Draftsman (RCC & Steel)",
-            postDate: "- 2025",
+            postDate: "12 Mar, 2025",
             location: "Mumbai Metropolitan Region",
             jobtype: [
-                "Hybrid", "Full-time", "0 of 10 skills match"
+                "Remote", "Full-time"
             ],
             jobdescription: <>
                 <div>
@@ -275,6 +275,86 @@ const Career = () => {
                         <li>Proficient in AutoCAD software, knowledge in Revit BIM will be an added advantage</li>
                         <li>Excellent interpersonal and communication skills</li>
                         <li>⁠Ability to work remotely within a team</li>
+                    </ul>
+                </div>
+            </>
+        },
+        {
+            postTitle: "Lead Structural Engineer",
+            postDate: "28 Apr, 2025",
+            location: "Mumbai, India (Hybrid: Remote with on-site client meetings as needed)",
+            jobtype: [
+                "Remote", "Full-time"
+            ],
+            jobdescription: <>
+                <div>
+                    <p><b>About Highbrou Engineering Pvt. Ltd.:</b></p>
+                    <p>Highbrou Engineering Pvt. Ltd., based in Mumbai, is a leading structural consultancy delivering innovative, efficient, and code-compliant solutions across high-rise buildings, industrial, and infrastructure sectors. We seamlessly integrate advanced technologies with traditional engineering excellence to stay ahead globally.</p>
+                    <p><b>Roles & Responsibilities:</b></p>
+                    <p><b>Structural Design & Analysis:</b></p>
+                    <ul>
+                        <li>Lead design of diverse structures ensuring safety, stability, and compliance with IS, BS, ACI, and Eurocodes.
+                        </li>
+                        <li>⁠Execute detailed analysis using ETABS, STAAD.Pro, SAFE, Revit; handle foundation and superstructure designs for concrete and steel structures.
+                        </li>
+                        <li> ⁠Interpret geotechnical reports for design parameters; optimize loads, seismic, and wind loading schemes.
+                        </li>
+                        <li>  ⁠Specialize in large-span, pre-cast, post-tensioned, and RCC structures with strong lateral stability understanding.
+                        </li>
+                        <li>Apply advanced simulations to predict structural behavior, incorporating parametric and generative design methods.
+                        </li>
+                    </ul>
+                    <p><b>Project Leadership:
+                    </b></p>
+                    <ul>
+                        <li>Manage multiple projects, ensuring adherence to timelines, budgets, and quality.</li>
+                        <li>Coordinate with architects, MEP consultants, and contractors for smooth project delivery.</li>
+                        <li>Review design outputs and mentor junior engineers and drafters.</li>
+                    </ul>
+                    <p><b>Client Engagement:
+                    </b></p>
+                    <ul>
+                        <li>⁠Act as the technical face for client interactions and project presentations.
+                        </li>
+                        <li>Attend meetings, gather client requirements, and propose effective structural solutions.</li>
+                    </ul>
+                    <p><b>Quality Assurance & Compliance:</b></p>
+                    <ul>
+                        <li>⁠Implement rigorous quality checks and ensure full compliance with relevant codes and international standards.</li>
+                        <li>Review, approve, and oversee design documentation before delivery.</li>
+                    </ul>
+                    <p><b>Innovation & Continuous Improvement:</b></p>
+                    <ul>
+                        <li>⁠Stay updated with the latest trends and tools in engineering innovation.</li>
+                        <li>Introduce and implement new technologies like BIM workflows, generative designs, and sustainability practices.</li>
+                    </ul>
+                    <p><b>Documentation & Reporting:</b></p>
+                    <ul>
+                        <li>Prepare comprehensive design reports, technical specifications, and project proposals.</li>
+                        <li>Maintain organized records for project submissions and internal use.</li>
+                    </ul>
+                    <p><b>Qualifications & Eligibility:</b></p>
+                    <ul>
+                        <li>⁠Master’s degree in Structural Engineering (mandatory).</li>
+                        <li>12+ years’ experience in structural design with leadership roles in reputed MNCs.</li>
+                        <li>⁠Experience with international codes, sustainable design, and green building certifications.</li>
+                        <li>⁠Proficiency in ETABS, STAAD.Pro, SAFE, Revit; knowledge of Grasshopper, Rhino, Dynamo is a plus.</li>
+                        <li>Strong grasp of BIM processes and multidisciplinary coordination.
+                        </li>
+                        <li>Excellent leadership, communication, and decision-making skills.</li>
+                        <li>Exposure to full project delivery cycles is essential.</li>
+                    </ul>
+                    <p><b>Company Benefits & Offerings:</b></p>
+                    <ul>
+                        <li>Work Flexibility: Hybrid setup with remote working and site visits as needed.
+                        </li>
+                        <li>Professional Growth: Continuous learning programs, mentorship, and leadership opportunities.
+                        </li>
+                        <li>Compensation: Competitive salary with performance-linked incentives and annual bonuses.
+                        </li>
+                        <li>Work Culture: Inclusive, collaborative environment with innovation-driven practices.
+                        </li>
+                        <li>Work-Life Balance: 5-day workweek supporting personal and professional wellbeing.</li>
                     </ul>
                 </div>
             </>
@@ -324,11 +404,13 @@ const Career = () => {
         <>
 
             <section id="CareerContainer">
+
                 <CommonTopBannerDynamic
                     heading="Our Career"
                     subheading="Our Journey, Our Tomorrow"
                     image={Topback}
                 />
+
                 <div className="CareerPostContainer sectionPadding">
                     <Row>
                         {CareerPostData.map((item, index) => (
@@ -465,7 +547,7 @@ const Career = () => {
 
                         <Form.Item
                             name="currentCTC"
-                            label="Current CTC (in INR)"
+                            label="Current Annual CTC (in INR Lakhs)"
                             rules={[
                                 { required: true, message: "Please enter your current CTC!" },
                                 { pattern: /^[0-9]+$/, message: "CTC should only contain numbers!" },
@@ -482,7 +564,7 @@ const Career = () => {
 
                         <Form.Item
                             name="expectedCTC"
-                            label="Expected CTC (in INR)"
+                            label="Expected Annual CTC (in INR Lakhs)"
                             rules={[
                                 { required: true, message: "Please enter your expected CTC!" },
                                 { pattern: /^[0-9]+$/, message: "CTC should only contain numbers!" },

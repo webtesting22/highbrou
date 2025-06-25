@@ -50,6 +50,10 @@ const NavigationLinks = [
         path: "/our-approach"
     },
     {
+        link: "Case Studies",
+        path: "/case-studies"
+    },
+    {
         link: "Career",
         path: "/career"
     },
