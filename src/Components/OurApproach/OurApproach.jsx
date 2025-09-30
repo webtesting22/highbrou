@@ -27,17 +27,9 @@ const OurApproach = () => {
                         <h2>Our Approach</h2>
                     </div>
                     <div className="OnlyPCCode">
-                        <div className="ourApprochImageContainer">
-                            <img src={ApproachImage1} alt="" data-aos="fade-up" data-aos-duration="1000" loading="lazy"/>
-                            <img src={ApproachImage2} alt="" data-aos="fade-up" data-aos-duration="1000" loading="lazy"/>
-                            <img src={ApproachImage3} alt="" data-aos="fade-up" data-aos-duration="1000" loading="lazy"/>
-                            <img src={ApproachImage4} alt="" data-aos="fade-up" data-aos-duration="1000" loading="lazy"/>
-                            <img src={ApproachImage5} alt="" data-aos="fade-up" data-aos-duration="1000" loading="lazy"/>
-                            <img src={ApproachImage6} alt="" data-aos="fade-up" data-aos-duration="1000" loading="lazy"/>
-                            <img src={ApproachImage7} alt="" data-aos="fade-up" data-aos-duration="1000" loading="lazy"/>
-                        </div>
+                        <img src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/HighBrouPcTimeline.png" alt="" style={{width: "100%"}}/>
                     </div>
-                    <img src={OurApprochMobile} alt="" className="OnlyMobile" style={{ width: "100%" }} />
+                    <img src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/HighbrouMobileTimeline.png" alt="" className="OnlyMobile" style={{ width: "100%" }} />
                 </div>
             </section>
         </>

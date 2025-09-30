@@ -7,14 +7,401 @@
     font-weight: 500;
     line-height: 107%;
     width: 400px;
-    background: white;
-    position: sticky;
-    top: 70px;
+    /* background: white; */
+    /* position: sticky; */
+    /* top: 70px; */
     padding-bottom: 0px !important;
     padding: 53px 0px;
     z-index: 2;
 }
 
+/* New Card-based Layout Styles */
+.ProjectsMainContainer {
+    margin-top: 40px;
+}
+
+.ProjectsFilterTop {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 0px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 70px;
+    z-index: 10;
+}
+
+.FilterTitle h3 {
+    color: #0d2a3b;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.FilterTitle p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.ProjectsFilterTop .ant-select {
+    font-size: 16px;
+}
+
+.ProjectsFilterTop .ant-select .ant-select-selector {
+    border-radius: 8px;
+    min-height: 45px;
+    border: 2px solid #e1e5e9;
+}
+
+.ProjectsFilterTop .ant-select:hover .ant-select-selector {
+    border-color: #2989BC;
+}
+
+.ProjectsFilterTop .ant-select-focused .ant-select-selector {
+    border-color: #2989BC !important;
+    box-shadow: 0 0 0 2px rgba(41, 137, 188, 0.2);
+}
+
+.ProjectsGrid {
+    width: 100%;
+}
+
+.ProjectCard {
+    border-radius: 20px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transition: all 0.4s ease;
+    height: 450px;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.ProjectCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.ProjectCard .ant-card-body {
+    padding: 0;
+    height: 100%;
+}
+
+.ProjectCardImageContainer {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+}
+
+.ProjectCardImage {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+    transition: all 0.4s ease;
+}
+
+.ProjectCard:hover .ProjectCardImage {
+    transform: scale(1.1);
+}
+
+.ProjectCardOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(13, 42, 59, 0.3), rgba(13, 42, 59, 0.8));
+    display: flex;
+    align-items: flex-end;
+    opacity: 1;
+    transition: all 0.4s ease;
+}
+
+.ProjectCard:hover .ProjectCardOverlay {
+    background: linear-gradient(to bottom, rgba(13, 42, 59, 0.5), rgba(13, 42, 59, 0.9));
+}
+
+.ProjectCardContent {
+    padding: 30px;
+    color: white;
+    width: 100%;
+    transform: translateY(0);
+    transition: all 0.4s ease;
+}
+
+.ProjectCardContent h3 {
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.ProjectCardContent p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.ViewProjectBtn {
+    color: #2989BC;
+    font-weight: 600;
+    font-size: 16px;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+}
+
+.ProjectCard:hover .ViewProjectBtn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ViewProjectBtn:hover {
+    background: #2989BC;
+    color: white;
+}
+
+/* Single Project Page Styles */
+#SingleProjectContainer {
+    min-height: 100vh;
+}
+
+.SingleProjectContent {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 5rem;
+}
+
+.ProjectBackButton {
+    margin-bottom: 30px;
+}
+
+.BackButton {
+    background: #2989BC;
+    border-color: #2989BC;
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+    height: 45px;
+    padding: 0 20px;
+}
+
+.BackButton:hover {
+    background: #0d2a3b;
+    border-color: #0d2a3b;
+    color: white;
+}
+
+.ProjectTitleSection {
+    text-align: center;
+    margin: 30px 0 40px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+}
+
+.ProjectTitle {
+    color: #0d2a3b;
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.ProjectCategory {
+    color: #2989BC;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.ProjectTagline {
+    color: #666;
+    font-size: 18px;
+    font-style: italic;
+}
+
+/* E-commerce Style Image Gallery */
+.ThumbnailNavigation {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.ThumbnailWrapper {
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.ThumbnailWrapper:hover {
+    border-color: #2989BC;
+    transform: scale(1.02);
+}
+
+.ThumbnailWrapper.active {
+    border-color: #0d2a3b;
+    box-shadow: 0 4px 15px rgba(13, 42, 59, 0.3);
+}
+
+.ThumbnailImage {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+}
+
+.MainImageContainer {
+    position: relative;
+}
+
+.ImageSliderWrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    background: #f8f9fa;
+}
+
+.MainProjectImage {
+    width: 100%;
+    height: 600px;
+    object-fit: contain;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.SliderNavButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: #0d2a3b;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+}
+
+.SliderNavButton:hover {
+    background: #2989BC;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.SliderNavButton.prev {
+    left: 20px;
+}
+
+.SliderNavButton.next {
+    right: 20px;
+}
+
+.ImageCounter {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(13, 42, 59, 0.8);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    backdrop-filter: blur(10px);
+}
+
+/* Project Information Section */
+.ProjectInfoCard {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.ProjectDetailsSection h3,
+.ProjectSpecsSection h3 {
+    color: #0d2a3b;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #2989BC;
+}
+
+.ProjectDescription {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.8;
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.ProjectDescription ul {
+    padding-left: 20px;
+}
+
+.ProjectDescription li {
+    margin-bottom: 12px;
+}
+
+.ProjectDescription b {
+    color: #0d2a3b;
+}
+
+.ProjectSpecs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.SpecItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.SpecItem:last-child {
+    border-bottom: none;
+}
+
+.SpecItem strong {
+    color: #0d2a3b;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.SpecItem span {
+    color: #666;
+    font-size: 16px;
+    background: #f8f9fa;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+/* Legacy styles - keeping for backward compatibility */
 .ProjectsCardsContainer {
     transition: .5s;
 }
@@ -182,8 +569,25 @@
     font-size: 20px;
 }
 
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .ProjectTitle {
+        font-size: 40px;
+    }
+    
+    .ProjectsFilterTop .ant-select {
+        font-size: 15px;
+    }
+}
 
-@media (max-width:900px) {
+@media (max-width: 900px) {
+    .SingleProjectContent {
+        padding-top: 3rem;
+    }
+    .ProjectDescription {
+        background: transparent;
+        box-shadow: none;
+    }
     .FloatingFilterButton {
         display: block;
         display: flex;
@@ -195,12 +599,10 @@
     .ProjectsCardsContainer .heightContainer {
         height: 400px;
         overflow: hidden;
-        /* border: 1px solid red; */
         margin: 20px 0px;
         border-radius: 20px;
         position: relative;
         transition: .5s;
-        /* padding: 20px; */
     }
 
     .ProjectsFilterButtonContainer {
@@ -226,5 +628,165 @@
 
     .ProjectsNamesCategoriesContainer {
         display: none;
+    }
+    
+    .ProjectsFilterTop {
+        display: none;
+    }
+    
+    .ProjectTitle {
+        font-size: 32px;
+    }
+    
+    .ProjectCard {
+        height: 400px;
+    }
+    
+    .ProjectCardImageContainer {
+        height: 400px;
+    }
+    
+    .ProjectImagesSection h3,
+    .ProjectDetailsSection h3 {
+        font-size: 24px;
+    }
+    
+    .ProjectAdditionalInfo {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Single Project Mobile Styles */
+    .ProjectTitle {
+        font-size: 32px;
+    }
+    
+    .ThumbnailNavigation {
+        flex-direction: row;
+        max-height: none;
+        overflow-x: auto;
+        gap: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .ThumbnailWrapper {
+        min-width: 80px;
+        flex-shrink: 0;
+    }
+    
+    .ThumbnailImage {
+        height: 60px;
+    }
+    
+    .MainProjectImage {
+        height: 400px;
+    }
+    
+    .SliderNavButton {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .SliderNavButton.prev {
+        left: 10px;
+    }
+    
+    .SliderNavButton.next {
+        right: 10px;
+    }
+    
+    .ImageCounter {
+        bottom: 10px;
+        right: 10px;
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    
+    .ProjectDetailsSection h3,
+    .ProjectSpecsSection h3 {
+        font-size: 24px;
+    }
+    
+    .SpecItem {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .SpecItem span {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 768px) {
+    .ProjectsFilterTop {
+        padding: 20px;
+        position: static;
+    }
+    
+    .FilterTitle h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .FilterTitle p {
+        font-size: 14px;
+    }
+    
+    .ProjectsFilterTop .ant-select {
+        font-size: 14px;
+    }
+    
+    .ProjectsFilterTop .ant-select .ant-select-selector {
+        min-height: 40px;
+    }
+    
+    /* Additional Single Project Styles for Small Screens */
+    .ProjectTitleSection {
+        padding: 20px;
+        margin: 20px 0 30px 0;
+    }
+    
+    .ProjectTitle {
+        font-size: 28px;
+    }
+    
+    .ProjectCategory {
+        font-size: 16px;
+    }
+    
+    .ProjectTagline {
+        font-size: 14px;
+    }
+    
+    .ThumbnailImage {
+        height: 50px;
+    }
+    
+    .MainProjectImage {
+        height: 300px;
+    }
+    
+    .ProjectDescription {
+        padding: 00px;
+    }
+}
+
+@media (max-width: 480px) {
+    .SliderNavButton {
+        display: none;
+    }
+    
+    .ThumbnailNavigation {
+        margin-bottom: 20px;
+        justify-content: center;
+    }
+    
+    .ProjectTitle {
+        font-size: 24px;
+    }
+    
+    .MainProjectImage {
+        height: 250px;
     }
 }

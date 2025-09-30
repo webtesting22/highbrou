@@ -15,6 +15,11 @@ const ApplicationView = () => {
     const [selectedCTCRanges, setSelectedCTCRanges] = useState([]);
     const [currentCTCRange, setCurrentCTCRange] = useState([0, 0]);
     const [expectedCTCRange, setExpectedCTCRange] = useState([0, 0]);
+    const [pagination, setPagination] = useState({
+        current: 1,
+        pageSize: 10,
+        total: 0,
+    });
 
     const currentCTCValues = applications.map(app => app.currentCTC || 0);
     const expectedCTCValues = applications.map(app => app.expectedCTC || 0);
@@ -182,6 +187,14 @@ const ApplicationView = () => {
 
         setCurrentCTCRange([Math.min(...currentCTCValues), Math.max(...currentCTCValues)]);
         setExpectedCTCRange([Math.min(...expectedCTCValues), Math.max(...expectedCTCValues)]);
+    };
+
+    const handleTableChange = (paginationConfig) => {
+        setPagination({
+            current: paginationConfig.current,
+            pageSize: paginationConfig.pageSize,
+            total: paginationConfig.total,
+        });
     };
 
 
@@ -357,7 +370,16 @@ const ApplicationView = () => {
                         dataSource={filteredApplications.map(app => ({ ...app, key: app._id }))}
                         loading={loading}
                         bordered
-                        pagination={{ pageSize: 10 }}
+                        onChange={handleTableChange}
+                        pagination={{ 
+                            current: pagination.current,
+                            pageSize: pagination.pageSize,
+                            total: filteredApplications.length,
+                            showSizeChanger: true,
+                            showQuickJumper: false,
+                            showTotal: (total, range) => `${range[0]}-${range[1]} of ${total} items`,
+                            pageSizeOptions: ['10', '20', '50', '100']
+                        }}
                     />
                 </div>
 

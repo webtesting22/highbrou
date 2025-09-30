@@ -22,7 +22,7 @@ const HighbrouMissionVision = () => {
                                         <div className="MissionContainer" data-aos="fade-up"
                                             data-aos-duration="1000">
                                             <div className="MissionIconContainer">
-                                                <img src="/Images/mission.png" alt="" loading="lazy"/>
+                                                <img src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/mission.png" alt="" loading="lazy"/>
                                             </div>
                                             <div className="MissionContentContainer">
                                                 <h2>MISSION</h2>
@@ -32,7 +32,7 @@ const HighbrouMissionVision = () => {
                                         <div className="VisionContainer" data-aos="fade-up"
                                             data-aos-duration="1500">
                                             <div className="VisionIconContainer">
-                                                <img src="/Images//vision.png" alt="" loading="lazy"/>
+                                                <img src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/vision.png" alt="" loading="lazy"/>
                                             </div>
                                             <div className="VisionContentContainer">
                                                 <h2>VISION</h2>

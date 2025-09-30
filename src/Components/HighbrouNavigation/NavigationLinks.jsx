@@ -1,3 +1,10 @@
+import ProjectsData from '../AllProjects/ProjectsData';
+
+// Get unique categories from actual project data
+const getUniqueCategories = () => {
+    return [...new Set(ProjectsData.map(project => project.category))].filter(Boolean);
+};
+
 const NavigationLinks = [
     {
         link: "About Us",
@@ -9,50 +16,21 @@ const NavigationLinks = [
     },
     {
         link: "Projects +",
-        sublinks: [
-            {
-                link: "Building Structures",
-                path: "/allprojects"
-            },
-            {
-                link: "Hospitality Structures",
-                path: "/allprojects"
-            },
-            {
-                link: "⁠Commercial Structures",
-                path: "/allprojects"
-            },
-            {
-                link: "⁠Industrial Structures",
-                path: "/allprojects"
-            },
-            {
-                link: "Infrastructures",
-                path: "/allprojects"
-            },
-            {
-                link: "International Projects",
-                path: "/allprojects"
-            },
-            {
-                link: "Facade Design",
-                path: "/allprojects"
-            },
-            {
-                link: "From Work",
-                path: "/allprojects"
-            }
-        ],
+        sublinks: getUniqueCategories().map(category => ({
+            link: category,
+            // path: `/allprojects?category=${encodeURIComponent(category)}`
+            path: `/allprojects`
+        })),
         path: "/allprojects"
     },
     {
         link: "Our Approach",
         path: "/our-approach"
     },
-    {
-        link: "Case Studies",
-        path: "/case-studies"
-    },
+    // {
+    //     link: "Case Studies",
+    //     path: "/case-studies"
+    // },
     {
         link: "Career",
         path: "/career"
@@ -62,4 +40,5 @@ const NavigationLinks = [
         path: "/contact"
     }
 ]
+
 export default NavigationLinks

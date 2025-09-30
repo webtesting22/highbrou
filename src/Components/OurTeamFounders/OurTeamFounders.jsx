@@ -3,7 +3,7 @@ import "./OurTeamFounders.css";
 import { Row, Col, Modal } from "antd";
 import 'swiper/css';
 import 'swiper/css/pagination';
-import ShaikhIsmail from "./Image (1).png"
+// import ShaikhIsmail from "./Image (1).png"
 import ShaikhKashif1 from "./k4.jpg"
 const OurTeamFounders = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -61,7 +61,7 @@ const OurTeamFounders = () => {
         //     </>
         // },
         {
-            image: ShaikhIsmail,
+            image: "https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/Shaikh Ismail.png",
             name: "Shaikh Ismail",
             position: "Director",
             tagline: "A finance expert with extensive experience in project development, driving strategic growth at Highbrou Engineering.",

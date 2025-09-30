@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import CommonTopBannerDynamic from "../CommonTopBanner/CommonTopBannerDynamic";
 import { Row, Col, Modal, Form, Input, Select, Button, message, Tag, Upload, notification } from "antd";
 import { MdOutlineArrowRight } from "react-icons/md";
-import { FaCalendar } from "react-icons/fa";
+import { FaCalendar, FaCopy } from "react-icons/fa";
 import Topback from "./Topback.jpeg"
 import "./Careers.css"
 const { Option } = Select;
@@ -13,6 +13,56 @@ const Career = () => {
     const [form] = Form.useForm();
     const [resumeLink, setResumeLink] = useState(null);
     const apibaseUrl = import.meta.env.VITE_BASE_URL;
+
+    // Function to create URL slug from job title
+    const createJobSlug = (title) => {
+        return title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    };
+
+    // Function to find job by slug
+    const findJobBySlug = (slug) => {
+        return CareerPostData.find(job => createJobSlug(job.postTitle) === slug);
+    };
+
+    // Function to copy job link to clipboard
+    const copyJobLink = async () => {
+        if (!selectedPost) return;
+
+        const jobSlug = createJobSlug(selectedPost.postTitle);
+        const currentUrl = window.location.origin + window.location.pathname;
+        const jobUrl = `${currentUrl}?job=${jobSlug}`;
+
+        try {
+            await navigator.clipboard.writeText(jobUrl);
+            message.success('Job link copied to clipboard!');
+        } catch (err) {
+            // Fallback for browsers that don't support clipboard API
+            const textArea = document.createElement('textarea');
+            textArea.value = jobUrl;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            message.success('Job link copied to clipboard!');
+        }
+    };
+
+    // Check URL parameters on component mount
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const jobSlug = urlParams.get('job');
+
+        if (jobSlug) {
+            const job = findJobBySlug(jobSlug);
+            if (job) {
+                setSelectedPost(job);
+                setIsDescriptionModalOpen(true);
+            }
+        }
+
+        window.scrollTo(0, 0);
+    }, []);
+
     const handleResumeChange = async (info) => {
         if (!info.file) return;
 
@@ -141,6 +191,61 @@ const Career = () => {
 
 
     const CareerPostData = [
+        {
+            postTitle: "Business Development Manager",
+            postDate: "12 Jul, 2025",
+            location: "Mumbai, India (Remote + Onsite)",
+            jobtype: [
+                "Remote", "Full-time"
+            ],
+            jobdescription: <>
+                <div>
+                    <p><b>Location:</b> Mumbai, India (Remote + Onsite)</p>
+                    <p><b>Employment Type:</b> Full-time</p>
+                    <p><b>Experience Level:</b> Senior (8+ years)</p>
+                    <p><b>Industry:</b> Structural Engineering / Construction Services</p>
+                    <div>
+                        <p><b>About Highbrou Engineering:</b></p>
+                        <p>Highbrou Engineering is a leading Mumbai-based structural consulting firm collaborating with top-tier developers, architects, and EPC contractors. We deliver innovative framing systems, sustainable solutions, and material-optimization strategies that drive cost savings, expedite schedules, and expand design freedom. Our marquee portfolio includes premium residential towers, commercial landmarks, and critical infrastructure across India and the MENA region.</p>
+                        <p><b>Role Overview:</b></p>
+                        <p>We’re seeking an accomplished Business Development Manager who already excels in structural engineering sales and possesses an extensive, Mumbai-based professional network. You will own strategic market engagement, forge high-value partnerships, and consistently achieve the highest sales conversion rates.</p>
+
+                        <p><b>Key Responsibilities:</b></p>
+                        <ul>
+                            <li><b>Strategic Prospecting & Pipeline Ownership:</b> Leverage your established contacts—developers, architects, contractors—to generate high-quality leads. Independently qualify and prioritize opportunities to maintain a robust, predictable sales funnel.</li>
+                            <li><b>Relationship Leadership:</b> Act as the principal ambassador for Highbrou, fostering deep, trust-based relationships at C-level and project leadership levels. Cultivate repeat business and referrals through proactive client engagement and service excellence.</li>
+                            <li><b>High-Impact Presentations & Proposals:</b> Architect persuasive, technically rigorous proposals in collaboration with engineering teams. Present tailored solutions that highlight Highbrou’s proven track record in cost savings, buildability, and innovation.</li>
+                            <li><b>Top-Tier Negotiation & Deal Closing:</b> Drive complex negotiations on scope, pricing, and contract terms to secure profitable, long-term engagements. Consistently exceed monthly, quarterly, and annual revenue targets.</li>
+                            <li><b>Market Intelligence & Advisory:</b> Monitor market dynamics, competitor strategies, and regulatory shifts; translate insights into actionable growth initiatives. Advise executive leadership on emerging opportunities and risk mitigation.</li>
+                            <li><b>Performance Metrics & Reporting:</b> Maintain real-time visibility into your pipeline and sales performance using company CRM. Report on key metrics—conversion rates, average deal size, sales cycle efficiency, and revenue attainment.</li>
+                        </ul>
+
+                        <p><b>Qualifications & Skills:</b></p>
+                        <ul>
+                            <li>Bachelor’s or Master’s degree in Engineering, Business Administration, or related field.</li>
+                            <li>8+ years of progressive business development or sales leadership experience in structural engineering or related consulting services.</li>
+                            <li>Proven top-tier sales conversion record—evidence of outperforming peers and industry benchmarks.</li>
+                            <li>Deep-rooted professional network within Mumbai’s real estate and construction ecosystem.</li>
+                            <li>Exceptional negotiation, communication, and executive-level presentation skills.</li>
+                            <li>Autonomous, results-driven, and accustomed to operating in a goal-oriented, high-accountability environment.</li>
+                            <li>Proficiency with CRM systems (Zoho CRM, Salesforce, etc) and LinkedIn Sales Navigator.</li>
+                        </ul>
+
+                        <p><b>Compensation & Benefits:</b></p>
+                        <ul>
+                            <li>Competitive base salary, aligned with senior market benchmarks.</li>
+                            <li>Lucrative commission structure with uncapped earnings tied to performance.</li>
+                            <li>Opportunity to lead strategic growth initiatives and influence company direction.</li>
+                            <li>Access to marquee project engagements and a collaborative leadership team.</li>
+                        </ul>
+
+                        {/* <p><b>How to Apply:</b></p>
+                        <p>If you’re a results-oriented sales leader with a commanding presence in Mumbai’s structural engineering market, we want to hear from you.<br />
+                            Apply on our website career page: <a href="https://www.highbrou.com">www.highbrou.com</a></p> */}
+                    </div>
+                </div>
+            </>
+        },
         {
             postTitle: "Design Engineer - BIM Structures",
             postDate: "12 Mar, 2025",
@@ -358,7 +463,85 @@ const Career = () => {
                     </ul>
                 </div>
             </>
-        }
+        },
+        {
+            postTitle: "Trainee Engineer — Structural Design",
+            postDate: "29 Sep, 2025",
+            location: "Mumbai Metropolitan Region (Remote-first; occasional site/office visits)",
+            jobtype: [
+                "Remote", "Full-time"
+            ],
+            jobdescription: <>
+                <div>
+                    <p><b>Location:</b> Mumbai Metropolitan Region (Remote-first; occasional site/office visits)</p>
+                    <p><b>Employment Type:</b> Full-time — remote with periodic on-site/client interactions</p>
+                    <div>
+                        <p><b>About Highbrou Engineering</b></p>
+                        <p>Highbrou Engineering is a Mumbai-based structural consulting firm delivering value-focused, buildable structural solutions for developers, architects and contractors. We work on residential, commercial and tall-building projects across India and in international markets.</p>
+                        
+                        <p><b>Role Summary</b></p>
+                        <p>We are hiring a Trainee Engineer — Structural Design. This is an entry-level technical role for candidates who hold a Master's degree in Structural Engineering (M.Tech / M.E. in Structures). Fresh Master's and candidates with up to 1 year of professional experience are encouraged to apply. This role focuses on hands-on learning in structural modelling, analysis, computational methods and drawing production while working closely with senior engineers.</p>
+
+                        <p><b>Key Responsibilities:</b></p>
+                        <ul>
+                            <li>Assist in building and updating structural models in ETABS / SAFE / STAAD.Pro and similar tools under supervision.</li>
+                            <li>Perform basic design calculations and checks (RCC & steel) and prepare calculation sheets for review.</li>
+                            <li>Prepare parts of design reports, specification notes and deliverable packages.</li>
+                            <li>Produce and update drawings and mark-ups in AutoCAD / Revit; support BIM coordination and model version control.</li>
+                            <li>Learn and apply computational engineering workflows (scripting, parametric design, automation) to streamline modelling and repetitive calculations.</li>
+                            <li>Support integration of computation outputs into design checks and reports.</li>
+                            <li>Participate in internal learning sessions, design reviews and client/architect coordination (normally with a senior present).</li>
+                            <li>Follow QA/QC checklists and implement senior feedback to improve deliverables.</li>
+                            <li>Maintain organised project documentation and file structures.</li>
+                        </ul>
+
+                        <p><b>Essential Qualifications & Skills:</b></p>
+                        <ul>
+                            <li>Master's degree (M.Tech / M.E.) in Structural Engineering — applications from other disciplines will not be considered. Fresh graduates or candidates with up to 1 year of experience are encouraged to apply.</li>
+                            <li>Strong fundamentals in RCC and steel structural behaviour and design concepts.</li>
+                            <li>Basic or beginner proficiency (hands-on or coursework) with structural software: ETABS, SAFE, STAAD.Pro, AutoCAD, Revit, ROBOT Structural Analysis, Tekla Structures (any combination — familiarity is acceptable).</li>
+                            <li>Basic programming / computational skills: familiarity or coursework experience in one or more of C, C#, C++, Python, Grasshopper, Dynamo or similar tools.</li>
+                            <li>A clear keen interest in computational engineering as applied to structural design — automation, scripts, parametric modelling and algorithmic problem solving.</li>
+                            <li>Problem-solving orientation — able to reason through design challenges, propose constructive alternatives and not just perform routine calculations.</li>
+                            <li>Good numerical aptitude, attention to detail and clear written & verbal communication in English.</li>
+                            <li>Reliable home workstation (PC/laptop) and professional workspace with stable internet.</li>
+                        </ul>
+
+                        <p><b>Desirable (Accelerates Onboarding):</b></p>
+                        <ul>
+                            <li>Course projects or miniprojects demonstrating scripts or parametric models (Python, Grasshopper, Dynamo, or similar).</li>
+                            <li>Any exposure to international codes or project workflows (Gulf/UAE) is a plus.</li>
+                            <li>A short portfolio with model screenshots, one sample calculation and/or a small script that automates a calculation is helpful.</li>
+                        </ul>
+
+                        <p><b>Location & Work Mode:</b></p>
+                        <ul>
+                            <li>Remote-first role aligned with Highbrou's work-from-home policy.</li>
+                            <li>Candidate must own a computer, meeting company configuration requirements (specs to be shared during interview).</li>
+                            <li>Occasional site visits or in-person meetings in Mumbai (or abroad) may be required depending on project needs.</li>
+                        </ul>
+
+                        <p><b>Assessment & Selection Process:</b></p>
+                        <ul>
+                            <li>Short online screening (MCQ + short modelling or calculation task).</li>
+                            <li>Practical short take-home task that may include: a basic modelling screenshot, a simple hand calculation, and a short coding/computation snippet or explanation of an algorithmic approach (to assess computational interest).</li>
+                            <li>Technical interview with senior engineers (includes problem-solving scenarios, software demonstration and discussion of any computational work submitted).</li>
+                            <li>HR / culture-fit discussion.</li>
+                        </ul>
+
+                        <p><b>Compensation & Learning Support:</b></p>
+                        <ul>
+                            <li>Competitive salary commensurate with qualifications and experience.</li>
+                            <li>Structured mentorship, regular technical reviews and access to internal training sessions focused on both conventional structural design and computational engineering.</li>
+                            <li>Support for skill development and practical exposure to modern workflows (scripting, BIM integration, automation).</li>
+                        </ul>
+
+                        <p><b>How to Apply:</b></p>
+                        <p>Send your CV and a short portfolio (model screenshots, one sample calculation and/or a brief code/script example) to the email or apply via the job portal. Applications that do not include a Master's in Structural Engineering will not be considered.</p>
+                    </div>
+                </div>
+            </>
+        },
 
 
     ]
@@ -383,6 +566,11 @@ const Career = () => {
     const openDescriptionModal = (post) => {
         setSelectedPost(post);
         setIsDescriptionModalOpen(true);
+
+        // Update URL without refreshing the page
+        const jobSlug = createJobSlug(post.postTitle);
+        const newUrl = `${window.location.pathname}?job=${jobSlug}`;
+        window.history.pushState({}, '', newUrl);
     };
 
     const openApplyModal = () => {
@@ -395,11 +583,12 @@ const Career = () => {
         setIsDescriptionModalOpen(false);
         setIsApplyModalOpen(false);
         form.resetFields();
+
+        // Clear URL parameters when closing modal
+        const newUrl = window.location.pathname;
+        window.history.pushState({}, '', newUrl);
     };
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
     return (
         <>
 
@@ -413,7 +602,14 @@ const Career = () => {
 
                 <div className="CareerPostContainer sectionPadding">
                     <Row>
-                        {CareerPostData.map((item, index) => (
+                        {CareerPostData
+                            .sort((a, b) => {
+                                // Parse dates and sort by latest first
+                                const dateA = new Date(a.postDate);
+                                const dateB = new Date(b.postDate);
+                                return dateB - dateA; // Latest first
+                            })
+                            .map((item, index) => (
                             <Col lg={12} md={12} key={index} style={{ width: "100%", padding: "10px" }}>
                                 <div className="BorderHoverCard">
 
@@ -439,7 +635,19 @@ const Career = () => {
                     </Row>
                 </div>
                 <Modal
-                    title={selectedPost?.postTitle || ""}
+                    title={
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <span>{selectedPost?.postTitle || ""}</span>
+                            <Button
+                                type="text"
+                                icon={<FaCopy />}
+                                onClick={copyJobLink}
+                                style={{ display: 'flex', alignItems: 'center', gap: '5px' }}
+                            >
+                                Copy Link
+                            </Button>
+                        </div>
+                    }
                     open={isDescriptionModalOpen}
                     onCancel={handleCancel}
                     width={1000}
@@ -559,7 +767,7 @@ const Career = () => {
                                 }
                             ]}
                         >
-                            <Input type="number" placeholder="Enter your current CTC" />
+                            <Input type="number" placeholder="eg. 3,80,0000" />
                         </Form.Item>
 
                         <Form.Item
@@ -576,7 +784,7 @@ const Career = () => {
                                 }
                             ]}
                         >
-                            <Input type="number" placeholder="Enter your expected CTC" />
+                            <Input type="number" placeholder="eg. 3,80,0000" />
                         </Form.Item>
 
                         <Form.Item

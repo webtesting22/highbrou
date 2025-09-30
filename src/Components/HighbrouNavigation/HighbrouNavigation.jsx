@@ -48,7 +48,7 @@ const HighbrouNavigation = () => {
                     <div className="mainDevideContainer">
                         <div className="LogoContainer">
                             <Link to="/">
-                                <img src={HighbrouLogo} alt="Highbrou Logo" loading="lazy"/>
+                                <img src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/highbrou.png" alt="Highbrou Logo" loading="lazy"/>
                             </Link>
                         </div>
                         <div className="NavigationLinksContainer desktopOnly">

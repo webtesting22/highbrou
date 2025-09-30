@@ -375,7 +375,7 @@ const ProjectsData = [
         </>
     },
     {
-        id: 12,
+        id: 13,
         category: "⁠Industrial Structures",
         image: [
             "Images/ProjectsImages/TGIFFILMSTUDIO1.jpg",
@@ -393,25 +393,25 @@ const ProjectsData = [
             </ul>
         </>
     },
-    {
-        id: 13,
-        category: "Infrastructures",
-        image: ["/Images/ProjectsImages/project10.jpg"],
-        heading: "ETP PLANT AT BOKARO FOR SAIL",
-        tagline: "Celebrating Heritage",
-        description: <>
-            <ul>
-                <li><b>Project:</b> Recycling of waste water from plant outfalls 1 & 2A for
-                    reducing water consumption and achieving zero discharge</li>
-                <li><b>Primary Tank size:</b> 20m × 50m</li>
-                <li><b>Location:</b> Bokaro, Jharkhand</li>
-                <li><b>Client:</b> SAIL</li>
-            </ul>
-        </>
-    },
+    // {
+    //     id: 13,
+    //     category: "Infrastructures",
+    //     image: ["/Images/ProjectsImages/project10.jpg"],
+    //     heading: "ETP PLANT AT BOKARO FOR SAIL",
+    //     tagline: "Celebrating Heritage",
+    //     description: <>
+    //         <ul>
+    //             <li><b>Project:</b> Recycling of waste water from plant outfalls 1 & 2A for
+    //                 reducing water consumption and achieving zero discharge</li>
+    //             <li><b>Primary Tank size:</b> 20m × 50m</li>
+    //             <li><b>Location:</b> Bokaro, Jharkhand</li>
+    //             <li><b>Client:</b> SAIL</li>
+    //         </ul>
+    //     </>
+    // },
     {
         id: 14,
-        category: "",
+        category: "Building Structures",
         image: ["https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/The Marque image.png"],
         heading: "The Marque, Bandra West",
         tagline: "",
@@ -442,8 +442,8 @@ const ProjectsData = [
 
     },
     {
-        id: "15",
-        category: "",
+        id: 15,
+        category: "Building Structures",
         image: ["https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/Gurukrupa Image.png"],
         heading: "Gurukrupa – Ridhi Sidhi, Andheri (W)",
         tagline: "",
@@ -478,11 +478,11 @@ const ProjectsData = [
         </>
     },
     {
-        id: "16",
-        category: "",
+        id: 16,
+        category: "Building Structures",
         image: ["https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/Maurya Image.png"],
         heading: "Maurya, Versova",
-        tagline: "",
+        tagline: "Building Structures",
         description: <>
             <ul>
                 <li><b>Project Snapshot</b></li>
@@ -539,8 +539,8 @@ const ProjectsData = [
         </>
     },
     {
-        id: "17",
-        category: "",
+        id: 17,
+        category: "Building Structures",
         image: ["https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/Chandra Image.png"],
         heading: "Chandra Logassa – Andheri (W)",
         tagline: "",

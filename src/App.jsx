@@ -6,6 +6,7 @@ import HighbrouNavigation from "./Components/HighbrouNavigation/HighbrouNavigati
 import AboutUs from "./Components/AboutUs/AboutUs";
 import Services from "./Components/Services/Services";
 import AllProjects from "./Components/AllProjects/Allprojects";
+import SingleProject from "./Components/AllProjects/SingleProject";
 import Footer from "./Components/Footer/Footer";
 import Career from "./Components/Careers/Carrer";
 import BackToTop from "./Components/BackToTop/BackToTop";
@@ -23,6 +24,7 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
         <Route path="/allprojects" element={<AllProjects />} />
+        <Route path="/allprojects/:slug" element={<SingleProject />} />
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/our-approach" element={<OurApproach />} />
