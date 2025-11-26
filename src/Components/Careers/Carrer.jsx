@@ -194,21 +194,21 @@ const Career = () => {
         {
             postTitle: "Business Development Manager",
             postDate: "12 Jul, 2025",
-            location: "Mumbai, India (Remote + Onsite)",
+            location: "Dubai (Full-time)",
             jobtype: [
-                "Remote", "Full-time"
+                "Full-time"
             ],
             jobdescription: <>
                 <div>
-                    <p><b>Location:</b> Mumbai, India (Remote + Onsite)</p>
+                    <p><b>Location:</b> Dubai (Full-time)</p>
                     <p><b>Employment Type:</b> Full-time</p>
-                    <p><b>Experience Level:</b> Senior (8+ years)</p>
+                    <p><b>Experience Level:</b> Senior (5+ years)</p>
                     <p><b>Industry:</b> Structural Engineering / Construction Services</p>
                     <div>
                         <p><b>About Highbrou Engineering:</b></p>
-                        <p>Highbrou Engineering is a leading Mumbai-based structural consulting firm collaborating with top-tier developers, architects, and EPC contractors. We deliver innovative framing systems, sustainable solutions, and material-optimization strategies that drive cost savings, expedite schedules, and expand design freedom. Our marquee portfolio includes premium residential towers, commercial landmarks, and critical infrastructure across India and the MENA region.</p>
+                        <p>Highbrou Engineering is a leading Dubai-based structural consulting firm collaborating with top-tier developers, architects, and EPC contractors. We deliver innovative framing systems, sustainable solutions, and material-optimization strategies that drive cost savings, expedite schedules, and expand design freedom. Our marquee portfolio includes premium residential towers, commercial landmarks, and critical infrastructure across Dubai and the MENA region.</p>
                         <p><b>Role Overview:</b></p>
-                        <p>We’re seeking an accomplished Business Development Manager who already excels in structural engineering sales and possesses an extensive, Mumbai-based professional network. You will own strategic market engagement, forge high-value partnerships, and consistently achieve the highest sales conversion rates.</p>
+                        <p>We’re seeking an accomplished Business Development Manager who already excels in structural engineering sales and possesses an extensive, Dubai-based professional network. You will own strategic market engagement, forge high-value partnerships, and consistently achieve the highest sales conversion rates.</p>
 
                         <p><b>Key Responsibilities:</b></p>
                         <ul>
@@ -225,7 +225,7 @@ const Career = () => {
                             <li>Bachelor’s or Master’s degree in Engineering, Business Administration, or related field.</li>
                             <li>8+ years of progressive business development or sales leadership experience in structural engineering or related consulting services.</li>
                             <li>Proven top-tier sales conversion record—evidence of outperforming peers and industry benchmarks.</li>
-                            <li>Deep-rooted professional network within Mumbai’s real estate and construction ecosystem.</li>
+                            <li>Deep-rooted professional network within Dubai’s real estate and construction ecosystem.</li>
                             <li>Exceptional negotiation, communication, and executive-level presentation skills.</li>
                             <li>Autonomous, results-driven, and accustomed to operating in a goal-oriented, high-accountability environment.</li>
                             <li>Proficiency with CRM systems (Zoho CRM, Salesforce, etc) and LinkedIn Sales Navigator.</li>
@@ -755,7 +755,7 @@ const Career = () => {
 
                         <Form.Item
                             name="currentCTC"
-                            label="Current Annual CTC (in INR Lakhs)"
+                            label={selectedPost?.location === "Dubai (Full-time)" ? "Current Annual CTC (in AED)" : "Current Annual CTC (in INR Lakhs)"}
                             rules={[
                                 { required: true, message: "Please enter your current CTC!" },
                                 { pattern: /^[0-9]+$/, message: "CTC should only contain numbers!" },
@@ -772,7 +772,7 @@ const Career = () => {
 
                         <Form.Item
                             name="expectedCTC"
-                            label="Expected Annual CTC (in INR Lakhs)"
+                            label={selectedPost?.location === "Dubai (Full-time)" ? "Expected Annual CTC (in AED)" : "Expected Annual CTC (in INR Lakhs)"}
                             rules={[
                                 { required: true, message: "Please enter your expected CTC!" },
                                 { pattern: /^[0-9]+$/, message: "CTC should only contain numbers!" },
