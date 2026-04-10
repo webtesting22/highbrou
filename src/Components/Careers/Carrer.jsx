@@ -348,6 +348,74 @@ const Career = () => {
             </>
         },
         {
+            postTitle: "Structural Design Engineer (Dubai)",
+            postDate: "11 Apr, 2026",
+            location: "Dubai, UAE",
+            salaryInAed: true,
+            jobtype: [
+                "Remote", "Full-time"
+            ],
+            jobdescription: <>
+                <div>
+                    <p><b>Location: </b> Dubai, UAE</p>
+
+                    <div>
+                        <p><b>About the job</b></p>
+                        <p>Tips: Provide a summary of the role, what success in the position looks like, and how this role fits into the organization overall.</p>
+                        <p><b>Role and Responsibilities:</b></p>
+                        <ul>
+                            <li>Developing structural design models.</li>
+                            <li>Performing calculations and analysis for various structural projects.</li>
+                            <li>Preparing design reports, drawings, and specifications.</li>
+                            <li>Collaborating with clients, architects, and project teams.</li>
+                            <li>Ensuring compliance with building codes and standards.
+                            </li>
+                        </ul>
+                        <p><b>Experience Level:</b></p>
+                        <ul>
+                            <li>Preferably 3–6 years of experience in structural design.</li>
+                            <li>Proficiency in software tools like ETABS, SAFE, STAAD.Pro, AutoCAD, and Revit.</li>
+                        </ul>
+                        <p><b>Required Skills:</b></p>
+                        <ul>
+                            <li>Experience with International projects (specifically UAE & Gulf) is required with strong knowledge and hands on experience with American and Euro codes</li>
+                            <li>Strong knowledge of RCC and steel design.
+                            </li>
+                            <li>Familiarity with BIM workflows.</li>
+                            <li>Ability to perform dynamic and seismic analysis.</li>
+                            <li>Problem-solving mindset and attention to detail.
+                            </li>
+                        </ul>
+                        <p><b>Additional Requirements:</b></p>
+                        <ul>
+                            <li>Candidate must have SOE card.</li>
+                            <li>Should have at least 3 years of experience in Dubai only.</li>
+                        </ul>
+                        <p><b>Location and Work Mode:</b></p>
+                        <ul>
+                            <li>The position allows for remote work, aligning with Highbrou's work-from-home policy.
+                            </li>
+                            <li>Candidates must have their own computer system meeting the company's configuration requirements and a professional workspace.
+                            </li>
+                        </ul>
+                        <p><b>Compensation and Benefits:</b></p>
+                        <ul>
+                            <li>Competitive salary based on experience and skills.</li>
+                            <li>Opportunities for training and professional growth.
+                            </li>
+                        </ul>
+                        <p><b>Additional Considerations:</b></p>
+                        <ul>
+                            <li>The engineer should have excellent communication skills to coordinate with clients and team members effectively.
+                            </li>
+                            <li>A strong commitment to delivering high-quality, innovative designs.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </>
+        },
+        {
             postTitle: "Senior Structural Draftsman (RCC & Steel)",
             postDate: "12 Mar, 2025",
             location: "Mumbai Metropolitan Region",
@@ -755,7 +823,7 @@ const Career = () => {
 
                         <Form.Item
                             name="currentCTC"
-                            label={selectedPost?.location === "Dubai (Full-time)" ? "Current Annual CTC (in AED)" : "Current Annual CTC (in INR Lakhs)"}
+                            label={selectedPost?.location === "Dubai (Full-time)" || selectedPost?.salaryInAed ? "Current Annual CTC (in AED)" : "Current Annual CTC (in INR Lakhs)"}
                             rules={[
                                 { required: true, message: "Please enter your current CTC!" },
                                 { pattern: /^[0-9]+$/, message: "CTC should only contain numbers!" },
@@ -772,7 +840,7 @@ const Career = () => {
 
                         <Form.Item
                             name="expectedCTC"
-                            label={selectedPost?.location === "Dubai (Full-time)" ? "Expected Annual CTC (in AED)" : "Expected Annual CTC (in INR Lakhs)"}
+                            label={selectedPost?.location === "Dubai (Full-time)" || selectedPost?.salaryInAed ? "Expected Annual CTC (in AED)" : "Expected Annual CTC (in INR Lakhs)"}
                             rules={[
                                 { required: true, message: "Please enter your expected CTC!" },
                                 { pattern: /^[0-9]+$/, message: "CTC should only contain numbers!" },
