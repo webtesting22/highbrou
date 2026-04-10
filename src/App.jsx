@@ -14,6 +14,7 @@ import Contact from "./Components/Contact/Contact";
 import OurApproach from "./Components/OurApproach/OurApproach";
 import ApplicationView from "./Components/ApplicationView/ApplicationView";
 import CaseStudies from "./Components/CaseStudies/CaseStudies";
+import Profile from "./Components/Profile/Profile";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/our-approach" element={<OurApproach />} />
         <Route path="/highbrouapplicationView" element={<ApplicationView />} />
         <Route path="/case-studies" element={<CaseStudies />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <Footer />
       <BackToTop />

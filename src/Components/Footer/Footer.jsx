@@ -58,8 +58,16 @@ const Footer = () => {
                                 <div className="NavigationLinksContainer">
                                     <Row>
                                         {NavigationLinks.map((item, index) => (
-                                            <Col lg={24} style={{ width: "100%" }}>
-                                                <p key={index}><Link to={item.path}>{item.link}</Link></p>
+                                            <Col lg={24} style={{ width: "100%" }} key={index}>
+                                                <p>
+                                                    {item.isExternal ? (
+                                                        <a href={item.path} target="_blank" rel="noopener noreferrer" style={{ color: "white" }}>
+                                                            {item.link}
+                                                        </a>
+                                                    ) : (
+                                                        <Link to={item.path}>{item.link}</Link>
+                                                    )}
+                                                </p>
                                             </Col>
                                         ))}
                                     </Row>

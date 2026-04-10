@@ -38,7 +38,11 @@ const NavigationLinks = [
     {
         link: "Contact",
         path: "/contact"
-    }
+    },
+    {
+        link: "Profile",
+        path: "/profile",
+    },
 ]
 
 export default NavigationLinks

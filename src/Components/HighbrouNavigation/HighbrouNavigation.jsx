@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { Drawer, Collapse } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import NavigationLinks from "./NavigationLinks";
-import HighbrouLogo from "./highbrou_logo.webp";
 
 const { Panel } = Collapse;
 
@@ -70,6 +69,15 @@ const HighbrouNavigation = () => {
                                                     </ul>
                                                 </div>
                                             </>
+                                        ) : item.isExternal ? (
+                                            <a
+                                                href={item.path}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                onClick={handleLinkClick}
+                                            >
+                                                {item.link}
+                                            </a>
                                         ) : (
                                             <Link to={item.path} onClick={handleLinkClick}>
                                                 {item.link}
@@ -110,9 +118,21 @@ const HighbrouNavigation = () => {
                             </Panel>
                         ) : (
                             <div key={index} className="NavPanel no-collapse" style={{ padding: "10px 40px" }}>
-                                <Link to={item.path} onClick={handleLinkClick} style={{ color: "black" }}>
-                                    {item.link}
-                                </Link>
+                                {item.isExternal ? (
+                                    <a
+                                        href={item.path}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={handleLinkClick}
+                                        style={{ color: "black" }}
+                                    >
+                                        {item.link}
+                                    </a>
+                                ) : (
+                                    <Link to={item.path} onClick={handleLinkClick} style={{ color: "black" }}>
+                                        {item.link}
+                                    </Link>
+                                )}
                             </div>
                         )
                     )}

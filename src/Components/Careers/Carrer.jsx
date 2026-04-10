@@ -351,7 +351,6 @@ const Career = () => {
             postTitle: "Structural Design Engineer (Dubai)",
             postDate: "11 Apr, 2026",
             location: "Dubai, UAE",
-            salaryInAed: true,
             jobtype: [
                 "Remote", "Full-time"
             ],
@@ -610,6 +609,142 @@ const Career = () => {
                 </div>
             </>
         },
+        {
+            postTitle: "Senior Architect - Lead",
+            postDate: "29 Nov, 2025",
+            location: "Dubai, UAE",
+            jobtype: [
+                "Full-time", "On-site"
+            ],
+            jobdescription: <>
+                <div>
+                    <p><b>Location:</b> Dubai, UAE</p>
+                    <p><b>Company:</b> Highbrou Engineering LLC</p>
+                    <p><b>Employment Type:</b> Full-time, On-site</p>
+                    <div>
+                        <p><b>About the Role</b></p>
+                        <p>At Highbrou Engineering LLC, we believe every successful project begins with clarity of vision and precision in planning. We are seeking a Senior Architect - Lead to join our Dubai office.</p>
+                        <p>This role is central to our projects: from the moment a developer acquires land, you will be responsible for assessing what can legally and practically be built, preparing feasibility studies and GFA/BUA calculations, and once approved, leading the development of conceptual architectural layouts. You will also coordinate with internal teams and external consultants, while ensuring all statutory approvals are secured from local authorities.</p>
+                        <p><b>Key Responsibilities:</b></p>
+                        <p><b>Feasibility & Planning:</b></p>
+                        <ul>
+                            <li>Conduct site analysis and interpret zoning, FAR, GFA, and BUA regulations.</li>
+                            <li>Prepare feasibility reports, yield studies, and constructable area calculations.</li>
+                            <li>Present feasibility outcomes to clients, highlighting development potential and constraints.</li>
+                        </ul>
+                        <p><b>Conceptual Design Development:</b></p>
+                        <ul>
+                            <li>Translate approved feasibility into conceptual architectural layouts and functional space planning.</li>
+                            <li>Develop massing studies, design briefs, and early-stage design packages.</li>
+                            <li>Ensure conceptual designs align with client requirements, regulations, and business objectives.</li>
+                        </ul>
+                        <p><b>Coordination & Collaboration:</b></p>
+                        <ul>
+                            <li>Work independently or with internal architectural teams to deliver concept designs.</li>
+                            <li>Coordinate with other disciplines (Structural, MEPF, Landscape, Environmental, Liaising Architect).</li>
+                            <li>Integrate consultant inputs into cohesive design packages.</li>
+                        </ul>
+                        <p><b>Statutory Approvals:</b></p>
+                        <ul>
+                            <li>Manage and oversee all statutory submissions and approvals with Dubai Municipality and other authorities.</li>
+                            <li>Ensure compliance with UAE building codes, Civil Defence, and regulatory requirements.</li>
+                        </ul>
+                        <p><b>Client & Stakeholder Engagement:</b></p>
+                        <ul>
+                            <li>Act as the primary point of contact for feasibility and concept design discussions.</li>
+                            <li>Present findings and design concepts to clients, investors, and authorities.</li>
+                        </ul>
+                        <p><b>What We&apos;re Looking For:</b></p>
+                        <ul>
+                            <li><b>Experience:</b> 10–15 years in architecture, with at least 5 years in the UAE/GCC.</li>
+                            <li><b>Expertise:</b> Proven track record in feasibility studies, zoning analysis, conceptual design, and statutory approvals.</li>
+                            <li><b>Knowledge:</b> Strong understanding of Dubai Municipality, RERA, Civil Defence, and permitting processes.</li>
+                            <li><b>Technical Skills:</b> Proficiency in AutoCAD, Revit, SketchUp, and BIM tools.</li>
+                            <li><b>Soft Skills:</b> Excellent communication, presentation, and client-facing abilities.</li>
+                            <li><b>Mindset:</b> Pragmatic, detail-oriented, and solution-driven, with the ability to mentor junior staff.</li>
+                        </ul>
+                        <p><b>Why Join Us?</b></p>
+                        <p>At Highbrou Engineering LLC, you&apos;ll be part of a forward-thinking, design-led practice that values precision, creativity, and collaboration. You&apos;ll have the opportunity to shape landmark projects in Dubai, working at the intersection of feasibility, design, and development strategy.</p>
+                        <p><b>How to Apply:</b></p>
+                        <p>If you&apos;re ready to take on this exciting challenge, we&apos;d love to hear from you.</p>
+                        <p>👉 Apply directly on our website <a href="https://highbrou.com/career" target="_blank" rel="noopener noreferrer">https://highbrou.com/career</a></p>
+                        <p><b>✨ Be the architect who transforms land potential into iconic design. Join Highbrou Engineering LLC and help shape Dubai&apos;s future skyline.</b></p>
+                    </div>
+                </div>
+            </>
+        },
+        {
+            postTitle: "Senior Computational Design Engineer",
+            postDate: "09 Dec, 2025",
+            location: "Mumbai, India",
+            jobtype: [
+                "Full-time", "Remote"
+            ],
+            jobdescription: <>
+                <div>
+                    <p><b>Location:</b> Mumbai, India</p>
+                    <p><b>Company:</b> Highbrou Engineering LLC</p>
+                    <p><b>Employment Type:</b> Remote</p>
+                    <div>
+                        <p><b>About Highbrou Engineering</b></p>
+                        <p>You know our story — a Mumbai-based structural consultancy scaling globally, pursuing <b>Vision 2030</b> to compete with international engineering houses by combining high-value structural design with automation and R&amp;D. We design tall buildings, complex frames and value-engineer projects to deliver cost, material and program advantages. This role is central to turning that strategy into repeatable productized workflows.</p>
+                        <p><b>About the Role</b></p>
+                        <p>We&apos;re looking for a hands-on Computational Design Engineer (senior) to architect, prototype and implement automation that converts conceptual designs and 2D drawings into production-ready GFC models and documents. You will own pipelines that use Rhino + Grasshopper, Revit + Dynamo, ETABS, Python, and related APIs to enable automated structural modeling, analysis translation, and 3D reinforcement detailing (BBS/BOQ).</p>
+                        <p>This is a fully remote role but you will be employed on the Mumbai payroll and expected to overlap with IST working hours.</p>
+                        <p><b>Key Responsibilities:</b></p>
+                        <ul>
+                            <li>Lead design &amp; implementation of generative engineering workflows for complex/tall buildings (column/grid optimization, framing, load paths) using Rhino/Grasshopper, Python, and parametric techniques.</li>
+                            <li>Build reliable CAD/PDF → 2D/3D Revit conversion pipelines (OCR/vectorization, rules-based interpretation, human-in-loop QC).</li>
+                            <li>Integrate Revit and ETABS: automate exchange of geometry, load cases, element sizes and rebar layouts via Revit API, ETABS API (or other structural analysis APIs).</li>
+                            <li>Automate reinforcement modeling (3D rebar), generate Bar Bending Schedules (BBS) and BOQs directly from Revit/parametric models.</li>
+                            <li>Create repeatable, documented toolchains (scripts, addins, Dynamo graphs, Grasshopper definitions, Python packages), CI for model validation and versioning.</li>
+                            <li>Maintain model validation and QA: checks for code-compliance inputs, clashes, geometry integrity, and rebar constructability rules.</li>
+                            <li>Collaborate closely with structural designers, drafters and project managers to embed automation in project workflows; create training materials &amp; SOPs.</li>
+                            <li>Prototype new computational methods (optimisation, genetic algorithms, ML-assisted recognition) and convert prototypes to production scripts.</li>
+                            <li>Provide technical leadership: code reviews, documentation, template libraries, and maintainability of automation assets.</li>
+                            <li>Monitor and report productivity gains, error rates, and adoption metrics.</li>
+                        </ul>
+                        <p><b>Must-have technical skills &amp; experience:</b></p>
+                        <ul>
+                            <li><b>5+ years</b> experience in computational design, structural engineering automation, or similar (senior level).</li>
+                            <li>Strong practical experience with <b>Rhino + Grasshopper</b> (including GhPython / plugins) and parametric design workflows.</li>
+                            <li>Hands-on with <b>Revit</b> modeling and the <b>Revit API</b>; experience building Dynamo graphs and/or Revit add-ins.</li>
+                            <li>Experience automating ETABS (or equivalent structural analysis software) via API or scripting; comfortable mapping analysis ↔ BIM.</li>
+                            <li>Proficient in <b>Python</b> (production scripting), experience with .NET/C# is a strong plus for Revit add-ins.</li>
+                            <li>Experience generating rebar models and producing <b>BBS/BOQ</b> outputs automatically (either in Revit or custom scripts).</li>
+                            <li>Strong CAD/BIM skills: ability to convert 2D drawings and PDFs into structured 3D BIM models with deterministic rules.</li>
+                            <li>Familiarity with version control (Git), basic CI principles, and code documentation best practices.</li>
+                            <li>Understanding of reinforced concrete design &amp; detailing (Indian codes and international practice) to ensure constructability.</li>
+                            <li>Excellent portfolio demonstrating: parametric models, automation scripts, Revit families/templates, ETABS integrations, and sample outputs (BBS/BOQ).</li>
+                        </ul>
+                        <p><b>Nice-to-have / differentiators:</b></p>
+                        <ul>
+                            <li>Experience with <b>Rhino.Inside.Revit</b> or <b>Dynamo ↔ Grasshopper</b> bridges.</li>
+                            <li>Familiarity with optimization libraries (e.g., Galapagos, Octopus, EO) or numerical solvers.</li>
+                            <li>Experience with ML for drawing recognition or point cloud processing.</li>
+                            <li>Knowledge of cloud automation, Docker, or server-based build pipelines for batch conversions.</li>
+                            <li>Experience working in remote, distributed teams and creating training docs/videos.</li>
+                            <li>Prior exposure to construction workflows and site constraints for rebar/placement.</li>
+                        </ul>
+                        <p><b>Education &amp; soft skills:</b></p>
+                        <ul>
+                            <li>Bachelor&apos;s or Master&apos;s in Civil Engineering, Structural Engineering, Computational Design, Architecture, or similar.</li>
+                            <li>Strong problem-solving skills, pragmatic engineering judgement, and ability to prioritize productized automation over academic perfection.</li>
+                            <li>Excellent written &amp; verbal communication — ability to explain automation to non-technical structural engineers and produce SOPs.</li>
+                            <li>Self-driven, experimental, with a bias for shipping prototypes and iterating with user feedback.</li>
+                        </ul>
+                        <p><b>Working model &amp; perks:</b></p>
+                        <ul>
+                            <li>Remote-first (work from home), employed on Mumbai payroll. Must be able to work in IST (core overlap 10:30–16:30 IST).</li>
+                            <li>Occasional in-person onboarding or workshops at Mumbai office (quarterly). Travel costs reimbursed.</li>
+                            <li>Flexible hours outside core overlap.</li>
+                            <li>Opportunity to lead R&amp;D and global automation initiatives and influence product roadmap.</li>
+                            <li>Competitive salary (market + performance incentives), professional development stipend, and access to company projects for portfolio building.</li>
+                        </ul>
+                    </div>
+                </div>
+            </>
+        },
 
 
     ]
@@ -823,7 +958,7 @@ const Career = () => {
 
                         <Form.Item
                             name="currentCTC"
-                            label={selectedPost?.location === "Dubai (Full-time)" || selectedPost?.salaryInAed ? "Current Annual CTC (in AED)" : "Current Annual CTC (in INR Lakhs)"}
+                            label={selectedPost?.location === "Dubai (Full-time)" || selectedPost?.location === "Dubai, UAE" ? "Current Annual CTC (in AED)" : "Current Annual CTC (in INR Lakhs)"}
                             rules={[
                                 { required: true, message: "Please enter your current CTC!" },
                                 { pattern: /^[0-9]+$/, message: "CTC should only contain numbers!" },
@@ -840,7 +975,7 @@ const Career = () => {
 
                         <Form.Item
                             name="expectedCTC"
-                            label={selectedPost?.location === "Dubai (Full-time)" || selectedPost?.salaryInAed ? "Expected Annual CTC (in AED)" : "Expected Annual CTC (in INR Lakhs)"}
+                            label={selectedPost?.location === "Dubai (Full-time)" || selectedPost?.location === "Dubai, UAE" ? "Expected Annual CTC (in AED)" : "Expected Annual CTC (in INR Lakhs)"}
                             rules={[
                                 { required: true, message: "Please enter your expected CTC!" },
                                 { pattern: /^[0-9]+$/, message: "CTC should only contain numbers!" },
