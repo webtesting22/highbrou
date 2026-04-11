@@ -1,0 +1,15 @@
+.viewProfileRoot {
+  position: fixed;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  background: #6a6f74;
+  z-index: 1;
+}
+
+.viewProfileFrame {
+  border: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+}

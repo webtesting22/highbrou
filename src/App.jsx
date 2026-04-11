@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom"; // Remove Router from here
+import { Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 import HomeRoutes from "./Components/HomeRoutes/HomeRoutes";
 import HighbrouNavigation from "./Components/HighbrouNavigation/HighbrouNavigation";
@@ -15,11 +15,15 @@ import OurApproach from "./Components/OurApproach/OurApproach";
 import ApplicationView from "./Components/ApplicationView/ApplicationView";
 import CaseStudies from "./Components/CaseStudies/CaseStudies";
 import Profile from "./Components/Profile/Profile";
+import ViewProfile from "./Components/Profile/ViewProfile";
 
 function App() {
+  const { pathname } = useLocation();
+  const portfolioFullscreen = pathname === "/view-profile";
+
   return (
     <>
-      <HighbrouNavigation />
+      {!portfolioFullscreen && <HighbrouNavigation />}
       <Routes>
         <Route path="/" element={<HomeRoutes />} />
         <Route path="/about-us" element={<AboutUs />} />
@@ -32,9 +36,10 @@ function App() {
         <Route path="/highbrouapplicationView" element={<ApplicationView />} />
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/view-profile" element={<ViewProfile />} />
       </Routes>
-      <Footer />
-      <BackToTop />
+      {!portfolioFullscreen && <Footer />}
+      {!portfolioFullscreen && <BackToTop />}
     </>
   );
 }

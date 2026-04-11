@@ -1,187 +1,200 @@
 .profilePage {
-    background: linear-gradient(180deg, #f4f6f9 0%, #e8ecf1 100%);
-    padding-bottom: 64px;
+  background: linear-gradient(180deg, #f4f6f9 0%, #e8ecf1 100%);
+  padding-bottom: 64px;
 }
 
 .profileIntro {
-    max-width: 720px;
-    margin: 0 auto 40px;
-    text-align: center;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  text-align: center;
 }
 
 .profileEyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgb(43, 136, 188);
-    margin-bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(43, 136, 188);
+  margin-bottom: 12px;
 }
 
 .profileEyebrow::before {
-    content: "";
-    width: 28px;
-    height: 2px;
-    background: rgb(43, 136, 188);
-    border-radius: 1px;
+  content: "";
+  width: 28px;
+  height: 2px;
+  background: rgb(43, 136, 188);
+  border-radius: 1px;
 }
 
 .profileIntroTitle {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 600;
-    color: rgb(13, 42, 59);
-    margin: 0 0 12px;
-    line-height: 1.3;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  color: rgb(13, 42, 59);
+  margin: 0 0 12px;
+  line-height: 1.3;
 }
 
 .profileIntroText {
-    font-size: 17px;
-    line-height: 1.65;
-    color: #3d4f5c;
-    margin: 0 auto 28px;
-    max-width: 560px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: #3d4f5c;
+  margin: 0 auto 28px;
+  max-width: 560px;
 }
 
 .profileActions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
 }
 
 .profileBtn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 22px;
-    font-size: 15px;
-    font-weight: 500;
-    font-family: "Poppins", serif;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease,
-        transform 0.2s ease;
-    text-decoration: none;
-    border: 2px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Poppins", serif;
+  border-radius: 6px;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease;
+  text-decoration: none;
+  border: 2px solid transparent;
 }
 
 .profileBtnPrimary {
-    background: rgb(13, 42, 59);
-    color: #fff;
-    border-color: rgb(13, 42, 59);
+  background: rgb(13, 42, 59);
+  color: #fff;
+  border-color: rgb(13, 42, 59);
 }
 
 .profileBtnPrimary:hover {
-    background: rgb(43, 136, 188);
-    border-color: rgb(43, 136, 188);
-    color: #fff;
-    transform: translateY(-1px);
+  background: rgb(43, 136, 188);
+  border-color: rgb(43, 136, 188);
+  color: #fff;
+  transform: translateY(-1px);
 }
 
 .profileBtnGhost {
-    background: #fff;
-    color: rgb(13, 42, 59);
-    border-color: rgba(13, 42, 59, 0.2);
+  background: #fff;
+  color: rgb(13, 42, 59);
+  border-color: rgba(13, 42, 59, 0.2);
 }
 
 .profileBtnGhost:hover {
-    border-color: rgb(43, 136, 188);
-    color: rgb(43, 136, 188);
-    background: rgba(255, 255, 255, 0.95);
+  border-color: rgb(43, 136, 188);
+  color: rgb(43, 136, 188);
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .profileViewerCard {
-    max-width: 1200px;
-    margin: 0 auto;
-    background: #fff;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow:
-        0 4px 6px -1px rgba(13, 42, 59, 0.06),
-        0 16px 40px -12px rgba(13, 42, 59, 0.12);
-    border: 1px solid rgba(13, 42, 59, 0.08);
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 4px 6px -1px rgba(13, 42, 59, 0.06),
+    0 16px 40px -12px rgba(13, 42, 59, 0.12);
+  border: 1px solid rgba(13, 42, 59, 0.08);
 }
 
 .profileViewerToolbar {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 14px 20px;
-    background: linear-gradient(180deg, #fafbfc 0%, #f3f5f7 100%);
-    border-bottom: 1px solid rgba(13, 42, 59, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 20px;
+  background: linear-gradient(180deg, #fafbfc 0%, #f3f5f7 100%);
+  border-bottom: 1px solid rgba(13, 42, 59, 0.08);
 }
 
 .profileViewerLabel {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-    font-weight: 500;
-    color: rgb(13, 42, 59);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(13, 42, 59);
 }
 
 .profileViewerLabel svg {
-    font-size: 20px;
-    opacity: 0.85;
-    color: rgb(43, 136, 188);
+  font-size: 20px;
+  opacity: 0.85;
+  color: rgb(43, 136, 188);
 }
 
 .profileViewerHint {
-    font-size: 13px;
-    color: #6b7c88;
-    margin: 0;
+  font-size: 13px;
+  color: #6b7c88;
+  margin: 0;
 }
 
 .profileIframeWrap {
-    position: relative;
-    width: 100%;
-    min-height: min(78vh, 900px);
-    background: #e2e6ea;
+  position: relative;
+  width: 100%;
+  min-height: min(78vh, 900px);
+  background: #e2e6ea;
+}
+
+.profileIframeWrap--tall {
+  min-height: min(88vh, 1100px);
+}
+
+.profileViewerCard--portfolio {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .profileIframeWrap iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
 }
 
 @media (max-width: 900px) {
-    .profileIntro {
-        margin-bottom: 28px;
-        padding: 0 8px;
-    }
+  .profileIntro {
+    margin-bottom: 28px;
+    padding: 0 8px;
+  }
 
-    .profileViewerToolbar {
-        flex-direction: column;
-        align-items: stretch;
-        text-align: center;
-    }
+  .profileViewerToolbar {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
 
-    .profileViewerLabel {
-        justify-content: center;
-    }
+  .profileViewerLabel {
+    justify-content: center;
+  }
 
-    .profileIframeWrap {
-        min-height: 65vh;
-    }
+  .profileIframeWrap {
+    min-height: 65vh;
+  }
 
-    .profileActions {
-        flex-direction: column;
-        width: 100%;
-    }
+  .profileActions {
+    flex-direction: column;
+    width: 100%;
+  }
 
-    .profileBtn {
-        width: 100%;
-        max-width: 320px;
-        justify-content: center;
-    }
+  .profileBtn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
 }

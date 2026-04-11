@@ -1,0 +1,4231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Highbrou Engineering — Company Portfolio 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ── RENDERING ─────────────────────────────────────────── */
+      html {
+        font-size: 16px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* ── PRINT / PDF — one .page = one physical sheet (A5) ─── */
+      @page {
+        size: A5 portrait;
+        margin: 0;
+      }
+
+      @media print {
+        * {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+        html {
+          margin: 0 !important;
+          padding: 0 !important;
+          height: auto;
+        }
+        html,
+        body {
+          margin: 0 !important;
+          padding: 0 !important;
+          background: white !important;
+        }
+        body {
+          display: block !important;
+          gap: 0 !important;
+          align-items: stretch !important;
+          width: 100% !important;
+        }
+        /* Each logical page is exactly one print sheet; no bleed from neighbours */
+        .page {
+          box-sizing: border-box !important;
+          width: 148mm !important;
+          height: 210mm !important;
+          min-height: 210mm !important;
+          max-height: 210mm !important;
+          margin: 0 auto !important;
+          padding: 0 !important;
+          overflow: hidden !important;
+          position: relative !important;
+          box-shadow: none !important;
+          flex-shrink: 0 !important;
+          break-inside: avoid !important;
+          page-break-inside: avoid !important;
+          break-after: page !important;
+          page-break-after: always !important;
+        }
+        .page:first-of-type {
+          break-before: auto !important;
+          page-break-before: avoid !important;
+          margin-top: 0 !important;
+          padding-top: 0 !important;
+        }
+        .page:last-child {
+          break-after: auto !important;
+          page-break-after: auto !important;
+        }
+        /* Full-bleed cover SVG matches A5 sheet */
+        svg.coverBlueprintSvg {
+          width: 148mm !important;
+          height: 210mm !important;
+          max-width: 148mm !important;
+          max-height: 210mm !important;
+        }
+        .pi {
+          min-height: 0 !important;
+          max-height: 100%;
+        }
+        .photo-slot.has-photo {
+          min-height: 0;
+          max-height: 100%;
+        }
+        img.photo-slot-bg,
+        img.mc-img-photo {
+          image-rendering: auto;
+        }
+      }
+
+      /* ── VARIABLES ─────────────────────────────────────────── */
+      :root {
+        --black: #231f20;
+        --blue: #2b88bc;
+        --lblue: #4cbcec;
+        --gray: #f4f4f4;
+        --lgray: #e0e0e0;
+        --white: #ffffff;
+        --gold: #c4982a;
+        --pw: 559px;
+        --ph: 793px;
+        --pm: 26px;
+        --fd: "Barlow Condensed", sans-serif;
+        --fb: "Barlow", sans-serif;
+      }
+
+      /* ── BODY ──────────────────────────────────────────────── */
+      body {
+        font-family: var(--fb);
+        background: #888;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 28px 16px;
+        gap: 14px;
+      }
+
+      /* ── PAGE — EXACT A5, OVERFLOW HIDDEN ──────────────────── */
+      .page {
+        width: var(--pw);
+        height: var(--ph);
+        overflow: hidden;
+        background: var(--white);
+        position: relative;
+        box-shadow: 0 2px 18px rgba(0, 0, 0, 0.32);
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+      }
+      .page.dark {
+        background: var(--black);
+      }
+      .page.graybg {
+        background: var(--gray);
+      }
+
+      /* ── PAGE INNER CONTENT ────────────────────────────────── */
+      .pi {
+        padding: var(--pm);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        overflow: hidden;
+      }
+
+      /* ── TOP STRIPE ────────────────────────────────────────── */
+      .ts {
+        height: 3px;
+        background: linear-gradient(90deg, var(--blue), var(--lblue));
+        flex-shrink: 0;
+      }
+      .ts.gold {
+        background: var(--gold);
+      }
+
+      /* ── GRID BG ───────────────────────────────────────────── */
+      .gb {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(44, 136, 188, 0.055) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(44, 136, 188, 0.055) 1px, transparent 1px);
+        background-size: 28px 28px;
+        pointer-events: none;
+      }
+
+      /* ── PAGE FOOTER ───────────────────────────────────────── */
+      .pf {
+        border-top: 1px solid var(--lgray);
+        padding: 6px var(--pm);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .pf.dk {
+        border-top-color: rgba(255, 255, 255, 0.07);
+      }
+      .pn {
+        font-family: var(--fd);
+        font-size: 7.5px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: rgba(35, 31, 32, 0.3);
+      }
+      .pn.w {
+        color: rgba(255, 255, 255, 0.2);
+      }
+      .ls {
+        font-family: var(--fd);
+        font-weight: 700;
+        font-size: 9.5px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--blue);
+      }
+      .ls.w {
+        color: var(--lblue);
+      }
+
+      /* ── TAG ───────────────────────────────────────────────── */
+      .tag {
+        font-family: var(--fd);
+        font-weight: 500;
+        font-size: 8.5px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--blue);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .tag::before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 1.5px;
+        background: currentColor;
+      }
+
+      /* ── HEADINGS ──────────────────────────────────────────── */
+      .h1 {
+        font-family: var(--fd);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: -0.5px;
+        line-height: 0.93;
+        color: var(--black);
+      }
+      .h2 {
+        font-family: var(--fd);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: -0.3px;
+        line-height: 1;
+        color: var(--black);
+      }
+      .ac {
+        color: var(--blue);
+      }
+      .aw {
+        color: var(--white);
+      }
+      .ag {
+        color: var(--gold);
+      }
+
+      /* ── RULE ──────────────────────────────────────────────── */
+      .rule {
+        width: 24px;
+        height: 2px;
+        background: var(--blue);
+      }
+
+      /* ── BODY TEXT ─────────────────────────────────────────── */
+      .bt {
+        font-family: var(--fb);
+        font-size: 9.5px;
+        font-weight: 400;
+        line-height: 1.65;
+        color: rgba(35, 31, 32, 0.72);
+      }
+      .bt.w {
+        color: rgba(255, 255, 255, 0.62);
+      }
+
+      /* ── ARROW LIST ────────────────────────────────────────── */
+      .al {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .al li {
+        display: flex;
+        gap: 6px;
+        font-family: var(--fb);
+        font-size: 9px;
+        font-weight: 400;
+        line-height: 1.55;
+        color: rgba(35, 31, 32, 0.72);
+        align-items: flex-start;
+      }
+      .al li::before {
+        content: "→";
+        color: var(--blue);
+        font-weight: 600;
+        flex-shrink: 0;
+        font-size: 8.5px;
+        margin-top: 1px;
+      }
+      .al.w li {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* ── PROOF BOX ─────────────────────────────────────────── */
+      .pb {
+        background: var(--gray);
+        border-left: 3px solid var(--blue);
+        border-radius: 0 3px 3px 0;
+        padding: 9px 11px;
+      }
+      .pb.dk {
+        background: rgba(44, 136, 188, 0.09);
+        border-left-color: var(--lblue);
+      }
+      .pl {
+        font-family: var(--fd);
+        font-weight: 600;
+        font-size: 8px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--blue);
+        margin-bottom: 3px;
+      }
+      .pl.w {
+        color: var(--lblue);
+      }
+      .pt {
+        font-family: var(--fb);
+        font-size: 9px;
+        font-weight: 400;
+        line-height: 1.6;
+        color: rgba(35, 31, 32, 0.72);
+      }
+      .pt.w {
+        color: rgba(255, 255, 255, 0.62);
+      }
+
+      /* ── MONEY NUMBER ──────────────────────────────────────── */
+      .mn {
+        font-family: var(--fd);
+        font-weight: 700;
+        letter-spacing: -1.5px;
+        line-height: 0.92;
+        color: var(--lblue);
+      }
+
+      /* ── HR ────────────────────────────────────────────────── */
+      .hr {
+        width: 100%;
+        height: 1px;
+        background: var(--lgray);
+      }
+      .hr.dk {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      /* ── FLOW DIAGRAM ──────────────────────────────────────── */
+      .fd-row {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .fb-box {
+        flex: 1;
+        background: var(--gray);
+        border-radius: 3px;
+        padding: 7px 6px;
+        text-align: center;
+      }
+      .fb-box.hl {
+        background: var(--black);
+      }
+      .fb-box.bl {
+        background: var(--blue);
+      }
+      .fb-arr {
+        font-family: var(--fd);
+        font-weight: 700;
+        font-size: 14px;
+        color: var(--blue);
+        flex-shrink: 0;
+      }
+      .fbl {
+        font-family: var(--fd);
+        font-weight: 500;
+        font-size: 7.5px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        line-height: 1.3;
+        color: rgba(35, 31, 32, 0.5);
+      }
+      .fbl.w {
+        color: rgba(255, 255, 255, 0.65);
+      }
+      .fbn {
+        font-family: var(--fd);
+        font-weight: 700;
+        font-size: 12px;
+        color: var(--blue);
+        line-height: 1;
+      }
+      .fbn.w {
+        color: var(--white);
+      }
+
+      /* ── STAT ROW ──────────────────────────────────────────── */
+      .sr {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        border-radius: 3px;
+        overflow: hidden;
+      }
+      .sc {
+        background: var(--black);
+        padding: 9px 10px;
+        text-align: center;
+      }
+      .sc:not(:last-child) {
+        border-right: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .sn {
+        font-family: var(--fd);
+        font-weight: 600;
+        font-size: 21px;
+        color: var(--lblue);
+        letter-spacing: -0.5px;
+        line-height: 1;
+      }
+      .sl {
+        font-family: var(--fd);
+        font-size: 7.5px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.32);
+        margin-top: 2px;
+      }
+
+      /* ── TIMELINE ──────────────────────────────────────────── */
+      .tl-item {
+        display: flex;
+        gap: 10px;
+        padding-bottom: 12px;
+      }
+      .tl-item:last-child {
+        padding-bottom: 0;
+      }
+      .tl-l {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .tl-d {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--blue);
+        flex-shrink: 0;
+      }
+      .tl-ln {
+        width: 1.5px;
+        flex: 1;
+        background: var(--lgray);
+        margin-top: 3px;
+        min-height: 16px;
+      }
+      .tl-item:last-child .tl-ln {
+        display: none;
+      }
+      .tl-yr {
+        font-family: var(--fd);
+        font-weight: 700;
+        font-size: 13px;
+        color: var(--blue);
+        line-height: 1.2;
+      }
+      .tl-tx {
+        font-family: var(--fb);
+        font-size: 9px;
+        font-weight: 400;
+        color: rgba(35, 31, 32, 0.58);
+        line-height: 1.5;
+        margin-top: 1px;
+      }
+
+      /* ── ISO ───────────────────────────────────────────────── */
+      .iso {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-family: var(--fd);
+        font-weight: 600;
+        font-size: 7.5px;
+        letter-spacing: 1.5px;
+        color: rgba(35, 31, 32, 0.4);
+        text-transform: uppercase;
+      }
+      .iso-c {
+        width: 20px;
+        height: 20px;
+        border: 1.5px solid rgba(35, 31, 32, 0.22);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--fd);
+        font-weight: 700;
+        font-size: 6px;
+        color: rgba(35, 31, 32, 0.4);
+        text-align: center;
+        line-height: 1.1;
+      }
+      .iso.w {
+        color: rgba(255, 255, 255, 0.25);
+      }
+      .iso-c.w {
+        border-color: rgba(255, 255, 255, 0.15);
+        color: rgba(255, 255, 255, 0.25);
+      }
+
+      /* ── PHOTO SLOT (full-column) ──────────────────────────── */
+      .photo-slot {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(160deg, #1a3d52 0%, #0d2130 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 3px;
+      }
+      .photo-slot::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(44, 136, 188, 0.07) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(44, 136, 188, 0.07) 1px, transparent 1px);
+        background-size: 18px 18px;
+      }
+      .photo-slot-icon {
+        width: 28px;
+        height: 28px;
+        border: 1.5px solid rgba(76, 188, 236, 0.35);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+      }
+      .photo-slot-icon svg {
+        width: 12px;
+        height: 12px;
+        fill: rgba(76, 188, 236, 0.45);
+      }
+      .photo-slot-text {
+        font-family: var(--fd);
+        font-weight: 500;
+        font-size: 7px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: rgba(76, 188, 236, 0.4);
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding: 0 10px;
+      }
+
+      /* Photo slots filled with project imagery */
+      .photo-slot.has-photo {
+        padding: 0;
+        justify-content: flex-end;
+        align-items: stretch;
+      }
+      .photo-slot.has-photo .photo-slot-icon,
+      .photo-slot.has-photo .photo-slot-text {
+        display: none;
+      }
+      .photo-slot-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: 0;
+      }
+      .photo-slot.has-photo::before {
+        z-index: 1;
+        opacity: 0.22;
+      }
+      .photo-slot-overlay {
+        position: relative;
+        z-index: 2;
+        margin-top: auto;
+        width: 100%;
+        padding: 10px 8px 8px;
+        background: linear-gradient(
+          transparent,
+          rgba(5, 21, 35, 0.88)
+        );
+      }
+      .photo-slot-overlay-text {
+        font-family: var(--fd);
+        font-weight: 600;
+        font-size: 7px;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.92);
+        line-height: 1.45;
+        text-align: center;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+      }
+      .photo-slot.certificate-photo .photo-slot-bg {
+        object-fit: contain;
+        background: #eceae6;
+      }
+      /* ── MINI PROJECT CARD (page 7) ────────────────────────── */
+      .mc {
+        background: var(--white);
+        border-radius: 3px;
+        border-top: 2px solid var(--blue);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .mc-img {
+        width: 100%;
+        height: 52px;
+        background: linear-gradient(135deg, #1b3f57 0%, #0d2030 100%);
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .mc-img::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(44, 136, 188, 0.07) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(44, 136, 188, 0.07) 1px, transparent 1px);
+        background-size: 12px 12px;
+      }
+      .mc-img-label {
+        position: absolute;
+        bottom: 4px;
+        left: 7px;
+        font-family: var(--fd);
+        font-size: 6.5px;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: rgba(76, 188, 236, 0.55);
+        z-index: 1;
+      }
+      .mc-img-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -65%);
+        width: 20px;
+        height: 20px;
+        border: 1.5px solid rgba(76, 188, 236, 0.3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+      }
+      .mc-img-icon svg {
+        width: 9px;
+        height: 9px;
+        fill: rgba(76, 188, 236, 0.4);
+      }
+      .mc-img.has-photo::before {
+        opacity: 0.12;
+      }
+      .mc-img.has-photo .mc-img-icon {
+        display: none;
+      }
+      .mc-img-photo {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: 0;
+      }
+      .mc-img.has-photo .mc-img-label {
+        z-index: 2;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 6px 7px 5px;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.45));
+        color: rgba(255, 255, 255, 0.92);
+      }
+      .mc-body {
+        padding: 8px 9px;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+      .mct {
+        font-family: var(--fd);
+        font-weight: 700;
+        font-size: 11px;
+        text-transform: uppercase;
+        color: var(--black);
+        line-height: 1.1;
+      }
+      .mcl {
+        font-family: var(--fd);
+        font-size: 7.5px;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--blue);
+      }
+      .mcd {
+        font-family: var(--fb);
+        font-size: 8.5px;
+        font-weight: 400;
+        line-height: 1.48;
+        color: rgba(35, 31, 32, 0.62);
+      }
+      .mcw {
+        font-family: var(--fd);
+        font-weight: 600;
+        font-size: 9px;
+        color: var(--blue);
+        line-height: 1.35;
+      }
+
+      /* ── LEADER CARD (page 9) ──────────────────────────────── */
+      .leader-card {
+        background: var(--white);
+        border-radius: 3px;
+        padding: 14px;
+        border-left: 3px solid var(--blue);
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .leader-avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: var(--blue);
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--fd);
+        font-weight: 700;
+        font-size: 13px;
+        color: white;
+        letter-spacing: -0.5px;
+      }
+      .leader-role {
+        font-family: var(--fd);
+        font-weight: 500;
+        font-size: 7.5px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--blue);
+        margin-bottom: 3px;
+      }
+      .leader-name {
+        font-family: var(--fd);
+        font-weight: 700;
+        font-size: 14px;
+        color: var(--black);
+        letter-spacing: -0.2px;
+        line-height: 1.1;
+        margin-bottom: 5px;
+      }
+      .leader-bio {
+        font-family: var(--fb);
+        font-size: 9px;
+        font-weight: 400;
+        line-height: 1.58;
+        color: rgba(35, 31, 32, 0.62);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════════════════════════
+     PAGE 1  —  COVER
+     FULL ARCHITECTURAL SVG BACKGROUND — blueprint elevation
+     of a structural high-rise with exposed structural frame,
+     outrigger belts, cross-bracing, dimension annotations,
+     and engineering detail circle. Text overlays on left.
+     ═══════════════════════════════════════════════════════ -->
+    <div class="page dark">
+      <!-- DRAMATIC FULL-PAGE ARCHITECTURAL BACKGROUND SVG -->
+      <svg
+        class="coverBlueprintSvg"
+        viewBox="0 0 559 793"
+        xmlns="http://www.w3.org/2000/svg"
+        style="
+          position: absolute;
+          inset: 0;
+          width: 559px;
+          height: 793px;
+          z-index: 0;
+          pointer-events: none;
+        "
+      >
+        <defs>
+          <!-- Blueprint grid pattern -->
+          <pattern
+            id="bgGrid"
+            width="28"
+            height="28"
+            patternUnits="userSpaceOnUse"
+          >
+            <path
+              d="M28 0L0 0 0 28"
+              fill="none"
+              stroke="#2B88BC"
+              stroke-width="0.4"
+              stroke-opacity="0.13"
+            />
+          </pattern>
+          <!-- Curtain wall pattern for main tower -->
+          <pattern
+            id="cwMain"
+            width="22"
+            height="18"
+            patternUnits="userSpaceOnUse"
+            x="312"
+            y="18"
+          >
+            <rect
+              x="1.5"
+              y="1.5"
+              width="19"
+              height="15"
+              fill="rgba(44,136,188,0.05)"
+            />
+            <rect
+              x="3"
+              y="3"
+              width="7"
+              height="11"
+              fill="rgba(44,136,188,0.1)"
+            />
+            <rect
+              x="13"
+              y="3"
+              width="7"
+              height="11"
+              fill="rgba(44,136,188,0.07)"
+            />
+          </pattern>
+          <!-- Window pattern for medium tower -->
+          <pattern
+            id="cwMed"
+            width="16"
+            height="14"
+            patternUnits="userSpaceOnUse"
+            x="236"
+            y="230"
+          >
+            <rect
+              x="2"
+              y="2"
+              width="12"
+              height="10"
+              fill="rgba(44,136,188,0.06)"
+            />
+            <rect
+              x="4"
+              y="3"
+              width="8"
+              height="7"
+              fill="rgba(44,136,188,0.08)"
+            />
+          </pattern>
+          <!-- Left text area darkening gradient -->
+          <linearGradient id="textZone" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#231F20" stop-opacity="1" />
+            <stop offset="42%" stop-color="#231F20" stop-opacity="0.88" />
+            <stop offset="62%" stop-color="#231F20" stop-opacity="0.3" />
+            <stop offset="100%" stop-color="#231F20" stop-opacity="0" />
+          </linearGradient>
+          <!-- Bottom fade -->
+          <linearGradient id="botFade" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="55%" stop-color="#231F20" stop-opacity="0" />
+            <stop offset="100%" stop-color="#231F20" stop-opacity="0.75" />
+          </linearGradient>
+          <!-- Highlight glow behind main tower -->
+          <radialGradient id="towerGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#1a4a6b" stop-opacity="0.5" />
+            <stop offset="100%" stop-color="#231F20" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+
+        <!-- ① Blueprint grid across entire page -->
+        <rect width="559" height="793" fill="url(#bgGrid)" />
+
+        <!-- ② Subtle glow behind the main tower area -->
+        <ellipse cx="395" cy="420" rx="200" ry="370" fill="url(#towerGlow)" />
+
+        <!-- ③ Far background building (faint, right edge) -->
+        <rect
+          x="488"
+          y="320"
+          width="50"
+          height="473"
+          fill="rgba(20,50,70,0.25)"
+        />
+        <rect
+          x="488"
+          y="320"
+          width="50"
+          height="473"
+          fill="none"
+          stroke="#2B88BC"
+          stroke-width="0.5"
+          stroke-opacity="0.2"
+        />
+        <!-- windows on far building -->
+        <rect
+          x="492"
+          y="335"
+          width="6"
+          height="5"
+          fill="rgba(44,136,188,0.1)"
+        />
+        <rect
+          x="502"
+          y="335"
+          width="6"
+          height="5"
+          fill="rgba(44,136,188,0.1)"
+        />
+        <rect
+          x="512"
+          y="335"
+          width="6"
+          height="5"
+          fill="rgba(44,136,188,0.1)"
+        />
+        <rect
+          x="492"
+          y="355"
+          width="6"
+          height="5"
+          fill="rgba(44,136,188,0.08)"
+        />
+        <rect
+          x="502"
+          y="355"
+          width="6"
+          height="5"
+          fill="rgba(44,136,188,0.1)"
+        />
+        <rect
+          x="512"
+          y="355"
+          width="6"
+          height="5"
+          fill="rgba(44,136,188,0.08)"
+        />
+
+        <!-- ④ Background building left (very low opacity) -->
+        <rect
+          x="155"
+          y="420"
+          width="44"
+          height="380"
+          fill="rgba(18,44,62,0.2)"
+        />
+
+        <!-- ⑤ Medium tower (left of main tower) -->
+        <rect
+          x="236"
+          y="240"
+          width="70"
+          height="520"
+          fill="rgba(16,44,62,0.7)"
+        />
+        <rect x="236" y="240" width="70" height="520" fill="url(#cwMed)" />
+        <rect
+          x="236"
+          y="240"
+          width="70"
+          height="520"
+          fill="none"
+          stroke="#2B88BC"
+          stroke-width="0.8"
+          stroke-opacity="0.35"
+        />
+        <!-- medium tower columns -->
+        <line
+          x1="255"
+          y1="240"
+          x2="255"
+          y2="760"
+          stroke="#2B88BC"
+          stroke-width="0.8"
+          stroke-opacity="0.2"
+        />
+        <line
+          x1="272"
+          y1="240"
+          x2="272"
+          y2="760"
+          stroke="#2B88BC"
+          stroke-width="0.8"
+          stroke-opacity="0.2"
+        />
+        <line
+          x1="289"
+          y1="240"
+          x2="289"
+          y2="760"
+          stroke="#2B88BC"
+          stroke-width="0.8"
+          stroke-opacity="0.2"
+        />
+        <!-- medium tower top accent -->
+        <rect
+          x="236"
+          y="240"
+          width="70"
+          height="3"
+          fill="#2B88BC"
+          fill-opacity="0.4"
+        />
+
+        <!-- ⑥ MAIN TOWER — structural engineering elevation -->
+        <!-- Body fill with curtain wall pattern -->
+        <rect
+          x="312"
+          y="14"
+          width="152"
+          height="746"
+          fill="rgba(12,38,58,0.8)"
+        />
+        <rect x="312" y="14" width="152" height="746" fill="url(#cwMain)" />
+
+        <!-- Outer envelope — visible structural outline -->
+        <rect
+          x="312"
+          y="14"
+          width="152"
+          height="746"
+          fill="none"
+          stroke="#4CBCEC"
+          stroke-width="1.2"
+          stroke-opacity="0.55"
+        />
+
+        <!-- Primary structural columns (vertical steel) -->
+        <line
+          x1="320"
+          y1="14"
+          x2="320"
+          y2="760"
+          stroke="#4CBCEC"
+          stroke-width="2"
+          stroke-opacity="0.4"
+        />
+        <line
+          x1="344"
+          y1="14"
+          x2="344"
+          y2="760"
+          stroke="#2B88BC"
+          stroke-width="1"
+          stroke-opacity="0.28"
+        />
+        <line
+          x1="368"
+          y1="14"
+          x2="368"
+          y2="760"
+          stroke="#2B88BC"
+          stroke-width="1"
+          stroke-opacity="0.28"
+        />
+        <line
+          x1="388"
+          y1="14"
+          x2="388"
+          y2="760"
+          stroke="#4CBCEC"
+          stroke-width="2.5"
+          stroke-opacity="0.38"
+        />
+        <line
+          x1="408"
+          y1="14"
+          x2="408"
+          y2="760"
+          stroke="#2B88BC"
+          stroke-width="1"
+          stroke-opacity="0.28"
+        />
+        <line
+          x1="432"
+          y1="14"
+          x2="432"
+          y2="760"
+          stroke="#2B88BC"
+          stroke-width="1"
+          stroke-opacity="0.28"
+        />
+        <line
+          x1="456"
+          y1="14"
+          x2="456"
+          y2="760"
+          stroke="#4CBCEC"
+          stroke-width="2"
+          stroke-opacity="0.4"
+        />
+
+        <!-- Outrigger belt floors (thicker horizontal structural elements) -->
+        <rect
+          x="303"
+          y="152"
+          width="170"
+          height="5"
+          fill="none"
+          stroke="#4CBCEC"
+          stroke-width="2.5"
+          stroke-opacity="0.65"
+        />
+        <rect
+          x="307"
+          y="152"
+          width="162"
+          height="5"
+          fill="rgba(76,188,236,0.1)"
+        />
+        <rect
+          x="303"
+          y="312"
+          width="170"
+          height="5"
+          fill="none"
+          stroke="#4CBCEC"
+          stroke-width="2.5"
+          stroke-opacity="0.65"
+        />
+        <rect
+          x="307"
+          y="312"
+          width="162"
+          height="5"
+          fill="rgba(76,188,236,0.1)"
+        />
+        <rect
+          x="303"
+          y="472"
+          width="170"
+          height="5"
+          fill="none"
+          stroke="#4CBCEC"
+          stroke-width="2.5"
+          stroke-opacity="0.65"
+        />
+        <rect
+          x="307"
+          y="472"
+          width="162"
+          height="5"
+          fill="rgba(76,188,236,0.1)"
+        />
+        <rect
+          x="303"
+          y="632"
+          width="170"
+          height="5"
+          fill="none"
+          stroke="#4CBCEC"
+          stroke-width="2.5"
+          stroke-opacity="0.65"
+        />
+        <rect
+          x="307"
+          y="632"
+          width="162"
+          height="5"
+          fill="rgba(76,188,236,0.1)"
+        />
+
+        <!-- Intermediate floor lines (lighter) -->
+        <line
+          x1="312"
+          y1="72"
+          x2="464"
+          y2="72"
+          stroke="#2B88BC"
+          stroke-width="0.6"
+          stroke-opacity="0.2"
+        />
+        <line
+          x1="312"
+          y1="112"
+          x2="464"
+          y2="112"
+          stroke="#2B88BC"
+          stroke-width="0.6"
+          stroke-opacity="0.2"
+        />
+        <line
+          x1="312"
+          y1="192"
+          x2="464"
+          y2="192"
+          stroke="#2B88BC"
+          stroke-width="0.6"
+          stroke-opacity="0.2"
+        />
+        <line
+          x1="312"
+          y1="232"
+          x2="464"
+          y2="232"
+          stroke="#2B88BC"
+          stroke-width="0.6"
+          stroke-opacity="0.2"
+        />
+        <line
+          x1="312"
+          y1="272"
+          x2="464"
+          y2="272"
+          stroke="#2B88BC"
+          stroke-width="0.6"
+          stroke-opacity="0.2"
+        />
+        <line
+          x1="312"
+          y1="352"
+          x2="464"
+          y2="352"
+          stroke="#2B88BC"
+          stroke-width="0.6"
+          stroke-opacity="0.2"
+        />
+        <line
+          x1="312"
+          y1="392"
+          x2="464"
+          y2="392"
+          stroke="#2B88BC"
+          stroke-width="0.6"
+          stroke-opacity="0.2"
+        />
+        <line
+          x1="312"
+          y1="432"
+          x2="464"
+          y2="432"
+          stroke="#2B88BC"
+          stroke-width="0.6"
+          stroke-opacity="0.2"
+        />
+        <line
+          x1="312"
+          y1="512"
+          x2="464"
+          y2="512"
+          stroke="#2B88BC"
+          stroke-width="0.6"
+          stroke-opacity="0.2"
+        />
+        <line
+          x1="312"
+          y1="552"
+          x2="464"
+          y2="552"
+          stroke="#2B88BC"
+          stroke-width="0.6"
+          stroke-opacity="0.2"
+        />
+        <line
+          x1="312"
+          y1="592"
+          x2="464"
+          y2="592"
+          stroke="#2B88BC"
+          stroke-width="0.6"
+          stroke-opacity="0.2"
+        />
+        <line
+          x1="312"
+          y1="672"
+          x2="464"
+          y2="672"
+          stroke="#2B88BC"
+          stroke-width="0.6"
+          stroke-opacity="0.2"
+        />
+        <line
+          x1="312"
+          y1="712"
+          x2="464"
+          y2="712"
+          stroke="#2B88BC"
+          stroke-width="0.6"
+          stroke-opacity="0.2"
+        />
+
+        <!-- Cross-bracing — Zone 1 (upper structural belt, y14 to y157) -->
+        <line
+          x1="320"
+          y1="14"
+          x2="456"
+          y2="152"
+          stroke="#2B88BC"
+          stroke-width="1.2"
+          stroke-opacity="0.35"
+          stroke-dasharray="5,3"
+        />
+        <line
+          x1="456"
+          y1="14"
+          x2="320"
+          y2="152"
+          stroke="#2B88BC"
+          stroke-width="1.2"
+          stroke-opacity="0.35"
+          stroke-dasharray="5,3"
+        />
+
+        <!-- Cross-bracing — Zone 2 (mid, y317 to y472) -->
+        <line
+          x1="320"
+          y1="317"
+          x2="456"
+          y2="472"
+          stroke="#2B88BC"
+          stroke-width="1.2"
+          stroke-opacity="0.35"
+          stroke-dasharray="5,3"
+        />
+        <line
+          x1="456"
+          y1="317"
+          x2="320"
+          y2="472"
+          stroke="#2B88BC"
+          stroke-width="1.2"
+          stroke-opacity="0.35"
+          stroke-dasharray="5,3"
+        />
+
+        <!-- Cross-bracing — Zone 3 (lower, y477 to y632) -->
+        <line
+          x1="320"
+          y1="477"
+          x2="456"
+          y2="632"
+          stroke="#2B88BC"
+          stroke-width="1.2"
+          stroke-opacity="0.35"
+          stroke-dasharray="5,3"
+        />
+        <line
+          x1="456"
+          y1="477"
+          x2="320"
+          y2="632"
+          stroke="#2B88BC"
+          stroke-width="1.2"
+          stroke-opacity="0.35"
+          stroke-dasharray="5,3"
+        />
+
+        <!-- Spire / antenna -->
+        <line
+          x1="388"
+          y1="2"
+          x2="388"
+          y2="14"
+          stroke="#4CBCEC"
+          stroke-width="2"
+          stroke-opacity="0.7"
+        />
+        <line
+          x1="382"
+          y1="6"
+          x2="394"
+          y2="6"
+          stroke="#4CBCEC"
+          stroke-width="1"
+          stroke-opacity="0.5"
+        />
+        <line
+          x1="384"
+          y1="10"
+          x2="392"
+          y2="10"
+          stroke="#4CBCEC"
+          stroke-width="0.7"
+          stroke-opacity="0.4"
+        />
+
+        <!-- ⑦ Podium base (wide plinth at bottom of both towers) -->
+        <rect
+          x="220"
+          y="722"
+          width="308"
+          height="38"
+          fill="rgba(12,38,58,0.85)"
+        />
+        <rect
+          x="220"
+          y="722"
+          width="308"
+          height="38"
+          fill="none"
+          stroke="#2B88BC"
+          stroke-width="0.8"
+          stroke-opacity="0.4"
+        />
+        <!-- Podium level lines -->
+        <line
+          x1="220"
+          y1="735"
+          x2="528"
+          y2="735"
+          stroke="#2B88BC"
+          stroke-width="0.5"
+          stroke-opacity="0.2"
+        />
+        <line
+          x1="220"
+          y1="748"
+          x2="528"
+          y2="748"
+          stroke="#2B88BC"
+          stroke-width="0.5"
+          stroke-opacity="0.2"
+        />
+
+        <!-- Ground / horizon line -->
+        <line
+          x1="0"
+          y1="760"
+          x2="559"
+          y2="760"
+          stroke="#2B88BC"
+          stroke-width="0.8"
+          stroke-opacity="0.22"
+        />
+        <!-- Ground reflection (faint) -->
+        <line
+          x1="180"
+          y1="770"
+          x2="540"
+          y2="770"
+          stroke="#2B88BC"
+          stroke-width="0.4"
+          stroke-opacity="0.1"
+        />
+        <line
+          x1="220"
+          y1="778"
+          x2="500"
+          y2="778"
+          stroke="#2B88BC"
+          stroke-width="0.3"
+          stroke-opacity="0.07"
+        />
+
+        <!-- ⑧ Dimension annotation — tower height -->
+        <line
+          x1="474"
+          y1="14"
+          x2="474"
+          y2="760"
+          stroke="#4CBCEC"
+          stroke-width="0.8"
+          stroke-opacity="0.45"
+          stroke-dasharray="3,3"
+        />
+        <!-- Arrow tips -->
+        <polygon
+          points="474,10 471,18 477,18"
+          fill="#4CBCEC"
+          fill-opacity="0.45"
+        />
+        <polygon
+          points="474,764 471,756 477,756"
+          fill="#4CBCEC"
+          fill-opacity="0.45"
+        />
+        <!-- End ticks -->
+        <line
+          x1="470"
+          y1="14"
+          x2="478"
+          y2="14"
+          stroke="#4CBCEC"
+          stroke-width="0.8"
+          stroke-opacity="0.45"
+        />
+        <line
+          x1="470"
+          y1="760"
+          x2="478"
+          y2="760"
+          stroke="#4CBCEC"
+          stroke-width="0.8"
+          stroke-opacity="0.45"
+        />
+        <!-- Label (rotated) -->
+        <text
+          font-family="Barlow Condensed, sans-serif"
+          font-size="7.5"
+          fill="#4CBCEC"
+          fill-opacity="0.55"
+          letter-spacing="1.5"
+          transform="rotate(-90 483 390) translate(-30,0)"
+        >
+          ~ 388 METRES
+        </text>
+
+        <!-- Outrigger belt label -->
+        <text
+          x="487"
+          y="156"
+          font-family="Barlow Condensed, sans-serif"
+          font-size="6.5"
+          fill="#4CBCEC"
+          fill-opacity="0.45"
+          letter-spacing="0.8"
+        >
+          OUTRIGGER
+        </text>
+        <line
+          x1="484"
+          y1="155"
+          x2="473"
+          y2="155"
+          stroke="#4CBCEC"
+          stroke-width="0.6"
+          stroke-opacity="0.4"
+        />
+
+        <!-- ⑨ Engineering detail circle — beam-column connection detail -->
+        <circle
+          cx="108"
+          cy="705"
+          r="42"
+          fill="rgba(12,38,58,0.6)"
+          stroke="#4CBCEC"
+          stroke-width="1"
+          stroke-opacity="0.5"
+          stroke-dasharray="4,2"
+        />
+        <!-- Inside detail: wide-flange column cross + beam -->
+        <rect
+          x="95"
+          y="694"
+          width="12"
+          height="22"
+          fill="rgba(44,136,188,0.22)"
+          stroke="#4CBCEC"
+          stroke-width="0.9"
+          stroke-opacity="0.75"
+        />
+        <rect
+          x="91"
+          y="695"
+          width="4"
+          height="4"
+          fill="rgba(44,136,188,0.2)"
+          stroke="#4CBCEC"
+          stroke-width="0.7"
+          stroke-opacity="0.65"
+        />
+        <rect
+          x="107"
+          y="695"
+          width="4"
+          height="4"
+          fill="rgba(44,136,188,0.2)"
+          stroke="#4CBCEC"
+          stroke-width="0.7"
+          stroke-opacity="0.65"
+        />
+        <rect
+          x="91"
+          y="713"
+          width="4"
+          height="4"
+          fill="rgba(44,136,188,0.2)"
+          stroke="#4CBCEC"
+          stroke-width="0.7"
+          stroke-opacity="0.65"
+        />
+        <rect
+          x="107"
+          y="713"
+          width="4"
+          height="4"
+          fill="rgba(44,136,188,0.2)"
+          stroke="#4CBCEC"
+          stroke-width="0.7"
+          stroke-opacity="0.65"
+        />
+        <rect
+          x="80"
+          y="702"
+          width="42"
+          height="7"
+          fill="rgba(44,136,188,0.18)"
+          stroke="#4CBCEC"
+          stroke-width="0.7"
+          stroke-opacity="0.6"
+        />
+        <text
+          x="108"
+          y="684"
+          text-anchor="middle"
+          font-family="Barlow Condensed, sans-serif"
+          font-size="6.5"
+          fill="#4CBCEC"
+          fill-opacity="0.55"
+          letter-spacing="0.5"
+        >
+          SEC A–A
+        </text>
+        <!-- Leader line from detail circle to tower zone -->
+        <line
+          x1="150"
+          y1="700"
+          x2="312"
+          y2="630"
+          stroke="#4CBCEC"
+          stroke-width="0.6"
+          stroke-opacity="0.35"
+          stroke-dasharray="4,4"
+        />
+        <circle
+          cx="312"
+          cy="630"
+          r="3"
+          fill="none"
+          stroke="#4CBCEC"
+          stroke-width="0.7"
+          stroke-opacity="0.45"
+        />
+
+        <!-- ⑩ Blueprint reference marks at corners -->
+        <path
+          d="M16 12 L12 12 L12 16"
+          fill="none"
+          stroke="#4CBCEC"
+          stroke-width="0.7"
+          stroke-opacity="0.3"
+        />
+        <path
+          d="M543 12 L547 12 L547 16"
+          fill="none"
+          stroke="#4CBCEC"
+          stroke-width="0.7"
+          stroke-opacity="0.3"
+        />
+        <path
+          d="M16 781 L12 781 L12 777"
+          fill="none"
+          stroke="#4CBCEC"
+          stroke-width="0.7"
+          stroke-opacity="0.3"
+        />
+        <path
+          d="M543 781 L547 781 L547 777"
+          fill="none"
+          stroke="#4CBCEC"
+          stroke-width="0.7"
+          stroke-opacity="0.3"
+        />
+        <text
+          x="547"
+          y="11"
+          text-anchor="end"
+          font-family="Barlow Condensed, sans-serif"
+          font-size="5.5"
+          fill="#4CBCEC"
+          fill-opacity="0.28"
+          letter-spacing="0.8"
+        >
+          HEPL-2025 · A5
+        </text>
+        <text
+          x="547"
+          y="788"
+          text-anchor="end"
+          font-family="Barlow Condensed, sans-serif"
+          font-size="5.5"
+          fill="#4CBCEC"
+          fill-opacity="0.28"
+          letter-spacing="0.8"
+        >
+          REV 01 · CONFIDENTIAL
+        </text>
+
+        <!-- ⑪ Left text-area darkening + bottom fade overlays (applied last) -->
+        <rect width="559" height="793" fill="url(#textZone)" />
+        <rect width="559" height="793" fill="url(#botFade)" />
+      </svg>
+
+      <!-- TOP STRIPE (above SVG, z-index 1) -->
+      <div class="ts" style="position: relative; z-index: 1"></div>
+
+      <!-- PAGE CONTENT -->
+      <div
+        class="pi"
+        style="justify-content: space-between; position: relative; z-index: 1"
+      >
+        <!-- Logo row -->
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+          "
+        >
+          <div style="display: flex; align-items: center; gap: 9px">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/highbrou.png"
+              alt="Highbrou Engineering"
+              width="140"
+              height="40"
+              style="
+                height: 40px;
+                width: auto;
+                max-width: 160px;
+                object-fit: contain;
+                display: block;
+              "
+            />
+            <div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 700;
+                  font-size: 14px;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: white;
+                  line-height: 1.1;
+                "
+              >
+                HIGHBROU™
+              </div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 400;
+                  font-size: 7.5px;
+                  letter-spacing: 3px;
+                  text-transform: uppercase;
+                  color: rgba(255, 255, 255, 0.35);
+                "
+              >
+                ENGINEERING
+              </div>
+            </div>
+          </div>
+          <div class="iso w">
+            <div class="iso-c w">ISO</div>
+            <div style="line-height: 1.4">ISO 9001:2015<br />CERTIFIED</div>
+          </div>
+        </div>
+
+        <!-- Main headline -->
+        <div>
+          <div class="tag" style="color: var(--lblue); margin-bottom: 10px">
+            Structural Engineering · Est. 2016
+          </div>
+          <div
+            class="h1"
+            style="font-size: 48px; color: var(--white); margin-bottom: 10px"
+          >
+            Structural<br /><span class="ac">Innovation.</span><br />Built
+            with<br />Certainty.
+          </div>
+          <div class="rule" style="margin-bottom: 11px"></div>
+          <div class="bt w" style="max-width: 280px; font-size: 10px">
+            We design structures that do one thing above everything else: put
+            more money in your pocket. More saleable area. Less wasted material.
+            Faster construction.
+          </div>
+        </div>
+
+        <!-- Stats strip -->
+        <div>
+          <div class="hr dk" style="margin-bottom: 11px"></div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr">
+            <div
+              style="
+                padding-right: 10px;
+                border-right: 1px solid rgba(255, 255, 255, 0.07);
+              "
+            >
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 20px;
+                  color: var(--blue);
+                  letter-spacing: -0.5px;
+                  line-height: 1;
+                "
+              >
+                100+
+              </div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-size: 7.5px;
+                  font-weight: 500;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: rgba(255, 255, 255, 0.3);
+                  margin-top: 2px;
+                "
+              >
+                Projects
+              </div>
+            </div>
+            <div
+              style="
+                padding: 0 10px;
+                border-right: 1px solid rgba(255, 255, 255, 0.07);
+              "
+            >
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 20px;
+                  color: var(--blue);
+                  letter-spacing: -0.5px;
+                  line-height: 1;
+                "
+              >
+                10+
+              </div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-size: 7.5px;
+                  font-weight: 500;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: rgba(255, 255, 255, 0.3);
+                  margin-top: 2px;
+                "
+              >
+                Years
+              </div>
+            </div>
+            <div
+              style="
+                padding: 0 10px;
+                border-right: 1px solid rgba(255, 255, 255, 0.07);
+              "
+            >
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 20px;
+                  color: var(--blue);
+                  letter-spacing: -0.5px;
+                  line-height: 1;
+                "
+              >
+                1Cr+
+              </div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-size: 7.5px;
+                  font-weight: 500;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: rgba(255, 255, 255, 0.3);
+                  margin-top: 2px;
+                "
+              >
+                Sq.Ft Built
+              </div>
+            </div>
+            <div style="padding-left: 10px">
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 20px;
+                  color: var(--blue);
+                  letter-spacing: -0.5px;
+                  line-height: 1;
+                "
+              >
+                98%
+              </div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-size: 7.5px;
+                  font-weight: 500;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: rgba(255, 255, 255, 0.3);
+                  margin-top: 2px;
+                "
+              >
+                Satisfaction
+              </div>
+            </div>
+          </div>
+          <div class="hr dk" style="margin-top: 11px; margin-bottom: 8px"></div>
+          <div
+            style="
+              font-family: var(--fd);
+              font-size: 8.5px;
+              font-weight: 500;
+              letter-spacing: 2.5px;
+              text-transform: uppercase;
+              color: rgba(255, 255, 255, 0.2);
+              text-align: center;
+            "
+          >
+            Mumbai · Dubai
+          </div>
+        </div>
+      </div>
+      <div class="pf dk" style="position: relative; z-index: 1">
+        <div class="pn w">Highbrou Engineering Pvt. Ltd.</div>
+        <div class="ls w">Confidential</div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+     PAGE 2  —  THE QUESTION
+     ═══════════════════════════════════════════════════════ -->
+    <div class="page">
+      <div class="ts"></div>
+      <div class="pi" style="justify-content: space-between">
+        <div>
+          <div class="tag" style="margin-bottom: 7px">
+            The One Question That Matters
+          </div>
+          <div class="h2" style="font-size: 22px; margin-bottom: 4px">
+            What <span class="ac">Extra Profit</span> Do We Put<br />in Your
+            Pocket?
+          </div>
+          <div
+            style="
+              font-family: var(--fb);
+              font-size: 9px;
+              font-weight: 400;
+              color: rgba(35, 31, 32, 0.48);
+              margin-bottom: 11px;
+            "
+          >
+            Value that standard structural design alone does not reveal.
+          </div>
+          <div class="rule" style="margin-bottom: 12px"></div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px; flex: 1">
+          <div
+            style="
+              background: var(--black);
+              border-radius: 4px;
+              padding: 12px 14px;
+              display: flex;
+              align-items: center;
+              gap: 13px;
+            "
+          >
+            <div style="flex-shrink: 0; min-width: 84px">
+              <div class="mn" style="font-size: 32px">₹7.5Cr</div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-size: 8px;
+                  font-weight: 500;
+                  letter-spacing: 1.5px;
+                  text-transform: uppercase;
+                  color: rgba(255, 255, 255, 0.55);
+                  margin-top: 3px;
+                "
+              >
+                One Project
+              </div>
+            </div>
+            <div
+              style="
+                border-left: 1px solid rgba(255, 255, 255, 0.08);
+                padding-left: 13px;
+              "
+            >
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 10px;
+                  color: var(--white);
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                  margin-bottom: 3px;
+                "
+              >
+                The Marque, Bandra West
+              </div>
+              <div class="bt w">
+                783 MT of steel eliminated — material and labour both counted.
+                That is ₹7.5 Crore returned to the developer in a single
+                project.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: var(--black);
+              border-radius: 4px;
+              padding: 12px 14px;
+              display: flex;
+              align-items: center;
+              gap: 13px;
+            "
+          >
+            <div style="flex-shrink: 0; min-width: 84px">
+              <div class="mn" style="font-size: 32px">16K</div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-size: 8px;
+                  font-weight: 600;
+                  letter-spacing: 1.5px;
+                  text-transform: uppercase;
+                  color: rgba(255, 255, 255, 0.6);
+                  margin-top: 3px;
+                "
+              >
+                Sq.Ft Saleable
+              </div>
+            </div>
+            <div
+              style="
+                border-left: 1px solid rgba(255, 255, 255, 0.08);
+                padding-left: 13px;
+              "
+            >
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 10px;
+                  color: var(--white);
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                  margin-bottom: 3px;
+                "
+              >
+                Gurukrupa Ridhi Sidhi, Andheri
+              </div>
+              <div class="bt w">
+                Smart structural planning eliminated one podium floor and
+                created one extra residential floor — 16,000 sq.ft of apartments
+                the developer never planned for.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: var(--black);
+              border-radius: 4px;
+              padding: 12px 14px;
+              display: flex;
+              align-items: center;
+              gap: 13px;
+            "
+          >
+            <div style="flex-shrink: 0; min-width: 84px">
+              <div class="mn" style="font-size: 22px; line-height: 1.05">
+                ~200M
+              </div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-size: 7.5px;
+                  font-weight: 500;
+                  letter-spacing: 1.5px;
+                  text-transform: uppercase;
+                  color: rgba(255, 255, 255, 0.5);
+                  margin-top: 2px;
+                "
+              >
+                AED Saved
+              </div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 700;
+                  font-size: 10px;
+                  color: var(--blue);
+                  letter-spacing: -0.2px;
+                  margin-top: 2px;
+                "
+              >
+                (~₹460 Cr)
+              </div>
+            </div>
+            <div
+              style="
+                border-left: 1px solid rgba(255, 255, 255, 0.08);
+                padding-left: 13px;
+              "
+            >
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 10px;
+                  color: var(--white);
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                  margin-bottom: 3px;
+                "
+              >
+                Bayz 101 — Danube Properties, Dubai
+              </div>
+              <div class="bt w">
+                Re-engineered the structural system of a 388m tower. Reduced
+                steel by 40%. Savings: ~200 Million Dirhams (~₹460 Crore).
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 11px">
+          <div class="pb">
+            <div class="pl">
+              Before You Ask — We Already Have the Answer for Your Project
+            </div>
+            <div class="pt">
+              Inside every structural drawing, there is money waiting to be
+              recovered. Our engineers have found it in 100+ projects — before
+              the columns were poured, before the contractor raised a single
+              query. The question is not whether your project has savings in it.
+              The question is: how much?
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pf">
+        <div class="pn">What Extra Profit Do We Deliver?</div>
+        <div class="ls">Highbrou™</div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+     PAGE 3  —  THE MARQUE (TWO-COLUMN LAYOUT)
+     Photo left, content right — eliminates shallow slot problem
+     ═══════════════════════════════════════════════════════ -->
+    <div class="page">
+      <div class="ts"></div>
+      <div class="pi">
+        <!-- Full-width page header -->
+        <div style="margin-bottom: 9px; flex-shrink: 0">
+          <div class="tag" style="margin-bottom: 5px">
+            Case Study 01 · Gurukrupa Realcon · Bandra West, Mumbai
+          </div>
+          <div class="h2" style="font-size: 22px; margin-bottom: 2px">
+            The Marque
+          </div>
+          <div
+            style="
+              font-family: var(--fd);
+              font-size: 8.5px;
+              font-weight: 500;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              color: var(--blue);
+              margin-bottom: 8px;
+            "
+          >
+            120m High-Rise · 430,200 Sq.Ft · B3+G+P6+24 Floors
+          </div>
+          <div class="rule"></div>
+        </div>
+
+        <!-- TWO-COLUMN: Photo (left) | Content (right) -->
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 190px 1fr;
+            gap: 12px;
+            flex: 1;
+            min-height: 0;
+          "
+        >
+          <!-- LEFT: Full-height project photo -->
+          <div class="photo-slot has-photo">
+            <img
+              class="photo-slot-bg"
+              src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/The%20Marque%20image.png"
+              alt="The Marque, Bandra West"
+            />
+            <div class="photo-slot-overlay">
+              <div class="photo-slot-overlay-text">
+                The Marque · Bandra West · Mumbai
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: All content -->
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 7px;
+              min-height: 0;
+              overflow: hidden;
+            "
+          >
+            <!-- Hero numbers -->
+            <div
+              style="
+                background: var(--black);
+                border-radius: 3px;
+                padding: 10px 11px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: flex-start;
+                  gap: 8px;
+                "
+              >
+                <div>
+                  <div
+                    style="
+                      font-family: var(--fd);
+                      font-size: 7px;
+                      font-weight: 500;
+                      letter-spacing: 2px;
+                      text-transform: uppercase;
+                      color: rgba(255, 255, 255, 0.28);
+                      margin-bottom: 3px;
+                    "
+                  >
+                    Total Savings
+                  </div>
+                  <div class="mn" style="font-size: 30px">₹7.5 Cr</div>
+                  <div
+                    style="
+                      font-family: var(--fb);
+                      font-size: 8px;
+                      color: rgba(255, 255, 255, 0.45);
+                      margin-top: 2px;
+                    "
+                  >
+                    783 MT steel — material + labour
+                  </div>
+                </div>
+                <div
+                  style="
+                    text-align: right;
+                    border-left: 1px solid rgba(255, 255, 255, 0.08);
+                    padding-left: 9px;
+                  "
+                >
+                  <div
+                    style="
+                      font-family: var(--fd);
+                      font-size: 7px;
+                      font-weight: 500;
+                      letter-spacing: 2px;
+                      text-transform: uppercase;
+                      color: rgba(255, 255, 255, 0.28);
+                      margin-bottom: 3px;
+                    "
+                  >
+                    Schedule Saved
+                  </div>
+                  <div
+                    style="
+                      font-family: var(--fd);
+                      font-weight: 700;
+                      font-size: 22px;
+                      color: var(--blue);
+                      letter-spacing: -0.5px;
+                      line-height: 1;
+                    "
+                  >
+                    5+ Months
+                  </div>
+                  <div
+                    style="
+                      font-family: var(--fb);
+                      font-size: 7.5px;
+                      color: rgba(255, 255, 255, 0.38);
+                      margin-top: 2px;
+                      line-height: 1.4;
+                    "
+                  >
+                    Raft · steel · slab<br />detailing
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Problem -->
+            <div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 8.5px;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: var(--black);
+                  margin-bottom: 4px;
+                "
+              >
+                The Problem
+              </div>
+              <div class="bt" style="font-size: 8.5px">
+                75 coupling beams — each packed with 527 kg diagonal steel — so
+                congested that site workers could not thread the rebar. Work had
+                stopped. The pile raft was also adding enormous cost in
+                reclamation soil under a 9m deep basement.
+              </div>
+            </div>
+
+            <!-- What we did -->
+            <div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 8.5px;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: var(--black);
+                  margin-bottom: 4px;
+                "
+              >
+                What We Did
+              </div>
+              <ul class="al" style="gap: 4px">
+                <li>
+                  <strong>Pile-Free Raft:</strong> Joint analysis confirmed no
+                  piles needed — 5–7% substructure saving, ~3 months saved.
+                </li>
+                <li>
+                  <strong>Composite Coupling Beams:</strong> 527 kg → 62 kg per
+                  beam (88% less congestion) across all 75 locations — ~2 months
+                  RCC time saved.
+                </li>
+                <li>
+                  <strong>Simplified Slab Detailing:</strong> 1 day saved per
+                  slab level across 24+ floors — ~1 month recovered. Less bank
+                  interest, less tenant rent.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Stats row -->
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 5px;
+              "
+            >
+              <div
+                style="
+                  background: var(--gray);
+                  border-radius: 3px;
+                  padding: 7px 8px;
+                  border-top: 2px solid var(--blue);
+                "
+              >
+                <div
+                  style="
+                    font-family: var(--fd);
+                    font-weight: 700;
+                    font-size: 15px;
+                    color: var(--blue);
+                  "
+                >
+                  20%↓
+                </div>
+                <div
+                  style="
+                    font-family: var(--fd);
+                    font-size: 7px;
+                    font-weight: 500;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    color: rgba(35, 31, 32, 0.42);
+                    margin-top: 1px;
+                  "
+                >
+                  Steel
+                </div>
+                <div
+                  style="
+                    font-family: var(--fb);
+                    font-size: 7.5px;
+                    color: rgba(35, 31, 32, 0.5);
+                    margin-top: 2px;
+                  "
+                >
+                  3,917t→3,134t
+                </div>
+              </div>
+              <div
+                style="
+                  background: var(--gray);
+                  border-radius: 3px;
+                  padding: 7px 8px;
+                  border-top: 2px solid var(--blue);
+                "
+              >
+                <div
+                  style="
+                    font-family: var(--fd);
+                    font-weight: 700;
+                    font-size: 15px;
+                    color: var(--blue);
+                  "
+                >
+                  5%↓
+                </div>
+                <div
+                  style="
+                    font-family: var(--fd);
+                    font-size: 7px;
+                    font-weight: 500;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    color: rgba(35, 31, 32, 0.42);
+                    margin-top: 1px;
+                  "
+                >
+                  Concrete
+                </div>
+                <div
+                  style="
+                    font-family: var(--fb);
+                    font-size: 7.5px;
+                    color: rgba(35, 31, 32, 0.5);
+                    margin-top: 2px;
+                  "
+                >
+                  ~1,032m³ saved
+                </div>
+              </div>
+              <div
+                style="
+                  background: var(--gray);
+                  border-radius: 3px;
+                  padding: 7px 8px;
+                  border-top: 2px solid var(--blue);
+                "
+              >
+                <div
+                  style="
+                    font-family: var(--fd);
+                    font-weight: 700;
+                    font-size: 15px;
+                    color: var(--blue);
+                  "
+                >
+                  0 RFIs
+                </div>
+                <div
+                  style="
+                    font-family: var(--fd);
+                    font-size: 7px;
+                    font-weight: 500;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    color: rgba(35, 31, 32, 0.42);
+                    margin-top: 1px;
+                  "
+                >
+                  At Site
+                </div>
+                <div
+                  style="
+                    font-family: var(--fb);
+                    font-size: 7.5px;
+                    color: rgba(35, 31, 32, 0.5);
+                    margin-top: 2px;
+                  "
+                >
+                  No design queries
+                </div>
+              </div>
+            </div>
+
+            <!-- Certified note -->
+            <div
+              style="
+                background: var(--gray);
+                border-left: 3px solid var(--gold);
+                padding: 7px 10px;
+                border-radius: 0 3px 3px 0;
+              "
+            >
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 7px;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: var(--gold);
+                  margin-bottom: 2px;
+                "
+              >
+                Certified Result
+              </div>
+              <div
+                style="
+                  font-family: var(--fb);
+                  font-size: 8.5px;
+                  color: rgba(35, 31, 32, 0.65);
+                  line-height: 1.5;
+                "
+              >
+                Gurukrupa Realcon Infrabuild LLP issued a formal Certificate of
+                Performance — digitally signed, May 2025.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pf">
+        <div class="pn">Case Study 01 — The Marque, Bandra West</div>
+        <div class="ls">Highbrou™</div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+     PAGE 4  —  RIDHI SIDHI (TWO-COLUMN LAYOUT)
+     ═══════════════════════════════════════════════════════ -->
+    <div class="page">
+      <div class="ts"></div>
+      <div class="pi">
+        <div style="margin-bottom: 9px; flex-shrink: 0">
+          <div class="tag" style="margin-bottom: 5px">
+            Case Study 02 · Gurukrupa Realcon · Andheri West, Mumbai
+          </div>
+          <div class="h2" style="font-size: 22px; margin-bottom: 2px">
+            Gurukrupa Ridhi Sidhi
+          </div>
+          <div
+            style="
+              font-family: var(--fd);
+              font-size: 8.5px;
+              font-weight: 500;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              color: var(--blue);
+              margin-bottom: 8px;
+            "
+          >
+            41-Storey Mixed Use · 120m · 10.5 Lakh Sq.Ft
+          </div>
+          <div class="rule"></div>
+        </div>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 190px 1fr;
+            gap: 12px;
+            flex: 1;
+            min-height: 0;
+          "
+        >
+          <!-- LEFT: Project photo -->
+          <div class="photo-slot has-photo">
+            <img
+              class="photo-slot-bg"
+              src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/Gurukrupa%20Image.png"
+              alt="Gurukrupa Ridhi Sidhi, Andheri West"
+            />
+            <div class="photo-slot-overlay">
+              <div class="photo-slot-overlay-text">
+                Gurukrupa Ridhi Sidhi · Andheri West
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Content -->
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 7px;
+              min-height: 0;
+              overflow: hidden;
+            "
+          >
+            <!-- Hero number -->
+            <div
+              style="
+                background: var(--black);
+                border-radius: 3px;
+                padding: 10px 11px;
+              "
+            >
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-size: 7px;
+                  font-weight: 500;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: rgba(255, 255, 255, 0.28);
+                  margin-bottom: 3px;
+                "
+              >
+                Extra Saleable Area Created
+              </div>
+              <div style="display: flex; align-items: flex-end; gap: 7px">
+                <div class="mn" style="font-size: 36px">16,000</div>
+                <div style="padding-bottom: 3px">
+                  <div
+                    style="
+                      font-family: var(--fd);
+                      font-weight: 600;
+                      font-size: 14px;
+                      color: rgba(255, 255, 255, 0.55);
+                      text-transform: uppercase;
+                      line-height: 1;
+                    "
+                  >
+                    Sq.Ft
+                  </div>
+                  <div
+                    style="
+                      font-family: var(--fd);
+                      font-size: 7px;
+                      font-weight: 500;
+                      letter-spacing: 1.5px;
+                      text-transform: uppercase;
+                      color: rgba(255, 255, 255, 0.3);
+                    "
+                  >
+                    of apartments
+                  </div>
+                </div>
+              </div>
+              <div class="bt w" style="font-size: 8px; margin-top: 4px">
+                One extra residential floor — 16 luxury apartments — on a level
+                originally planned as a parking podium.
+              </div>
+            </div>
+
+            <!-- Flow diagram -->
+            <div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 8.5px;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: var(--black);
+                  margin-bottom: 5px;
+                "
+              >
+                How We Did It
+              </div>
+              <div class="fd-row" style="margin-bottom: 7px">
+                <div class="fb-box" style="padding: 6px 5px">
+                  <div class="fbl" style="font-size: 7px; margin-bottom: 1px">
+                    Original
+                  </div>
+                  <div class="fbn" style="font-size: 11px">8 Pods</div>
+                  <div
+                    style="
+                      font-family: var(--fb);
+                      font-size: 7px;
+                      color: rgba(35, 31, 32, 0.48);
+                      margin-top: 1px;
+                    "
+                  >
+                    limited parking
+                  </div>
+                </div>
+                <div class="fb-arr" style="font-size: 12px">→</div>
+                <div class="fb-box hl" style="padding: 6px 5px">
+                  <div class="fbl w" style="font-size: 7px; margin-bottom: 1px">
+                    Highbrou
+                  </div>
+                  <div
+                    class="fbn w"
+                    style="font-size: 11px; color: var(--lblue)"
+                  >
+                    7 Pods
+                  </div>
+                  <div
+                    style="
+                      font-family: var(--fb);
+                      font-size: 7px;
+                      color: rgba(255, 255, 255, 0.38);
+                      margin-top: 1px;
+                    "
+                  >
+                    more parking
+                  </div>
+                </div>
+                <div class="fb-arr" style="font-size: 12px">→</div>
+                <div class="fb-box bl" style="padding: 6px 5px">
+                  <div
+                    class="fbl"
+                    style="
+                      color: rgba(255, 255, 255, 0.7);
+                      font-size: 7px;
+                      margin-bottom: 1px;
+                    "
+                  >
+                    Result
+                  </div>
+                  <div
+                    style="
+                      font-family: var(--fd);
+                      font-weight: 700;
+                      font-size: 11px;
+                      color: white;
+                      line-height: 1;
+                    "
+                  >
+                    +1 Floor
+                  </div>
+                  <div
+                    style="
+                      font-family: var(--fb);
+                      font-size: 7px;
+                      color: rgba(255, 255, 255, 0.7);
+                      margin-top: 1px;
+                    "
+                  >
+                    16,000 sq.ft
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bullets -->
+            <ul class="al" style="gap: 4px">
+              <li>
+                Repositioned columns and shear walls — more parking in the same
+                podium footprint, same construction area.
+              </li>
+              <li>
+                Parking requirement met in fewer levels — one podium became
+                unnecessary, became residential.
+              </li>
+              <li>
+                16 apartments × ~1,000 sq.ft each. Plus ~18% steel savings on
+                the structural tube. 100% FSI utilised.
+              </li>
+              <li>
+                Full IS 1893 and IS 16700 compliance — 3D load path analysis
+                without changing the architect's plan.
+              </li>
+            </ul>
+
+            <!-- ROI callout -->
+            <div
+              style="
+                background: var(--black);
+                border-radius: 3px;
+                padding: 10px 12px;
+              "
+            >
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 7px;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: rgba(255, 255, 255, 0.28);
+                  margin-bottom: 4px;
+                "
+              >
+                Put Simply
+              </div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 700;
+                  font-size: 11.5px;
+                  color: var(--white);
+                  text-transform: uppercase;
+                  letter-spacing: -0.2px;
+                  line-height: 1.25;
+                "
+              >
+                Highbrou's fee was nothing compared to 16,000 sq.ft of new
+                apartments in Andheri West.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pf">
+        <div class="pn">Case Study 02 — Ridhi Sidhi, Andheri West</div>
+        <div class="ls">Highbrou™</div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+     PAGE 5  —  BAYZ 101 (TWO-COLUMN LAYOUT)
+     ═══════════════════════════════════════════════════════ -->
+    <div class="page dark">
+      <div class="gb"></div>
+      <div class="ts"></div>
+      <div class="pi" style="position: relative; z-index: 1">
+        <div style="margin-bottom: 9px; flex-shrink: 0">
+          <div class="tag" style="color: var(--lblue); margin-bottom: 5px">
+            Case Study 03 · Danube Properties · Dubai, UAE
+          </div>
+          <div class="h2 aw" style="font-size: 22px; margin-bottom: 2px">
+            Bayz 101
+          </div>
+          <div
+            style="
+              font-family: var(--fd);
+              font-size: 8.5px;
+              font-weight: 500;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              color: var(--blue);
+              margin-bottom: 8px;
+            "
+          >
+            388-Metre Tower · 101 Storeys · Dubai Skyline
+          </div>
+          <div class="rule"></div>
+        </div>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 190px 1fr;
+            gap: 12px;
+            flex: 1;
+            min-height: 0;
+          "
+        >
+          <!-- LEFT: Project photo (Gulf high-rise reference) -->
+          <div
+            class="photo-slot has-photo"
+            style="
+              background: linear-gradient(160deg, #0d2a40 0%, #051523 100%);
+            "
+          >
+            <img
+              class="photo-slot-bg"
+              src="/Images/ProjectsImages/ROOHISOLITAIRE.png"
+              alt="Bayz 101 — Danube Properties, Dubai UAE (reference project imagery)"
+            />
+            <div class="photo-slot-overlay">
+              <div class="photo-slot-overlay-text">
+                Bayz 101 · Danube Properties · Dubai, UAE
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Content -->
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 7px;
+              min-height: 0;
+              overflow: hidden;
+            "
+          >
+            <!-- Hero numbers -->
+            <div
+              style="
+                background: rgba(44, 136, 188, 0.09);
+                border: 1px solid rgba(44, 136, 188, 0.2);
+                border-radius: 3px;
+                padding: 10px 11px;
+              "
+            >
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-size: 7px;
+                  font-weight: 500;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: rgba(255, 255, 255, 0.28);
+                  margin-bottom: 3px;
+                "
+              >
+                Engineering Savings
+              </div>
+              <div style="display: flex; align-items: flex-end; gap: 10px">
+                <div>
+                  <div class="mn" style="font-size: 26px; letter-spacing: -1px">
+                    ~200M AED
+                  </div>
+                  <div
+                    style="
+                      font-family: var(--fd);
+                      font-weight: 700;
+                      font-size: 12px;
+                      color: var(--blue);
+                      margin-top: 1px;
+                    "
+                  >
+                    (~₹460 Crore)
+                  </div>
+                </div>
+                <div
+                  style="
+                    padding-left: 10px;
+                    border-left: 1px solid rgba(255, 255, 255, 0.08);
+                    padding-bottom: 2px;
+                  "
+                >
+                  <div
+                    style="
+                      font-family: var(--fd);
+                      font-weight: 700;
+                      font-size: 24px;
+                      color: var(--blue);
+                      letter-spacing: -0.5px;
+                      line-height: 1;
+                    "
+                  >
+                    40%
+                  </div>
+                  <div
+                    style="
+                      font-family: var(--fd);
+                      font-size: 7px;
+                      font-weight: 500;
+                      letter-spacing: 1.5px;
+                      text-transform: uppercase;
+                      color: rgba(255, 255, 255, 0.3);
+                    "
+                  >
+                    Steel Reduction
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Role + bullets -->
+            <div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 8.5px;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: rgba(255, 255, 255, 0.45);
+                  margin-bottom: 4px;
+                "
+              >
+                Our Role & Deliverables
+              </div>
+              <ul class="al w" style="gap: 4px">
+                <li>
+                  Value Engineering Consultant — Structural consultant: Arch
+                  Group Dubai. Client: Danube Properties LLP.
+                </li>
+                <li>
+                  Outrigger wall system at 5 levels re-engineered — same
+                  structural performance, 40% less steel.
+                </li>
+                <li>
+                  Post-tensioned flat plates for faster floor cycles — reduces
+                  construction finance carry time.
+                </li>
+                <li>
+                  Composite columns (concrete + structural steel) free usable
+                  area on every residential floor.
+                </li>
+                <li>
+                  Sky garden Level 91 + 15m panoramic atrium — architectural
+                  vision fully intact.
+                </li>
+                <li>
+                  Full Dubai Municipality code compliance and authority
+                  approvals included.
+                </li>
+              </ul>
+            </div>
+
+            <!-- What this proves -->
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 3px;
+                padding: 9px 11px;
+              "
+            >
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 7px;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: rgba(255, 255, 255, 0.28);
+                  margin-bottom: 3px;
+                "
+              >
+                What This Proves
+              </div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 700;
+                  font-size: 11px;
+                  color: var(--white);
+                  text-transform: uppercase;
+                  line-height: 1.25;
+                "
+              >
+                Value engineering works at every scale — from a small villa to a
+                101-storey Dubai tower. Same discipline. Same result.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pf dk">
+        <div class="pn w">Case Study 03 — Bayz 101, Dubai</div>
+        <div class="ls w">Highbrou™</div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+     PAGE 6  —  HOW WE THINK DIFFERENTLY
+     ═══════════════════════════════════════════════════════ -->
+    <div class="page">
+      <div class="ts"></div>
+      <div class="pi" style="justify-content: space-between">
+        <div>
+          <div class="tag" style="margin-bottom: 6px">
+            Every Developer Asks This
+          </div>
+          <div class="h2" style="font-size: 20px; margin-bottom: 4px">
+            Every Engineer Uses the Same Codes.<br /><span class="ac"
+              >So What Makes Our Designs Different?</span
+            >
+          </div>
+          <div class="rule" style="margin-bottom: 10px"></div>
+        </div>
+
+        <div style="margin-bottom: 9px">
+          <div class="bt" style="margin-bottom: 8px">
+            Fair question. Every structural engineer studies the same IS codes
+            and textbooks. The knowledge is the same. The difference lies in
+            what you do with that knowledge — and whether your engineer reads
+            those codes looking only for compliance, or also looking for
+            efficiency that creates value for you.
+          </div>
+          <div class="pb" style="margin-bottom: 0">
+            <div class="pl">Our Approach</div>
+            <div class="pt">
+              We apply the same IS codes and engineering principles every
+              structural engineer applies — completely, without compromise. But
+              we read those codes looking for what they allow, not just what
+              they require. Full code compliance is the foundation of everything
+              we do. Developer value is what we build on top of that foundation.
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 6px; flex: 1">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              align-items: flex-start;
+              background: var(--gray);
+              border-radius: 3px;
+              padding: 10px;
+              border-left: 3px solid var(--blue);
+            "
+          >
+            <div
+              style="
+                font-family: var(--fd);
+                font-weight: 700;
+                font-size: 22px;
+                color: var(--blue);
+                line-height: 1;
+                flex-shrink: 0;
+                width: 22px;
+                text-align: center;
+              "
+            >
+              1
+            </div>
+            <div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 9.5px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                  color: var(--black);
+                  margin-bottom: 3px;
+                "
+              >
+                Value Engineering Is Embedded From the First Sketch
+              </div>
+              <div class="bt" style="font-size: 9px">
+                We do not add value engineering as a separate step at the end.
+                The first structural sketch already asks: where is the material
+                this design does not need? Every decision is evaluated for its
+                cost impact before the drawing is made — not after.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              align-items: flex-start;
+              background: var(--gray);
+              border-radius: 3px;
+              padding: 10px;
+              border-left: 3px solid var(--blue);
+            "
+          >
+            <div
+              style="
+                font-family: var(--fd);
+                font-weight: 700;
+                font-size: 22px;
+                color: var(--blue);
+                line-height: 1;
+                flex-shrink: 0;
+                width: 22px;
+                text-align: center;
+              "
+            >
+              2
+            </div>
+            <div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 9.5px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                  color: var(--black);
+                  margin-bottom: 3px;
+                "
+              >
+                We Built Our Own Engineering Intelligence System
+              </div>
+              <div class="bt" style="font-size: 9px">
+                H-AIS — Highbrou Automation and Intelligence System — is our
+                proprietary platform: 19 modules running automated code checks
+                and structural optimisation calculations on every project. It
+                finds savings not visible to manual review alone. No other
+                structural engineering firm has this.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              align-items: flex-start;
+              background: var(--gray);
+              border-radius: 3px;
+              padding: 10px;
+              border-left: 3px solid var(--blue);
+            "
+          >
+            <div
+              style="
+                font-family: var(--fd);
+                font-weight: 700;
+                font-size: 22px;
+                color: var(--blue);
+                line-height: 1;
+                flex-shrink: 0;
+                width: 22px;
+                text-align: center;
+              "
+            >
+              3
+            </div>
+            <div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 9.5px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                  color: var(--black);
+                  margin-bottom: 3px;
+                "
+              >
+                100+ Projects — Every Solution Is in Our Library
+              </div>
+              <div class="bt" style="font-size: 9px">
+                Reclamation soil with a 9m basement? Solved. Floating columns in
+                a mixed-use tower? Done. Coupling beam congestion that stopped
+                the site? Fixed. When your drawing arrives, we already know
+                where to look — because we have seen it before in 100+ projects
+                across Mumbai and the Middle East.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="
+            margin-top: 9px;
+            background: var(--black);
+            border-radius: 3px;
+            padding: 10px 13px;
+          "
+        >
+          <div
+            style="
+              font-family: var(--fd);
+              font-weight: 700;
+              font-size: 11.5px;
+              color: var(--white);
+              text-transform: uppercase;
+              letter-spacing: -0.2px;
+              line-height: 1.3;
+            "
+          >
+            We found ₹7.5 Crore in The Marque. We found 16,000 sq.ft in Ridhi
+            Sidhi. We found ₹460 Crore in Bayz 101. Your project has something
+            waiting too.
+          </div>
+        </div>
+      </div>
+      <div class="pf">
+        <div class="pn">Our Engineering Approach</div>
+        <div class="ls">Highbrou™</div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+     PAGE 7  —  MORE PROJECT PROOF
+     ═══════════════════════════════════════════════════════ -->
+    <div class="page graybg">
+      <div class="ts"></div>
+      <div class="pi" style="justify-content: space-between">
+        <div>
+          <div class="tag" style="margin-bottom: 6px">Portfolio</div>
+          <div class="h2" style="font-size: 20px; margin-bottom: 4px">
+            Proof Across Every <span class="ac">Project Type</span>
+          </div>
+          <div class="rule" style="margin-bottom: 10px"></div>
+        </div>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 7px;
+            flex: 1;
+          "
+        >
+          <div class="mc">
+            <div class="mc-img has-photo">
+              <img
+                class="mc-img-photo"
+                src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/Maurya%20Image.png"
+                alt="Maurya, Versova"
+              />
+              <div class="mc-img-label">Maurya · Versova</div>
+            </div>
+            <div class="mc-body">
+              <div class="mcl">Versova · Gurukrupa Realcon</div>
+              <div class="mct">Maurya</div>
+              <div class="mcd">
+                5 levels of mechanical parking, column-free. 13 residential
+                floors, beamless ceilings for Jodi-flat sales.
+              </div>
+              <div class="mcw">
+                ↑ "Beamless luxury ceilings you can reconfigure" — a developer
+                sales USP created by the structure.
+              </div>
+            </div>
+          </div>
+
+          <div class="mc">
+            <div class="mc-img has-photo">
+              <img
+                class="mc-img-photo"
+                src="/Images/ProjectsImages/ShivanshHeight1.jpg"
+                alt="Jai Gujarat — representative Highbrou residential project, Mumbai"
+              />
+              <div class="mc-img-label">Jai Gujarat · Santacruz</div>
+            </div>
+            <div class="mc-body">
+              <div class="mcl">Santacruz · Mayfair Housing</div>
+              <div class="mct">Jai Gujarat</div>
+              <div class="mcd">
+                Bedroom cantilever above basement. Supporting column sat exactly
+                where cars needed to pass.
+              </div>
+              <div class="mcw">
+                ↑ RCC cross-tie brace — no basement column, parking preserved,
+                clean façade.
+              </div>
+            </div>
+          </div>
+
+          <div class="mc">
+            <div class="mc-img has-photo">
+              <img
+                class="mc-img-photo"
+                src="/Images/ProjectsImages/SKYLIGHTROOF1.png"
+                alt="Skylight roof, Riyadh"
+              />
+              <div class="mc-img-label">Skylight Roof · Riyadh</div>
+            </div>
+            <div class="mc-body">
+              <div class="mcl">Riyadh, Saudi Arabia · University</div>
+              <div class="mct">Skylight Roof</div>
+              <div class="mcd">
+                28.5m × 48m glass roof — zero tolerance for deflection. Glass
+                cracks if the structure moves.
+              </div>
+              <div class="mcw">
+                ↑ Pre-stressed bowstring trusses — 1,368 sq.m installed, zero
+                cracks.
+              </div>
+            </div>
+          </div>
+
+          <div class="mc">
+            <div class="mc-img has-photo">
+              <img
+                class="mc-img-photo"
+                src="/Images/ProjectsImages/THESKYHEAVEN.png"
+                alt="The Sky Heaven, Andheri West"
+              />
+              <div class="mc-img-label">Sky Heaven · Andheri</div>
+            </div>
+            <div class="mc-body">
+              <div class="mcl">Andheri West · DA Realty</div>
+              <div class="mct">The Sky Heaven</div>
+              <div class="mcd">
+                Column-free lower levels. More columns on upper residential
+                floors. Opposite demands, same building.
+              </div>
+              <div class="mcw">
+                ↑ Lift shaft core as shear walls — IS 1893 compliant,
+                architect's plan untouched.
+              </div>
+            </div>
+          </div>
+
+          <div class="mc">
+            <div class="mc-img has-photo">
+              <img
+                class="mc-img-photo"
+                src="/Images/ProjectsImages/MASJIDSADAT1.jpg"
+                alt="Masjid Sadat, Aurangabad"
+              />
+              <div class="mc-img-label">Masjid Sadat · Aurangabad</div>
+            </div>
+            <div class="mc-body">
+              <div class="mcl">Aurangabad · Religious Structure</div>
+              <div class="mct">Masjid Sadat</div>
+              <div class="mcd">
+                Column-free prayer hall. 127ft minarets. Modular dome. Three
+                structural problems in one building.
+              </div>
+              <div class="mcw">
+                ↑ Each element engineered independently — unified design, zero
+                visual compromise.
+              </div>
+            </div>
+          </div>
+
+          <div class="mc">
+            <div class="mc-img has-photo">
+              <img
+                class="mc-img-photo"
+                src="/Images/ProjectsImages/TGIFFILMSTUDIO1.jpg"
+                alt="TGIF Film Studio, Madh, Mumbai"
+              />
+              <div class="mc-img-label">Film Studio · Madh, Mumbai</div>
+            </div>
+            <div class="mc-body">
+              <div class="mcl">Madh, Mumbai · TGIF Film Studio</div>
+              <div class="mct">Film Studio</div>
+              <div class="mcd">
+                36m × 46m completely column-free floor — standard frames could
+                not span without mid-supports.
+              </div>
+              <div class="mcw">
+                ↑ Conventional truss system for full clear span — 1,800 sq.m
+                uninterrupted production space.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="
+            margin-top: 8px;
+            padding: 7px 11px;
+            background: var(--white);
+            border-radius: 3px;
+            border-left: 3px solid var(--blue);
+          "
+        >
+          <div class="bt" style="font-size: 8.5px">
+            These are not exceptional projects for us. Every project receives
+            the same structural thinking — because the structural solution is
+            the proof, not the pitch.
+          </div>
+        </div>
+      </div>
+      <div class="pf" style="border-top-color: var(--lgray)">
+        <div class="pn">Project Portfolio</div>
+        <div class="ls">Highbrou™</div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+     PAGE 8  —  ABOUT HIGHBROU / TRUST
+     ═══════════════════════════════════════════════════════ -->
+    <div class="page">
+      <div class="ts"></div>
+      <div class="pi" style="justify-content: space-between">
+        <div>
+          <div class="tag" style="margin-bottom: 6px">
+            About Highbrou Engineering
+          </div>
+          <div class="h2" style="font-size: 20px; margin-bottom: 4px">
+            Why You Can <span class="ac">Trust Us</span> With Your Project
+          </div>
+          <div class="rule" style="margin-bottom: 10px"></div>
+        </div>
+
+        <div class="sr" style="margin-bottom: 11px">
+          <div class="sc">
+            <div class="sn">10+</div>
+            <div class="sl">Years Active</div>
+          </div>
+          <div class="sc">
+            <div class="sn">100+</div>
+            <div class="sl">Projects</div>
+          </div>
+          <div class="sc">
+            <div class="sn">98%</div>
+            <div class="sl">Satisfaction</div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 11px">
+          <div
+            style="
+              font-family: var(--fd);
+              font-weight: 600;
+              font-size: 9px;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              color: var(--black);
+              margin-bottom: 8px;
+            "
+          >
+            Our Journey
+          </div>
+          <div class="tl-item">
+            <div class="tl-l">
+              <div class="tl-d"></div>
+              <div class="tl-ln"></div>
+            </div>
+            <div>
+              <div class="tl-yr">2016</div>
+              <div class="tl-tx">
+                Founded in Mumbai. First projects: high-rise residential and
+                industrial structures for Maharashtra developers.
+              </div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-l">
+              <div class="tl-d"></div>
+              <div class="tl-ln"></div>
+            </div>
+            <div>
+              <div class="tl-yr">2024</div>
+              <div class="tl-tx">
+                Incorporated as Highbrou Engineering Private Limited. ISO
+                9001:2015 certification. Logo registered as Trademark™.
+              </div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-l">
+              <div class="tl-d"></div>
+              <div class="tl-ln" style="display: none"></div>
+            </div>
+            <div>
+              <div class="tl-yr">2025</div>
+              <div class="tl-tx">
+                Dubai office opened. Serving India and the UAE. Bayz 101 (Dubai)
+                and Skylight Roof (Riyadh) delivered.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 11px;
+          "
+        >
+          <div
+            style="
+              background: var(--gray);
+              border-radius: 3px;
+              padding: 12px;
+              border-top: 2px solid var(--blue);
+            "
+          >
+            <div
+              style="
+                font-family: var(--fd);
+                font-weight: 700;
+                font-size: 17px;
+                text-transform: uppercase;
+                color: var(--black);
+                line-height: 1;
+                letter-spacing: -0.3px;
+              "
+            >
+              Mumbai
+            </div>
+            <div
+              style="
+                font-family: var(--fd);
+                font-size: 8px;
+                font-weight: 500;
+                letter-spacing: 1.5px;
+                color: var(--blue);
+                text-transform: uppercase;
+                margin-bottom: 6px;
+              "
+            >
+              Headquarters · Est. 2016
+            </div>
+            <div class="bt" style="font-size: 8.5px">
+              Jogeshwari West, Mumbai — our founding office, serving developers
+              and architects across India for 10+ years.
+            </div>
+          </div>
+          <div
+            style="
+              background: var(--black);
+              border-radius: 3px;
+              padding: 12px;
+              border-top: 2px solid var(--lblue);
+            "
+          >
+            <div
+              style="
+                font-family: var(--fd);
+                font-weight: 700;
+                font-size: 17px;
+                text-transform: uppercase;
+                color: var(--white);
+                line-height: 1;
+                letter-spacing: -0.3px;
+              "
+            >
+              Dubai
+            </div>
+            <div
+              style="
+                font-family: var(--fd);
+                font-size: 8px;
+                font-weight: 500;
+                letter-spacing: 1.5px;
+                color: var(--lblue);
+                text-transform: uppercase;
+                margin-bottom: 6px;
+              "
+            >
+              International Office · Est. 2025
+            </div>
+            <div class="bt w" style="font-size: 8.5px">
+              Serving clients across UAE, Riyadh, Qatar, and the wider GCC —
+              Indian engineering depth in the Middle East market.
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            padding: 10px 12px;
+            background: var(--gray);
+            border-radius: 3px;
+          "
+        >
+          <div
+            class="iso-c"
+            style="
+              width: 26px;
+              height: 26px;
+              font-size: 6.5px;
+              border-color: var(--blue);
+              color: var(--blue);
+              flex-shrink: 0;
+            "
+          >
+            ISO
+          </div>
+          <div>
+            <div
+              style="
+                font-family: var(--fd);
+                font-weight: 600;
+                font-size: 9px;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                color: var(--black);
+              "
+            >
+              ISO 9001:2015 Certified Quality Management System
+            </div>
+            <div class="bt" style="font-size: 8.5px; margin-top: 1px">
+              Logo registered as Trademark™. Every project delivered under a
+              documented Quality Management System.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pf">
+        <div class="pn">About Highbrou Engineering</div>
+        <div class="ls">Highbrou™</div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+     PAGE 9  —  BOARD OF DIRECTORS (NEW PAGE)
+     Added as requested: after page 8, before testimony
+     ═══════════════════════════════════════════════════════ -->
+    <div class="page graybg">
+      <div class="ts"></div>
+      <div class="pi" style="justify-content: space-between">
+        <div>
+          <div class="tag" style="margin-bottom: 6px">Our Leadership</div>
+          <div class="h2" style="font-size: 20px; margin-bottom: 4px">
+            Board of <span class="ac">Directors</span>
+          </div>
+          <div class="rule" style="margin-bottom: 4px"></div>
+          <div
+            style="
+              font-family: var(--fb);
+              font-size: 9px;
+              color: rgba(35, 31, 32, 0.5);
+              margin-bottom: 10px;
+            "
+          >
+            The principals who built Highbrou's engineering philosophy, delivery
+            capability, and business strategy.
+          </div>
+        </div>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            flex: 1;
+          "
+        >
+          <!-- Sayyad Wajed Ali -->
+          <div class="leader-card">
+            <div class="leader-avatar">SWA</div>
+            <div style="min-width: 0">
+              <div class="leader-role">Managing Director &amp; Founder</div>
+              <div class="leader-name">Sayyad Wajed Ali</div>
+              <div class="leader-bio">
+                Civil Engineer with 10+ years delivering innovative structural
+                solutions across high-rise, stadium, and specialty projects.
+                Personally responsible for value engineering outcomes — ₹7.5
+                Crore in The Marque, 16,000 sq.ft in Ridhi Sidhi. Leads
+                engineering strategy, H-AIS development, and global expansion.
+              </div>
+            </div>
+          </div>
+
+          <!-- Sarfaraz Shaikh -->
+          <div
+            class="leader-card"
+            style="border-left-color: rgba(44, 136, 188, 0.5)"
+          >
+            <div
+              class="leader-avatar"
+              style="
+                background: rgba(44, 136, 188, 0.18);
+                color: var(--blue);
+                border: 1.5px solid rgba(44, 136, 188, 0.4);
+              "
+            >
+              SS
+            </div>
+            <div style="min-width: 0">
+              <div class="leader-role">
+                Associate Director — MEP Integration
+              </div>
+              <div class="leader-name">Sarfaraz Shaikh</div>
+              <div class="leader-bio">
+                Mechanical Engineer with 20+ years and 600+ projects delivering
+                integrated MEP-structural solutions. Ensures structural systems
+                are co-ordinated with mechanical, electrical, and plumbing from
+                day one — eliminating costly clashes before construction starts.
+              </div>
+            </div>
+          </div>
+
+          <!-- Shaikh Ismail -->
+          <div
+            class="leader-card"
+            style="border-left-color: rgba(44, 136, 188, 0.5)"
+          >
+            <div class="leader-avatar" style="background: var(--black)">SI</div>
+            <div style="min-width: 0">
+              <div class="leader-role">Director — Finance &amp; Strategy</div>
+              <div class="leader-name">Shaikh Ismail</div>
+              <div class="leader-bio">
+                Finance expert driving strategic growth and ensuring project
+                financial viability. Responsible for capital structure,
+                partnership governance, and the firm's international expansion
+                financial strategy across India and the GCC.
+              </div>
+            </div>
+          </div>
+
+          <!-- Mohammed Kashif -->
+          <div
+            class="leader-card"
+            style="border-left-color: rgba(44, 136, 188, 0.5)"
+          >
+            <div class="leader-avatar" style="background: var(--black)">MK</div>
+            <div style="min-width: 0">
+              <div class="leader-role">Director — Business Development</div>
+              <div class="leader-name">Mohammed Kashif</div>
+              <div class="leader-bio">
+                Business graduate enhancing project feasibility and
+                market-responsive strategies. Leads client acquisition,
+                developer relationships, and market entry across the UAE and
+                Saudi Arabia alongside Highbrou's India portfolio growth.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer note -->
+        <div
+          style="
+            margin-top: 10px;
+            padding: 9px 12px;
+            background: var(--white);
+            border-radius: 3px;
+            border-left: 3px solid var(--blue);
+          "
+        >
+          <div class="bt" style="font-size: 8.5px">
+            Each director brings a distinct discipline — structural engineering,
+            MEP integration, finance, and business development — ensuring every
+            project is evaluated for technical soundness and commercial value
+            simultaneously.
+          </div>
+        </div>
+      </div>
+      <div class="pf" style="border-top-color: var(--lgray)">
+        <div class="pn">Board of Directors</div>
+        <div class="ls">Highbrou™</div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+     PAGE 10  —  CLIENT TESTIMONY
+     CORRECTED: Removed Certified Results LEFT column.
+     Kept: Quote → full-width certificate photo → italic box.
+     ═══════════════════════════════════════════════════════ -->
+    <div class="page graybg">
+      <div class="ts gold"></div>
+      <div class="pi" style="justify-content: space-between">
+        <div>
+          <div class="tag" style="color: var(--gold); margin-bottom: 6px">
+            <span
+              style="
+                background: var(--gold);
+                display: inline-block;
+                width: 15px;
+                height: 1.5px;
+              "
+            ></span
+            >Client Testimony
+          </div>
+          <div class="h2" style="font-size: 20px; margin-bottom: 4px">
+            Our Client Said It. <span class="ag">In Writing.</span>
+          </div>
+          <div
+            style="
+              width: 24px;
+              height: 2px;
+              background: var(--gold);
+              margin-bottom: 10px;
+            "
+          ></div>
+        </div>
+
+        <!-- Quote -->
+        <div
+          style="
+            position: relative;
+            padding: 11px 12px 11px 18px;
+            border-left: 3px solid var(--gold);
+            background: var(--white);
+            border-radius: 0 3px 3px 0;
+            margin-bottom: 11px;
+            flex-shrink: 0;
+          "
+        >
+          <div
+            style="
+              position: absolute;
+              top: 1px;
+              left: 3px;
+              font-family: var(--fd);
+              font-size: 36px;
+              font-weight: 700;
+              color: var(--gold);
+              line-height: 1;
+              opacity: 0.28;
+            "
+          >
+            "
+          </div>
+          <div
+            style="
+              font-family: var(--fb);
+              font-style: italic;
+              font-size: 10.5px;
+              font-weight: 400;
+              line-height: 1.68;
+              color: rgba(35, 31, 32, 0.82);
+            "
+          >
+            Highbrou Engineering demonstrated exceptional command over
+            structural optimisation and material efficiency. Their coordinated
+            and execution-friendly deliverables helped streamline on-site
+            activities, improve planning accuracy, and minimise rework during
+            construction. We acknowledge their contribution in enhancing the
+            efficiency and profitability of the project.
+          </div>
+          <div
+            style="
+              font-family: var(--fd);
+              font-weight: 600;
+              font-size: 8px;
+              letter-spacing: 1.5px;
+              text-transform: uppercase;
+              color: var(--gold);
+              margin-top: 6px;
+            "
+          >
+            — Gurukrupa Realcon Infrabuild LLP · Digitally Signed, May 2025
+          </div>
+        </div>
+
+        <!-- Full-width certificate / credentials photograph -->
+        <div
+          class="photo-slot has-photo certificate-photo"
+          style="
+            flex: 1;
+            min-height: 0;
+            border-radius: 4px;
+            margin-bottom: 10px;
+          "
+        >
+          <div
+            style="
+              position: absolute;
+              top: 12px;
+              right: 12px;
+              width: 34px;
+              height: 34px;
+              border: 1.5px solid var(--gold);
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-family: var(--fd);
+              font-size: 6.5px;
+              font-weight: 700;
+              text-align: center;
+              line-height: 1.2;
+              color: var(--gold);
+              text-transform: uppercase;
+              z-index: 3;
+            "
+          >
+            CERT<br />2025
+          </div>
+          <img
+            class="photo-slot-bg"
+            src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/ISO%20Certificate%20Highbrou%20_page-0001.jpg"
+            alt="ISO 9001:2015 certificate of registration, Highbrou Engineering"
+          />
+          <div class="photo-slot-overlay">
+            <div
+              class="photo-slot-overlay-text"
+              style="color: rgba(255, 248, 230, 0.95); font-size: 6.5px"
+            >
+              ISO 9001:2015 registration · Client performance certificates on file
+            </div>
+          </div>
+        </div>
+
+        <!-- Restored italic box -->
+        <div
+          style="
+            padding: 9px 12px;
+            background: var(--white);
+            border-radius: 3px;
+            border-left: 3px solid var(--gold);
+            flex-shrink: 0;
+          "
+        >
+          <div
+            style="
+              font-family: var(--fb);
+              font-size: 9.5px;
+              font-style: italic;
+              font-weight: 400;
+              color: rgba(35, 31, 32, 0.62);
+              line-height: 1.6;
+            "
+          >
+            These are not our words. This is what our client wrote and signed
+            about the value Highbrou delivered. Above: our ISO 9001:2015
+            registration; signed client performance certificates are available on
+            request for diligence meetings.
+          </div>
+        </div>
+      </div>
+      <div class="pf" style="border-top-color: var(--lgray)">
+        <div class="pn">Client Testimony — Gurukrupa Realcon</div>
+        <div class="ls">Highbrou™</div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+     PAGE 11  —  CTA / CLOSING
+     ═══════════════════════════════════════════════════════ -->
+    <div class="page dark">
+      <div class="gb"></div>
+      <div class="ts"></div>
+      <div
+        class="pi"
+        style="justify-content: space-between; position: relative; z-index: 1"
+      >
+        <div>
+          <div class="tag" style="color: var(--lblue); margin-bottom: 9px">
+            The Next Step
+          </div>
+          <div
+            class="h1"
+            style="font-size: 40px; color: var(--white); margin-bottom: 10px"
+          >
+            Let Us Find<br />What Your<br /><span class="ac">Next Project</span
+            ><br />Is Worth.
+          </div>
+          <div class="rule" style="margin-bottom: 10px"></div>
+          <div class="bt w" style="max-width: 350px; font-size: 9.5px">
+            Every project we have reviewed has had savings sitting inside it
+            that were not visible before we looked. Let us do the same for yours
+            — at no cost, no obligation.
+          </div>
+        </div>
+
+        <div
+          style="
+            background: rgba(44, 136, 188, 0.09);
+            border: 1px solid rgba(44, 136, 188, 0.2);
+            border-radius: 4px;
+            padding: 12px;
+          "
+        >
+          <div
+            style="
+              font-family: var(--fd);
+              font-weight: 600;
+              font-size: 7.5px;
+              letter-spacing: 3px;
+              text-transform: uppercase;
+              color: var(--blue);
+              margin-bottom: 7px;
+            "
+          >
+            Complimentary Design Opportunity Review
+          </div>
+          <ul class="al w">
+            <li>
+              30-minute confidential meeting with our senior structural engineer
+            </li>
+            <li>
+              We review one of your structural drawings and identify saving
+              opportunities
+            </li>
+            <li>
+              You receive 3 specific, prioritised improvement strategies — with
+              estimated ₹ impact
+            </li>
+            <li>No commitment. No fees. Completely confidential.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="hr dk" style="margin-bottom: 11px"></div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 10px;
+            "
+          >
+            <div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-size: 7.5px;
+                  font-weight: 500;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: rgba(255, 255, 255, 0.22);
+                  margin-bottom: 3px;
+                "
+              >
+                Call Us
+              </div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 700;
+                  font-size: 14px;
+                  color: var(--white);
+                  letter-spacing: 0.5px;
+                "
+              >
+                +91 848 489 7313
+              </div>
+            </div>
+            <div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-size: 7.5px;
+                  font-weight: 500;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: rgba(255, 255, 255, 0.22);
+                  margin-bottom: 3px;
+                "
+              >
+                Email Us
+              </div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 13px;
+                  color: var(--white);
+                "
+              >
+                info&#64;highbrou.com
+              </div>
+            </div>
+            <div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-size: 7.5px;
+                  font-weight: 500;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: rgba(255, 255, 255, 0.22);
+                  margin-bottom: 3px;
+                "
+              >
+                Website
+              </div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 13px;
+                  color: var(--blue);
+                "
+              >
+                www.highbrou.com
+              </div>
+            </div>
+            <div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-size: 7.5px;
+                  font-weight: 500;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: rgba(255, 255, 255, 0.22);
+                  margin-bottom: 3px;
+                "
+              >
+                Offices
+              </div>
+              <div
+                style="
+                  font-family: var(--fd);
+                  font-weight: 600;
+                  font-size: 13px;
+                  color: rgba(255, 255, 255, 0.72);
+                "
+              >
+                Mumbai · Dubai
+              </div>
+            </div>
+          </div>
+          <div class="hr dk" style="margin-bottom: 8px"></div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <div
+              style="
+                font-family: var(--fd);
+                font-weight: 600;
+                font-size: 9px;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.18);
+              "
+            >
+              Highbrou Engineering Pvt. Ltd.™
+            </div>
+            <div class="iso w">
+              <div class="iso-c w">ISO</div>
+              <div style="line-height: 1.35; font-size: 7.5px">
+                ISO 9001:2015<br />Certified
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pf dk">
+        <div class="pn w">
+          © 2025 Highbrou Engineering Pvt. Ltd. All rights reserved.
+        </div>
+        <div class="ls w">Confidential</div>
+      </div>
+    </div>
+  </body>
+</html>
