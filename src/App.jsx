@@ -16,6 +16,8 @@ import ApplicationView from "./Components/ApplicationView/ApplicationView";
 import CaseStudies from "./Components/CaseStudies/CaseStudies";
 import Profile from "./Components/Profile/Profile";
 import ViewProfile from "./Components/Profile/ViewProfile";
+import BlogList from "./Components/Blogs/BlogList";
+import SingleBlog from "./Components/Blogs/SingleBlog";
 
 function App() {
   const { pathname } = useLocation();
@@ -37,6 +39,8 @@ function App() {
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/view-profile" element={<ViewProfile />} />
+        <Route path="/blog" element={<BlogList />} />
+        <Route path="/blog/:slug" element={<SingleBlog />} />
       </Routes>
       {!portfolioFullscreen && <Footer />}
       {!portfolioFullscreen && <BackToTop />}

@@ -1,0 +1,109 @@
+#BlogPageContainer .BlogSectionHeading {
+  color: #0d2a3b;
+  letter-spacing: -1.4px;
+  margin-top: 0;
+  margin-bottom: 26px;
+  font-size: 58px;
+  font-weight: 500;
+  line-height: 107%;
+  padding: 53px 0 0;
+}
+
+.BlogMainContainer {
+  margin-top: 24px;
+}
+
+.BlogGrid {
+  width: 100%;
+}
+
+.BlogCard {
+  border-radius: 20px;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s ease;
+  min-height: 420px;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  background: #fff;
+}
+
+.BlogCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.BlogCardImageContainer {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.BlogCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.BlogCardBody {
+  padding: 22px 24px 28px;
+}
+
+.BlogCardMeta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.BlogCardCategory {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #2989bc;
+}
+
+.BlogCardDate {
+  font-size: 13px;
+  color: #888;
+}
+
+.BlogCardTitle {
+  color: #0d2a3b;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 12px;
+  letter-spacing: -0.3px;
+}
+
+.BlogCardExcerpt {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0 0 16px;
+}
+
+.BlogCardLink {
+  color: #2989bc;
+  font-weight: 600;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.BlogCardLink:hover {
+  color: #0d2a3b;
+}
+
+@media (max-width: 768px) {
+  #BlogPageContainer .BlogSectionHeading {
+    font-size: 40px;
+    padding-top: 32px;
+  }
+}
