@@ -38,7 +38,7 @@ const BlogList = () => {
                       <article className="BlogCard">
                         <div className="BlogCardImageContainer">
                           <img
-                            src={post.coverImage}
+                            src={encodeURI(post.coverImage)}
                             alt=""
                             loading="lazy"
                             className="BlogCardImage"

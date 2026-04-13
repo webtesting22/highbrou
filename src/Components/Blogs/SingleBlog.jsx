@@ -4,7 +4,10 @@ import { Button } from "antd";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import CommonTopBannerDynamic from "../CommonTopBanner/CommonTopBannerDynamic";
 import BlogsData from "./BlogsData";
+import SpandrelBeamArticle from "./SpandrelBeamArticle";
 import "./SingleBlog.css";
+
+const DOC_TITLE = "Highbrou Engineering | Precision Structural Solutions";
 
 const SingleBlog = () => {
   const { slug } = useParams();
@@ -17,6 +20,14 @@ const SingleBlog = () => {
     setPost(found || null);
   }, [slug]);
 
+  useEffect(() => {
+    if (!post?.title) return;
+    document.title = `${post.title} | Highbrou Engineering`;
+    return () => {
+      document.title = DOC_TITLE;
+    };
+  }, [post?.title]);
+
   const handleBack = () => navigate("/blog");
 
   if (!post) {
@@ -27,6 +38,29 @@ const SingleBlog = () => {
           Back to Blog
         </Button>
       </div>
+    );
+  }
+
+  if (slug === "smarter-spandrel-beam-design") {
+    return (
+      <>
+        <div className="sectionPadding" style={{ paddingBottom: 0 }}>
+          <Button
+            type="link"
+            icon={<ArrowLeftOutlined />}
+            onClick={handleBack}
+            style={{ paddingLeft: 0, color: "#2989bc", marginBottom: 8 }}
+          >
+            Back to Blog
+          </Button>
+        </div>
+        <SpandrelBeamArticle post={post} />
+        <div className="sectionPadding" style={{ paddingTop: 24 }}>
+          <Link to="/blog" style={{ color: "#2989bc" }}>
+            ← All articles
+          </Link>
+        </div>
+      </>
     );
   }
 
@@ -59,7 +93,7 @@ const SingleBlog = () => {
 
           <h1 className="SingleBlogTitle">{post.title}</h1>
 
-          {post.sections.map((section) => (
+          {post.sections?.map((section) => (
             <div className="SingleBlogSection" key={section.heading}>
               <h2>{section.heading}</h2>
               <p>{section.body}</p>
