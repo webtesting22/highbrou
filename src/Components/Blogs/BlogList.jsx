@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Row, Col } from "antd";
 import { RightOutlined } from "@ant-design/icons";
@@ -13,7 +13,7 @@ const BlogList = () => {
 
   const sortedPosts = useMemo(
     () => [...BlogsData].sort((a, b) => b.id - a.id),
-    []
+    [],
   );
 
   return (
