@@ -1,5 +1,5 @@
 /**
- * Static blog posts. Spandrel article is rendered by SpandrelBeamArticle.jsx (React-only).
+ * Static blog posts. Spandrel article body is served as static HTML under `public/pdf/`.
  */
 const BlogsData = [
   {

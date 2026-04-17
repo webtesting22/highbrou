@@ -97,6 +97,22 @@
   font-style: italic;
 }
 
+.SingleBlogHtmlEmbed {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 24px;
+  box-sizing: border-box;
+}
+
+.SingleBlogHtmlIframe {
+  width: 100%;
+  min-height: 85vh;
+  border: none;
+  display: block;
+  background: #fff;
+}
+
 @media (max-width: 768px) {
   .SingleBlogTitle {
     font-size: 26px;
