@@ -44,8 +44,9 @@ const NavigationLinks = [
         path: "/contact"
     },
     {
-        link: "Profile",
-        path: "/profile",
+        link: "View Profile",
+        path: "/view-profile",
+        isExternal: true,
     },
 ]
 

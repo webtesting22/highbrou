@@ -14,7 +14,6 @@ import Contact from "./Components/Contact/Contact";
 import OurApproach from "./Components/OurApproach/OurApproach";
 import ApplicationView from "./Components/ApplicationView/ApplicationView";
 import CaseStudies from "./Components/CaseStudies/CaseStudies";
-import Profile from "./Components/Profile/Profile";
 import ViewProfile from "./Components/Profile/ViewProfile";
 import BlogList from "./Components/Blogs/BlogList";
 import SingleBlog from "./Components/Blogs/SingleBlog";
@@ -37,7 +36,6 @@ function App() {
         <Route path="/our-approach" element={<OurApproach />} />
         <Route path="/highbrouapplicationView" element={<ApplicationView />} />
         <Route path="/case-studies" element={<CaseStudies />} />
-        <Route path="/profile" element={<Profile />} />
         <Route path="/view-profile" element={<ViewProfile />} />
         <Route path="/blog" element={<BlogList />} />
         <Route path="/blog/:slug" element={<SingleBlog />} />
