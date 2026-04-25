@@ -30,23 +30,25 @@ const SpandrelBeamArticle = ({ post }) => {
             rel="noopener noreferrer"
           >
             {a.name}
-          </a>
+          </a>,
         );
       } else {
         nodes.push(<span key={a.name}>{a.name}</span>);
       }
     });
-    return (
-      <>
-        {nodes} · Highbrou Engineering · Case Study
-      </>
-    );
+    return <>{nodes} · Highbrou Engineering · Case Study</>;
   };
 
   return (
     <div className="spandrelArticleRoot">
       <section className="sa-hero">
         <div className="sa-heroInner">
+          <div className="sa-brand">
+            <div className="sa-brandTitle">
+              HIGH<span>bro</span>U
+            </div>
+            <div className="sa-brandSub">Precision structural solutions</div>
+          </div>
           <div className="sa-heroTag">
             Structural Engineering · Project Insight
           </div>
@@ -60,9 +62,7 @@ const SpandrelBeamArticle = ({ post }) => {
             solution. Here is how we learned to solve both problems at once —
             and what it means for your project.
           </p>
-          <div className="sa-heroMeta">
-            By {renderAuthors()}
-          </div>
+          <div className="sa-heroMeta">By {renderAuthors()}</div>
         </div>
       </section>
 
@@ -70,10 +70,10 @@ const SpandrelBeamArticle = ({ post }) => {
         <p>
           Imagine receiving a set of structural drawings and discovering that
           one of the beams calls for{" "}
-          <strong>14 diagonal reinforcement bars</strong> — all
-          criss-crossing inside a single concrete beam the width of your
-          forearm. Your formwork team stares at the cage of steel and wonders
-          how on earth they are supposed to pour concrete through it.
+          <strong>14 diagonal reinforcement bars</strong> — all criss-crossing
+          inside a single concrete beam the width of your forearm. Your formwork
+          team stares at the cage of steel and wonders how on earth they are
+          supposed to pour concrete through it.
         </p>
         <p>
           This was the exact situation we faced on a recent project. The beams
@@ -101,8 +101,8 @@ const SpandrelBeamArticle = ({ post }) => {
           inside the finished beam. Workers struggle to align and tie dozens of
           bars in a confined space, slowing the entire programme. Quality
           control becomes difficult. And when concrete cannot be properly
-          vibrated around a cage of steel, the structure you pour may not be
-          the structure you designed.
+          vibrated around a cage of steel, the structure you pour may not be the
+          structure you designed.
         </p>
 
         <div className="sa-pullQuote">
@@ -131,7 +131,11 @@ const SpandrelBeamArticle = ({ post }) => {
             <div className="sa-baCol before">
               <div className="sa-baColHeader">
                 <div className="sa-baColIcon" aria-hidden>
-                  <svg viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg
+                    viewBox="0 0 13 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <line
                       x1="2"
                       y1="2"
@@ -179,7 +183,11 @@ const SpandrelBeamArticle = ({ post }) => {
             <div className="sa-baCol after">
               <div className="sa-baColHeader">
                 <div className="sa-baColIcon" aria-hidden>
-                  <svg viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg
+                    viewBox="0 0 13 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <polyline
                       points="2,7 5,10 11,3"
                       stroke="white"
@@ -359,23 +367,22 @@ const SpandrelBeamArticle = ({ post }) => {
         <h2>Is your project facing a similar challenge?</h2>
         <p>
           Spandrel beams with heavy loads are one scenario. But the same
-          principle — that buildability and structural integrity must be designed
-          together, not traded off against each other — applies across a wide
-          range of structural challenges. Transfer beams, deep coupling beams,
-          heavily loaded connections, tight floor-to-floor heights where
+          principle — that buildability and structural integrity must be
+          designed together, not traded off against each other — applies across
+          a wide range of structural challenges. Transfer beams, deep coupling
+          beams, heavily loaded connections, tight floor-to-floor heights where
           conventional solutions simply do not fit.
         </p>
         <p>
-          If you are in the early stages of a project and concerned about how the
-          structure will behave on site, or if you are already in construction
-          and encountering problems with a design that looks right but is proving
-          difficult to execute, there is usually a smarter path forward. It
-          requires an engineer who is willing to ask a different question — not
-          just &quot;does it work?&quot; but &quot;can it be built?&quot;
+          If you are in the early stages of a project and concerned about how
+          the structure will behave on site, or if you are already in
+          construction and encountering problems with a design that looks right
+          but is proving difficult to execute, there is usually a smarter path
+          forward. It requires an engineer who is willing to ask a different
+          question — not just &quot;does it work?&quot; but &quot;can it be
+          built?&quot;
         </p>
-        <p>
-          That is the kind of engineering we practise at Highbrou.
-        </p>
+        <p>That is the kind of engineering we practise at Highbrou.</p>
 
         <div className="sa-cta">
           <h2>Facing a difficult structural problem?</h2>

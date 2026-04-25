@@ -4,10 +4,8 @@ import { Button } from "antd";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import CommonTopBannerDynamic from "../CommonTopBanner/CommonTopBannerDynamic";
 import BlogsData from "./BlogsData";
+import SpandrelBeamArticle from "./SpandrelBeamArticle";
 import "./SingleBlog.css";
-
-/** Served from `public/pdf/` — filename includes spaces; encode for the URL. */
-const SPANDREL_ARTICLE_HTML = "/pdf/highbrou_spandrel_article (1) (1).html";
 
 const DOC_TITLE = "Highbrou Engineering | Precision Structural Solutions";
 
@@ -56,13 +54,7 @@ const SingleBlog = () => {
             Back to Blog
           </Button>
         </div>
-        <div className="SingleBlogHtmlEmbed">
-          <iframe
-            title={post.title}
-            className="SingleBlogHtmlIframe"
-            src={encodeURI(SPANDREL_ARTICLE_HTML)}
-          />
-        </div>
+        <SpandrelBeamArticle key={slug} post={post} />
         <div className="sectionPadding" style={{ paddingTop: 24 }}>
           <Link to="/blog" style={{ color: "#2989bc" }}>
             ← All articles

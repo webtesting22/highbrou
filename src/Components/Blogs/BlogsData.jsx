@@ -1,5 +1,5 @@
 /**
- * Static blog posts. Spandrel article body is served as static HTML under `public/pdf/`.
+ * Static blog posts. Spandrel article is rendered by `SpandrelBeamArticle.jsx` (React-only).
  */
 const BlogsData = [
   {
@@ -22,7 +22,7 @@ const BlogsData = [
       },
       {
         name: "Maria Momin",
-        linkedinUrl: null,
+        linkedinUrl: "https://www.linkedin.com/in/maria-momin-ab4737172/",
       },
     ],
   },
