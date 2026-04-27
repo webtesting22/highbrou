@@ -10,7 +10,7 @@ import "./Profile.css";
 const PORTFOLIO_HTML = "/pdf/HEPL_Portfolio.html";
 const PORTFOLIO_PDF = "/pdf/highbrou.pdf";
 /** Clean URL when opening the portfolio in a new tab */
-const VIEW_PROFILE_PATH = "/view-profile";
+const VIEW_PROFILE_PATH = "/profile";
 
 const Profile = () => {
   useEffect(() => {

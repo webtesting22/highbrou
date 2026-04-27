@@ -20,7 +20,7 @@ import SingleBlog from "./Components/Blogs/SingleBlog";
 
 function App() {
   const { pathname } = useLocation();
-  const portfolioFullscreen = pathname === "/view-profile";
+  const portfolioFullscreen = pathname === "/profile";
 
   return (
     <>
@@ -36,7 +36,7 @@ function App() {
         <Route path="/our-approach" element={<OurApproach />} />
         <Route path="/highbrouapplicationView" element={<ApplicationView />} />
         <Route path="/case-studies" element={<CaseStudies />} />
-        <Route path="/view-profile" element={<ViewProfile />} />
+        <Route path="/profile" element={<ViewProfile />} />
         <Route path="/blog" element={<BlogList />} />
         <Route path="/blog/:slug" element={<SingleBlog />} />
       </Routes>

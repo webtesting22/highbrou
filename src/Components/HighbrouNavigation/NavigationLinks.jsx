@@ -45,7 +45,7 @@ const NavigationLinks = [
     },
     {
         link: "View Profile",
-        path: "/view-profile",
+        path: "/profile",
         isExternal: true,
     },
 ]
