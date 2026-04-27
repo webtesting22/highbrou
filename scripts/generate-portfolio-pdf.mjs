@@ -67,7 +67,32 @@ let browser;
 try {
   browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
-  await page.goto(url, { waitUntil: "networkidle", timeout: 180000 });
+
+  // Serve highbrou.com assets from local /public when available — avoids cold-start delays
+  await page.route("https://highbrou.com/**", async (route) => {
+    const reqUrl = new URL(route.request().url());
+    const localPath = path.normalize(path.join(publicRoot, decodeURIComponent(reqUrl.pathname)));
+    if (localPath.startsWith(publicRoot) && fs.existsSync(localPath) && !fs.statSync(localPath).isDirectory()) {
+      await route.fulfill({ status: 200, contentType: mimeFor(localPath), body: fs.readFileSync(localPath) });
+    } else {
+      await route.continue();
+    }
+  });
+
+  await page.goto(url, { waitUntil: "load", timeout: 60000 }).catch(() => {});
+
+  // Wait for every <img> to finish loading (handles slow external/CDN images on first deploy)
+  console.log("Waiting for all images to load...");
+  await page.waitForFunction(
+    () => Array.from(document.images).every((img) => img.complete),
+    { timeout: 120000, polling: 1000 }
+  ).catch(async () => {
+    const pending = await page.evaluate(() =>
+      Array.from(document.images).filter((img) => !img.complete).map((img) => img.src)
+    );
+    console.warn("Some images did not finish loading:", pending);
+  });
+
   await page.emulateMedia({ media: "print" });
   await page.evaluate(() => document.fonts?.ready ?? Promise.resolve());
 
