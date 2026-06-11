@@ -107,6 +107,7 @@ const Career = () => {
         Object.entries(data.data.fields).forEach(([key, value]) =>
           formData.append(key, value),
         );
+        formData.append("Content-Type", fileType);
         formData.append("file", file);
 
         // Upload file to the S3 bucket
